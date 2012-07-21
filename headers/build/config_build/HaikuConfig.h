@@ -1,9 +1,12 @@
 /*
- * Copyright 2009-2010, Haiku, Inc. All Rights Reserved.
+ * Copyright 2009-2012 Haiku, Inc. All Rights Reserved.
  * Distributed under the terms of the MIT License.
  */
 #ifndef _CONFIG_HAIKU_CONFIG_H
 #define _CONFIG_HAIKU_CONFIG_H
+
+
+#include <HaikuBuild.h>
 
 
 /* Determine the architecture and define macros for some fundamental
@@ -18,26 +21,26 @@
    								  (defaults to undefined)
 */
 #ifdef __INTEL__
-#	define __HAIKU_ARCH				x86
-#	define __HAIKU_ARCH_X86			1
+#	define __HAIKU_BUILD_HAIKU_ARCH				x86
+#	define __HAIKU_BUILD_HAIKU_ARCH_X86			1
 #elif __x86_64__
-#	define __HAIKU_ARCH				x86_64
-#	define __HAIKU_ARCH_X86_64		1
-#	define __HAIKU_ARCH_BITS		64
+#	define __HAIKU_BUILD_HAIKU_ARCH				x86_64
+#	define __HAIKU_BUILD_HAIKU_ARCH_X86_64		1
+#	define __HAIKU_BUILD_HAIKU_ARCH_BITS		64
 #elif __POWERPC__
-#	define __HAIKU_ARCH				ppc
-#	define __HAIKU_ARCH_PPC			1
-#	define __HAIKU_BIG_ENDIAN		1
+#	define __HAIKU_BUILD_HAIKU_ARCH				ppc
+#	define __HAIKU_BUILD_HAIKU_ARCH_PPC			1
+#	define __HAIKU_BUILD_HAIKU_BIG_ENDIAN		1
 #elif __M68K__
-#	define __HAIKU_ARCH				m68k
-#	define __HAIKU_ARCH_M68K		1
-#	define __HAIKU_BIG_ENDIAN		1
+#	define __HAIKU_BUILD_HAIKU_ARCH				m68k
+#	define __HAIKU_BUILD_HAIKU_ARCH_M68K		1
+#	define __HAIKU_BUILD_HAIKU_BIG_ENDIAN		1
 #elif __MIPSEL__
-#	define __HAIKU_ARCH				mipsel
-#	define __HAIKU_ARCH_MIPSEL		1
+#	define __HAIKU_BUILD_HAIKU_ARCH				mipsel
+#	define __HAIKU_BUILD_HAIKU_ARCH_MIPSEL		1
 #elif __ARM__
-#	define __HAIKU_ARCH				arm
-#	define __HAIKU_ARCH_ARM			1
+#	define __HAIKU_BUILD_HAIKU_ARCH				arm
+#	define __HAIKU_BUILD_HAIKU_ARCH_ARM			1
 #else
 #	error Unsupported architecture!
 #endif
@@ -53,40 +56,106 @@
 */
 
 /* bitness */
-#ifndef __HAIKU_ARCH_BITS
-#	define __HAIKU_ARCH_BITS		32
+#ifndef __HAIKU_BUILD_HAIKU_ARCH_BITS
+#	define __HAIKU_BUILD_HAIKU_ARCH_BITS		32
 #endif
 
-#if __HAIKU_ARCH_BITS == 32
-#	define __HAIKU_ARCH_32_BIT		1
-#elif __HAIKU_ARCH_BITS == 64
-#	define __HAIKU_ARCH_64_BIT		1
+#if __HAIKU_BUILD_HAIKU_ARCH_BITS == 32
+#	define __HAIKU_BUILD_HAIKU_ARCH_32_BIT		1
+#elif __HAIKU_BUILD_HAIKU_ARCH_BITS == 64
+#	define __HAIKU_BUILD_HAIKU_ARCH_64_BIT		1
 #else
 #	error Unsupported bitness!
 #endif
 
 /* physical bitness */
-#ifndef __HAIKU_ARCH_PHYSICAL_BITS
-#	define __HAIKU_ARCH_PHYSICAL_BITS	__HAIKU_ARCH_BITS
+#ifndef __HAIKU_BUILD_HAIKU_ARCH_PHYSICAL_BITS
+#	define __HAIKU_BUILD_HAIKU_ARCH_PHYSICAL_BITS	\
+		__HAIKU_BUILD_HAIKU_ARCH_BITS
 #endif
 
-#if __HAIKU_ARCH_PHYSICAL_BITS == 32
-#	define __HAIKU_ARCH_PHYSICAL_32_BIT	1
-#elif __HAIKU_ARCH_PHYSICAL_BITS == 64
-#	define __HAIKU_ARCH_PHYSICAL_64_BIT	1
+#if __HAIKU_BUILD_HAIKU_ARCH_PHYSICAL_BITS == 32
+#	define __HAIKU_BUILD_HAIKU_ARCH_PHYSICAL_32_BIT	1
+#elif __HAIKU_BUILD_HAIKU_ARCH_PHYSICAL_BITS == 64
+#	define __HAIKU_BUILD_HAIKU_ARCH_PHYSICAL_64_BIT	1
 #else
 #	error Unsupported physical bitness!
 #endif
 
 /* endianess */
-#ifndef __HAIKU_BIG_ENDIAN
-#	define	__HAIKU_LITTLE_ENDIAN	1
+#ifndef __HAIKU_BUILD_HAIKU_BIG_ENDIAN
+#	define	__HAIKU_BUILD_HAIKU_LITTLE_ENDIAN	1
 #endif
 
 /* architecture specific include macros */
-#define __HAIKU_ARCH_HEADER(header)					<arch/__HAIKU_ARCH/header>
-#define __HAIKU_SUBDIR_ARCH_HEADER(subdir, header)	\
-	<subdir/arch/__HAIKU_ARCH/header>
+#define __HAIKU_BUILD_HAIKU_ARCH_HEADER(header)		<arch/__HAIKU_ARCH/header>
+// NOTE: Should the above define be this following line instead?
+// #define __HAIKU_BUILD_HAIKU_ARCH_HEADER(header)		<arch/__HAIKU_BUILD_HAIKU_ARCH/header>
+#define __HAIKU_BUILD_HAIKU_SUBDIR_ARCH_HEADER(subdir, header)	\
+	<subdir/arch/__HAIKU_BUILD_HAIKU_ARCH/header>
 
+
+/* map the macros, if not building the libroot mapper functions */
+
+#ifndef _HAIKU_BUILD_LIBROOT_FUNCTION_WRAPPER
+
+#define __HAIKU_ARCH				__HAIKU_BUILD_HAIKU_ARCH
+#define __HAIKU_ARCH_BITS			__HAIKU_BUILD_HAIKU_ARCH_BITS
+#define __HAIKU_ARCH_PHYSICAL_BITS	__HAIKU_BUILD_HAIKU_ARCH_PHYSICAL_BITS
+
+#ifdef __HAIKU_BUILD_HAIKU_ARCH_X86
+#	define __HAIKU_ARCH_X86	__HAIKU_BUILD_HAIKU_ARCH_X86
+#endif
+
+#ifdef __HAIKU_BUILD_HAIKU_ARCH_X86_64
+#	define __HAIKU_ARCH_X86_64	__HAIKU_BUILD_HAIKU_ARCH_X86_64
+#endif
+
+#ifdef __HAIKU_BUILD_HAIKU_ARCH_PPC
+#	define __HAIKU_ARCH_PPC	__HAIKU_BUILD_HAIKU_ARCH_PPC
+#endif
+
+#ifdef __HAIKU_BUILD_HAIKU_ARCH_M68K
+#	define __HAIKU_ARCH_M68K	__HAIKU_BUILD_HAIKU_ARCH_M68K
+#endif
+
+#ifdef __HAIKU_BUILD_HAIKU_ARCH_MIPSEL
+#	define __HAIKU_ARCH_MIPSEL	__HAIKU_BUILD_HAIKU_ARCH_MIPSEL
+#endif
+
+#ifdef __HAIKU_BUILD_HAIKU_ARCH_ARM
+#	define __HAIKU_ARCH_ARM	__HAIKU_BUILD_HAIKU_ARCH_ARM
+#endif
+
+#ifdef __HAIKU_BUILD_HAIKU_ARCH_32_BIT
+#	define __HAIKU_ARCH_32_BIT	__HAIKU_BUILD_HAIKU_ARCH_32_BIT
+#endif
+
+#ifdef __HAIKU_BUILD_HAIKU_ARCH_64_BIT
+#	define __HAIKU_ARCH_64_BIT	__HAIKU_BUILD_HAIKU_ARCH_64_BIT
+#endif
+
+#ifdef __HAIKU_BUILD_HAIKU_ARCH_PHYSICAL_32_BIT
+#	define __HAIKU_ARCH_PHYSICAL_32_BIT	__HAIKU_BUILD_HAIKU_ARCH_PHYSICAL_32_BIT
+#endif
+
+#ifdef __HAIKU_BUILD_HAIKU_ARCH_PHYSICAL_64_BIT
+#	define __HAIKU_ARCH_PHYSICAL_64_BIT	__HAIKU_BUILD_HAIKU_ARCH_PHYSICAL_64_BIT
+#endif
+
+#ifdef __HAIKU_BUILD_HAIKU_ARCH_LITTLE_ENDIAN
+#	define __HAIKU_ARCH_LITTLE_ENDIAN	__HAIKU_BUILD_HAIKU_ARCH_LITTLE_ENDIAN
+#endif
+
+#ifdef __HAIKU_BUILD_HAIKU_ARCH_BIG_ENDIAN
+#	define __HAIKU_ARCH_BIG_ENDIAN	__HAIKU_BUILD_HAIKU_ARCH_BIG_ENDIAN
+#endif
+
+
+#define __HAIKU_ARCH_HEADER(header)	__HAIKU_BUILD_HAIKU_ARCH_HEADER(header)
+#define __HAIKU_SUBDIR_ARCH_HEADER(subdir, header)	\
+	__HAIKU_BUILD_HAIKU_SUBDIR_ARCH_HEADER(subdir, header)
+
+#endif	/* _HAIKU_BUILD_LIBROOT_FUNCTION_WRAPPER */
 
 #endif	/* _CONFIG_HAIKU_CONFIG_H */
