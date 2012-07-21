@@ -913,6 +913,7 @@ HOST_BE_API_C++FLAGS = ;
 if ! $(HOST_PLATFORM_BEOS_COMPATIBLE) {
 	HOST_BE_API_HEADERS =
 		[ FDirName $(HAIKU_TOP) headers build ]
+		[ FDirName $(HAIKU_TOP) headers build posix ]
 		[ FDirName $(HAIKU_TOP) headers build os ]
 		[ FDirName $(HAIKU_TOP) headers build os app ]
 		[ FDirName $(HAIKU_TOP) headers build os drivers ]
