@@ -1,5 +1,5 @@
 
-#include <BeOSBuildCompatibility.h>
+//#include <BeOSBuildCompatibility.h>
 
 #include <stdlib.h>
 #include <string.h>

@@ -15,7 +15,7 @@ UsePrivateHeaders shared ;
 DEFINES += FS_SHELL=1 ;
 
 # prevent inclusion of HaikuBuildCompatibility.h
-DEFINES += HAIKU_BUILD_COMPATIBILITY_H ;
+#DEFINES += HAIKU_BUILD_COMPATIBILITY_H ;
 
 # platform specific sources/libraries
 local fsShellCommandSources ;

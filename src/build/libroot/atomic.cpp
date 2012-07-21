@@ -1,8 +1,8 @@
-#include <BeOSBuildCompatibility.h>
+//#include <BeOSBuildCompatibility.h>
 
-#include <string.h>
+//#include <string.h>
 
-#include <OS.h>
+//#include <OS.h>
 #include <SupportDefs.h>
 
 
@@ -44,7 +44,7 @@ atomic_and(vint32 *value, int32 andValue)
 
 
 int32
-atomic_or(vint32 *value, int32 orValue)	
+atomic_or(vint32 *value, int32 orValue)
 {
 	int32 oldValue = *value;
 	*value |= orValue;

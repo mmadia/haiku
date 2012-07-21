@@ -1,5 +1,5 @@
 
-#include <BeOSBuildCompatibility.h>
+//#include <BeOSBuildCompatibility.h>
 
 #include <OS.h>
 
@@ -33,7 +33,7 @@ find_thread(const char *name)
 {
 	if (name != NULL)
 		return B_ENTRY_NOT_FOUND;
-	
+
 	return kMainThreadID;
 }
 

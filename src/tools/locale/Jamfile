@@ -25,8 +25,9 @@ local libHaikuCompat ;
 if $(HOST_PLATFORM) in r5 bone dano {
 	ObjectC++Flags database_support.cpp UpdateMimeInfoThread.cpp
 		MimeUpdateThread.cpp
-		: -include [ FDirName $(HAIKU_TOP) headers build
-			HaikuBuildCompatibility.h ] ;
+#TODO: ticket8730
+#		: -include [ FDirName $(HAIKU_TOP) headers build
+#			HaikuBuildCompatibility.h ] ;
 	libHaikuCompat = libhaikucompat_build.a ;
 }
 

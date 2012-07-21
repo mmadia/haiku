@@ -38,9 +38,9 @@ if $(HOST_PLATFORM) in r5 bone dano {
 		ObjectDefines $(libbePatchSources) : _IMPEXP_BE=
 			USING_HAIKU_TYPE_CONSTANTS_H= ;
 	}
-	ObjectC++Flags $(libbePatchSources)
-		: -include [ FDirName $(HAIKU_TOP) headers build
-			HaikuBuildCompatibility.h ] ;
+#	ObjectC++Flags $(libbePatchSources)
+#		: -include [ FDirName $(HAIKU_TOP) headers build
+#			HaikuBuildCompatibility.h ] ;
 }
 
 BuildPlatformStaticLibrary libhaikucompat_build.a :

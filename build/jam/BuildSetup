@@ -778,10 +778,10 @@ if $(HOST_PLATFORM_BEOS_COMPATIBLE) {
 	HOST_LIBRARY_NAME_MAP_input_server = /system/servers/input_server ;
 	HOST_DEFINES += __STDC_FORMAT_MACROS __STDC_LIMIT_MACROS ;
 
-	local compatibilityHeader = -include [ FDirName $(HAIKU_TOP) headers build
-		HaikuBuildCompatibility.h ] ;
-	HOST_CCFLAGS += $(compatibilityHeader) ;
-	HOST_C++FLAGS += $(compatibilityHeader) ;
+#	local compatibilityHeader = -include [ FDirName $(HAIKU_TOP) headers build
+#		HaikuBuildCompatibility.h ] ;
+#	HOST_CCFLAGS += $(compatibilityHeader) ;
+#	HOST_C++FLAGS += $(compatibilityHeader) ;
 
 	# compatibility library
 	HOST_HAIKU_COMPATIBILITY_LIBS = libhaikucompat.a ;
@@ -924,8 +924,12 @@ if ! $(HOST_PLATFORM_BEOS_COMPATIBLE) {
 		[ FDirName $(HAIKU_TOP) headers build os support ]
 		[ FDirName $(HAIKU_TOP) headers build private ]
 	;
-	HOST_BE_API_CCFLAGS = -include BeOSBuildCompatibility.h ;
+#	HOST_BE_API_CCFLAGS = -include BeOSBuildCompatibility.h ;
+#	NOTE: -nostdinc was taken from full-host-abstraction.diff
+#		uncertain if needed.
+	HOST_BE_API_CCFLAGS += -nostdinc ;
 	HOST_BE_API_C++FLAGS = $(HOST_BE_API_CCFLAGS) ;
+	HOST_BE_API_C++FLAGS += -nostdinc++ ;
 }
 
 # Add directory with system headers we need when building something for the host
@@ -1068,10 +1072,10 @@ if $(HOST_PLATFORM_IS_64_BIT) {
 
 if ! $(TARGET_PLATFORM_HAIKU_COMPATIBLE) && $(TARGET_PLATFORM_BEOS_COMPATIBLE) {
 	# headers and flags
-	local compatibilityHeader = -include [ FDirName $(HAIKU_TOP) headers build
-		HaikuBuildCompatibility.h ] ;
-	TARGET_CCFLAGS += $(compatibilityHeader) ;
-	TARGET_C++FLAGS += $(compatibilityHeader) ;
+#	local compatibilityHeader = -include [ FDirName $(HAIKU_TOP) headers build
+#		HaikuBuildCompatibility.h ] ;
+#	TARGET_CCFLAGS += $(compatibilityHeader) ;
+#	TARGET_C++FLAGS += $(compatibilityHeader) ;
 
 	# compatibility library
 	TARGET_HAIKU_COMPATIBILITY_LIBS = libhaikucompat.a ;

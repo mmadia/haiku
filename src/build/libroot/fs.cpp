@@ -4,7 +4,7 @@
  */
 
 
-#include <BeOSBuildCompatibility.h>
+//#include <BeOSBuildCompatibility.h>
 
 #include "fs_impl.h"
 
@@ -13,6 +13,7 @@
 #include <fcntl.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include <unistd.h>
 #include <utime.h>
 #include <sys/stat.h>
@@ -119,7 +120,7 @@ utimes_helper(File& file, const struct timespec times[2])
 			timeBuffer[1] = now;
 	}
 
-	return file.SetTimes(timeBuffer);	
+	return file.SetTimes(timeBuffer);
 }
 
 #endif	// _HAIKU_BUILD_NO_FUTIMENS || _HAIKU_BUILD_NO_FUTIMENS
