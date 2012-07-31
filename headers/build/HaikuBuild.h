@@ -6,7 +6,7 @@
 #define _HAIKU_BUILD_H
 
 
-#include <HaikuHostBuildConfig.h>
+//#include <HaikuHostBuildConfig.h>
 
 
 #define _HAIKU_BUILD_STRING(string)
