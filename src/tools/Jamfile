@@ -22,17 +22,6 @@ local tools =
 
 USES_BE_API on $(tools) = true ;
 
-# TODO: temporary kludge
-local libHaikuCompat ;
-if $(HOST_PLATFORM) in r5 bone dano {
-	ObjectC++Flags database_support.cpp UpdateMimeInfoThread.cpp
-		MimeUpdateThread.cpp
-# TODO: ticket8730
-#		: -include [ FDirName $(HAIKU_TOP) headers build
-#			HaikuBuildCompatibility.h ] ;
-	libHaikuCompat = libhaikucompat_build.a ;
-}
-
 BuildPlatformMain <build>catattr : catattr.cpp : $(HOST_LIBBE) ;
 
 UsePrivateObjectHeaders copyattr.cpp : shared : : true ;
@@ -74,7 +63,7 @@ if $(HOST_PLATFORM) = haiku_host {
 
 BuildPlatformMain <build>mimeset :
 	$(mimesetSources)
-	: $(HOST_LIBBE) $(HOST_LIBSTDC++) $(HOST_LIBSUPC++) $(libHaikuCompat)
+	: $(HOST_LIBBE) $(HOST_LIBSTDC++) $(HOST_LIBSUPC++)
 ;
 
 if $(HOST_PLATFORM_BEOS_COMPATIBLE) {
@@ -105,7 +94,7 @@ BuildPlatformMain <build>settype : settype.cpp : $(HOST_LIBBE)
 	$(HOST_LIBSTDC++) $(HOST_LIBSUPC++) ;
 
 BuildPlatformMain <build>setversion : setversion.cpp : $(HOST_LIBBE)
-	$(HOST_LIBSTDC++) $(HOST_LIBSUPC++) $(libHaikuCompat) ;
+	$(HOST_LIBSTDC++) $(HOST_LIBSUPC++) ;
 
 BuildPlatformMain <build>xres : xres.cpp : $(HOST_LIBBE) $(HOST_LIBSTDC++)
 	$(HOST_LIBSUPC++) ;
