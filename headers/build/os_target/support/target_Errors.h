@@ -665,8 +665,8 @@
 extern "C" {
 #endif
 
-int _haiku_build_to_positive_error(int error);
-int _haiku_build_to_negative_error(int error);
+int _HAIKU_BUILD_DECLARE_FUNCTION(int, to_positive_error, (int error))
+int _HAIKU_BUILD_DECLARE_FUNCTION(int, to_negative_error, (int error))
 
 #ifdef __cplusplus
 }
