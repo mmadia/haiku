@@ -1,13 +1,13 @@
 SubDir HAIKU_TOP src build libroot ;
 
 UseHeaders [ FDirName $(HAIKU_TOP) headers build ] : true ;
-UseHeaders [ FDirName $(HAIKU_TOP) headers build os ] : true ;
-UseHeaders [ FDirName $(HAIKU_TOP) headers build os app ] : true ;
-UseHeaders [ FDirName $(HAIKU_TOP) headers build os drivers ] : true ;
-UseHeaders [ FDirName $(HAIKU_TOP) headers build os kernel ] : true ;
-UseHeaders [ FDirName $(HAIKU_TOP) headers build os interface ] : true ;
-UseHeaders [ FDirName $(HAIKU_TOP) headers build os storage ] : true ;
-UseHeaders [ FDirName $(HAIKU_TOP) headers build os support ] : true ;
+UseHeaders [ FDirName $(HAIKU_TOP) headers build os_target ] : true ;
+UseHeaders [ FDirName $(HAIKU_TOP) headers build os_target app ] : true ;
+UseHeaders [ FDirName $(HAIKU_TOP) headers build os_target drivers ] : true ;
+UseHeaders [ FDirName $(HAIKU_TOP) headers build os_target kernel ] : true ;
+UseHeaders [ FDirName $(HAIKU_TOP) headers build os_target interface ] : true ;
+UseHeaders [ FDirName $(HAIKU_TOP) headers build os_target storage ] : true ;
+UseHeaders [ FDirName $(HAIKU_TOP) headers build os_target support ] : true ;
 
 UsePrivateBuildHeaders kernel system ;
 
