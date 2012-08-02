@@ -6,10 +6,11 @@
 #define _LIBC_LIMITS_H_
 	/* Note: The header guard is checked in gcc's limits.h. */
 
+// TODO: #8730 -- create header from headers/config/types.h
+#include <config_target/target_types.h>
 
-#include <config/types.h>
-
-#include <float.h>		/* for DBL_DIG, FLT_DIG, etc */
+// TODO: #8730 -- create header from build/gcc-2.95.3/float.h
+#include <gcc-2.95.3_target/target_float.h>		/* for DBL_DIG, FLT_DIG, etc */
 
 #define _HAIKU_BUILD_LONGLONG_MIN    (-9223372036854775807LL - 1)  /* these are Be specific */
 #define _HAIKU_BUILD_LONGLONG_MAX    (9223372036854775807LL)
@@ -144,8 +145,8 @@
 /* _GCC_LIMITS_H_ is defined by GCC's internal limits.h to avoid
  * collisions with any defines in this file.
  */
-// NOTE: #8730 -- Does this need the _HAIKU_BUILD prefix?
-// NOTE: #8730 -- Does this need an ifndef _HAIKU_BUILD_LIBROOT_FUNCTION_WRAPPER counterpart?
+// TODO: #8730 Don't include_next limits.h here. ...
+//		Instead define its contents here or defined in HaikuHostBuildConfig.h
 #ifndef _GCC_LIMITS_H_
 #	include_next <limits.h>
 #endif
