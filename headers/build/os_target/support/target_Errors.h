@@ -6,7 +6,7 @@
 #define _ERRORS_H
 
 
-#include <limits.h>
+#include <target_limits.h>
 
 
 /* Error baselines */

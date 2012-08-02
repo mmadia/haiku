@@ -10,7 +10,7 @@
 #include <config_target/target_types.h>
 
 // TODO: #8730 -- create header from build/gcc-2.95.3/float.h
-#include <gcc-2.95.3_target/target_float.h>		/* for DBL_DIG, FLT_DIG, etc */
+#include <target_float.h>		/* for DBL_DIG, FLT_DIG, etc */
 
 #define _HAIKU_BUILD_LONGLONG_MIN    (-9223372036854775807LL - 1)  /* these are Be specific */
 #define _HAIKU_BUILD_LONGLONG_MAX    (9223372036854775807LL)
