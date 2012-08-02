@@ -145,6 +145,7 @@
 
 #	define _IMPEXP_ROOT
 #	define _IMPEXP_BE
+#endif /* _HAIKU_BUILD_LIBROOT_FUNCTION_WRAPPER */
 
 
 #endif	/* _BE_BUILD_H */
