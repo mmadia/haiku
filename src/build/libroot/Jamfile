@@ -8,6 +8,7 @@ UseHeaders [ FDirName $(HAIKU_TOP) headers build os_target kernel ] : true ;
 UseHeaders [ FDirName $(HAIKU_TOP) headers build os_target interface ] : true ;
 UseHeaders [ FDirName $(HAIKU_TOP) headers build os_target storage ] : true ;
 UseHeaders [ FDirName $(HAIKU_TOP) headers build os_target support ] : true ;
+UseHeaders [ FDirName $(HAIKU_TOP) headers build posix_target ] : true ;
 
 UsePrivateBuildHeaders kernel system ;
 
