@@ -226,23 +226,12 @@
 #endif
 
 /* POSIX Errors */
-#ifdef _HAIKU_BUILD_B_USE_POSITIVE_POSIX_ERRORS
-#	define _HAIKU_BUILD_B_TO_POSIX_ERROR(error)		(-(error))
-#	define _HAIKU_BUILD_B_FROM_POSIX_ERROR(error)	(-(error))
-#else
-#	define _HAIKU_BUILD_B_TO_POSIX_ERROR(error)		(error)
-#	define _HAIKU_BUILD_B_FROM_POSIX_ERROR(error)	(error)
-#endif
+#define _HAIKU_BUILD_B_TO_POSIX_ERROR(error)		(error)
+#define _HAIKU_BUILD_B_FROM_POSIX_ERROR(error)		(error)
 
 #ifndef _HAIKU_BUILD_LIBROOT_FUNCTION_WRAPPER
-// NOTE: #8730 -- Should this be ifdef _HAIKU_BUILD_B_USE_POSITIVE_POSIX_ERRORS?
-#	ifdef B_USE_POSITIVE_POSIX_ERRORS
-#		define B_TO_POSIX_ERROR(error)		_HAIKU_BUILD_B_TO_POSIX_ERROR(error)
-#		define B_FROM_POSIX_ERROR(error)	_HAIKU_BUILD_B_FROM_POSIX_ERROR(error)
-#	else
-#		define B_TO_POSIX_ERROR(error)		_HAIKU_BUILD_B_TO_POSIX_ERROR(error)
-#		define B_FROM_POSIX_ERROR(error)	_HAIKU_BUILD_B_FROM_POSIX_ERROR(error)
-#	endif
+#	define B_TO_POSIX_ERROR(error)		_HAIKU_BUILD_B_TO_POSIX_ERROR(error)
+#	define B_FROM_POSIX_ERROR(error)	_HAIKU_BUILD_B_FROM_POSIX_ERROR(error)
 #endif
 
 #define _HAIKU_BUILD_B_POSIX_ENOMEM		_HAIKU_BUILD_B_TO_POSIX_ERROR(_HAIKU_BUILD_B_POSIX_ERROR_BASE + 0)
@@ -372,20 +361,10 @@
 #endif
 
 /* B_NO_MEMORY (0x80000000) can't be negated, so it needs special handling */
-#ifdef _HAIKU_BUILD_B_USE_POSITIVE_POSIX_ERRORS
-#	define _HAIKU_BUILD_ENOMEM		_HAIKU_BUILD_B_POSIX_ENOMEM
-#else
-#	define _HAIKU_BUILD_ENOMEM		_HAIKU_BUILD_B_NO_MEMORY
-#endif
+#define _HAIKU_BUILD_ENOMEM		_HAIKU_BUILD_B_NO_MEMORY
 
 #ifndef _HAIKU_BUILD_LIBROOT_FUNCTION_WRAPPER
-// NOTE: #8730 -- Should this be ifdef _HAIKU_BUILD_B_USE_POSITIVE_POSIX_ERRORS?
-// NOTE: #8730 -- Is this conditional for this necessary?
-#	ifdef B_USE_POSITIVE_POSIX_ERRORS
 #	define ENOMEM					_HAIKU_BUILD_ENOMEM
-#	else
-#	define ENOMEM					_HAIKU_BUILD_ENOMEM
-#	endif
 #endif
 
 /* POSIX errors that can be mapped to BeOS error codes */
