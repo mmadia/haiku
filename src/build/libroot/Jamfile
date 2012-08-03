@@ -31,6 +31,8 @@ UsePrivateBuildHeaders kernel system ;
 	defines = [ FDefines KMESSAGE_CONTAINER_ONLY=1 ] ;
 	ObjectC++Flags KMessage.cpp : $(defines) ;
 
+	defines = [ FDefines _HAIKU_BUILD_LIBROOT_FUNCTION_WRAPPER=1 ] ;
+	ObjectC++Flags atomic.cpp : $(defines) ;
 }
 
 # locate the library
