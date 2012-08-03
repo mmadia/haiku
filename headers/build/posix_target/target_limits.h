@@ -10,6 +10,13 @@
 
 #include <float.h>		/* for DBL_DIG, FLT_DIG, etc */
 
+/* TODO: #8730 -- The values for _HAIKU_BUILD_LONGLONG_MIN,
+	_HAIKU_BUILD_LONGLONG_MAX are compiler specific.
+	Their values could be incorrect (when long long isn't 64 bit).
+
+	Get the values via HaikuHostBuildConfig.h
+*/
+
 #define _HAIKU_BUILD_LONGLONG_MIN    (-9223372036854775807LL - 1)  /* these are Be specific */
 #define _HAIKU_BUILD_LONGLONG_MAX    (9223372036854775807LL)
 #define _HAIKU_BUILD_ULONGLONG_MAX   (0xffffffffffffffffULL)
