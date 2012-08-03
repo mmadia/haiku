@@ -2,8 +2,9 @@
  * Copyright 2004-2012, Haiku, Inc. All Rights Reserved.
  * Distributed under the terms of the MIT License.
  *
- * Author:
+ * Authors:
  *		Erik Jaesler (erik@cgsoftware.com)
+ *		Matt Madia (mattmadia@gmail.com)
  */
 #ifndef _SUPPORT_DEFS_H
 #define _SUPPORT_DEFS_H
@@ -19,24 +20,24 @@
 
 
 /* fixed-size integer types */
-typedef __haiku_build_haiku_int8			_HAIKU_BUILD_IDENTIFIER(int8);
-typedef __haiku_build_haiku_uint8			_HAIKU_BUILD_IDENTIFIER(uint8);
-typedef __haiku_build_haiku_int16			_HAIKU_BUILD_IDENTIFIER(int16);
-typedef __haiku_build_haiku_uint16			_HAIKU_BUILD_IDENTIFIER(uint16);
-typedef __haiku_build_haiku_int32			_HAIKU_BUILD_IDENTIFIER(int32);
-typedef __haiku_build_haiku_uint32			_HAIKU_BUILD_IDENTIFIER(uint32);
-typedef __haiku_build_haiku_int64			_HAIKU_BUILD_IDENTIFIER(int64);
-typedef __haiku_build_haiku_uint64			_HAIKU_BUILD_IDENTIFIER(uint64);
+typedef __haiku_build_haiku_int8			_haiku_build_int8;
+typedef __haiku_build_haiku_uint8			_haiku_build_uint8;
+typedef __haiku_build_haiku_int16			_haiku_build_int16;
+typedef __haiku_build_haiku_uint16			_haiku_build_uint16;
+typedef __haiku_build_haiku_int32			_haiku_build_int32;
+typedef __haiku_build_haiku_uint32			_haiku_build_uint32;
+typedef __haiku_build_haiku_int64			_haiku_build_int64;
+typedef __haiku_build_haiku_uint64			_haiku_build_uint64;
 
 /* shorthand types */
-typedef volatile _haiku_build_int8   		_HAIKU_BUILD_IDENTIFIER(vint8);
-typedef volatile _haiku_build_uint8			_HAIKU_BUILD_IDENTIFIER(vuint8);
-typedef volatile _haiku_build_int16			_HAIKU_BUILD_IDENTIFIER(vint16);
-typedef volatile _haiku_build_uint16		_HAIKU_BUILD_IDENTIFIER(vuint16);
-typedef volatile _haiku_build_int32			_HAIKU_BUILD_IDENTIFIER(vint32);
-typedef volatile _haiku_build_uint32		_HAIKU_BUILD_IDENTIFIER(vuint32);
-typedef volatile _haiku_build_int64			_HAIKU_BUILD_IDENTIFIER(vint64);
-typedef volatile _haiku_build_uint64		_HAIKU_BUILD_IDENTIFIER(vuint64);
+typedef volatile _haiku_build_int8   		_haiku_build_vint8;
+typedef volatile _haiku_build_uint8			_haiku_build_vuint8;
+typedef volatile _haiku_build_int16			_haiku_build_vint16;
+typedef volatile _haiku_build_uint16		_haiku_build_vuint16;
+typedef volatile _haiku_build_int32			_haiku_build_vint32;
+typedef volatile _haiku_build_uint32		_haiku_build_vuint32;
+typedef volatile _haiku_build_int64			_haiku_build_vint64;
+typedef volatile _haiku_build_uint64		_haiku_build_vuint64;
 
 typedef volatile long			_haiku_build_vlong;
 typedef volatile int			_haiku_build_vint;
@@ -238,6 +239,40 @@ _HAIKU_BUILD_DECLARE_FUNCTION(void*, _haiku_build_get_stack_frame, (void))
 #endif
 
 #ifndef _HAIKU_BUILD_LIBROOT_FUNCTION_WRAPPER
+// NOTE: #8730 -- Are the next several groupings correct?
+/* fixed-size integer types */
+	typedef	_haiku_build_int8			int8;
+	typedef _haiku_build_uint8			uint8;
+	typedef	_haiku_build_int16			int16;
+	typedef _haiku_build_uint16			uint16;
+	typedef	_haiku_build_int32			int32;
+	typedef _haiku_build_uint32			uint32;
+	typedef	_haiku_build_int64			int64;
+	typedef _haiku_build_uint64			uint64;
+
+/* shorthand types */
+	typedef volatile _haiku_build_vint8   		vint8;
+	typedef volatile _haiku_build_vuint8		vuint8;
+	typedef volatile _haiku_build_vint16		vint16;
+	typedef volatile _haiku_build_vuint16		vuint16;
+	typedef volatile _haiku_build_vint32		vint32;
+	typedef volatile _haiku_build_vuint32		vuint32;
+	typedef volatile _haiku_build_vint64		vint64;
+	typedef volatile _haiku_build_vuint64		vuint64;
+
+/* descriptive types */
+	typedef int32					_haiku_build_int32;
+	typedef int64					_haiku_build_int64;
+	typedef int64					_haiku_build_int64;
+	typedef uint32					_haiku_build_uint32;
+	typedef uint32					_haiku_build_uint32;
+
+	typedef __haiku_phys_addr_t		__haiku_build_haiku_phys_addr_t;
+	typedef phys_addr_t				_haiku_build_phys_addr_t;
+
+	typedef	__haiku_generic_addr_t	__haiku_build_haiku_generic_addr_t;
+	typedef	generic_addr_t			_haiku_build_generic_addr_t;
+
 /* printf()/scanf() format strings for [u]int* types */
 #	define B_PRId8		_HAIKU_BUILD_B_PRId8
 #	define B_PRIi8		_HAIKU_BUILD_B_PRIi8
