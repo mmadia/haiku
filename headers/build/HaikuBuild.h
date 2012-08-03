@@ -24,5 +24,16 @@
 			__asm__(_HAIKU_BUILD_ASMNAME("_haiku_build_" #name));
 #endif
 
+// NOTE: #8730 -- _HAIKU_BUILD_DECLARE_CONSTANT is untested.
+#ifdef _HAIKU_BUILD_LIBROOT_FUNCTION_WRAPPER
+#	define _HAIKU_BUILD_DECLARE_CONSTANT(type, name) \
+		extern type _haiku_build##name; \
+#else
+#	define _HAIKU_BUILD_DECLARE_CONSTANT(type, name) \
+		extern type _haiku_build##name; \
+		extern type name \
+			__asm__(_HAIKU_BUILD_ASMNAME("_haiku_build" #name));
+#endif
+
 
 #endif	/* _HAIKU_BUILD_H */
