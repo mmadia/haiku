@@ -237,5 +237,117 @@ _HAIKU_BUILD_DECLARE_FUNCTION(void*, _haiku_build_get_stack_frame, (void))
 #	define _HAIKU_BUILD_TRUE		1
 #endif
 
+#ifndef _HAIKU_BUILD_LIBROOT_FUNCTION_WRAPPER
+/* printf()/scanf() format strings for [u]int* types */
+#	define B_PRId8		_HAIKU_BUILD_B_PRId8
+#	define B_PRIi8		_HAIKU_BUILD_B_PRIi8
+#	define B_PRId16		_HAIKU_BUILD_B_PRId16
+#	define B_PRIi16		_HAIKU_BUILD_B_PRIi16
+#	define B_PRId32		_HAIKU_BUILD_B_PRId32
+#	define B_PRIi32		_HAIKU_BUILD_B_PRId64
+#	define B_PRId64		_HAIKU_BUILD_B_PRId64
+#	define B_PRIi64		_HAIKU_BUILD_B_PRIi64
+#	define B_PRIu8		_HAIKU_BUILD_B_PRIu8
+#	define B_PRIo8		_HAIKU_BUILD_B_PRIo8
+#	define B_PRIx8		_HAIKU_BUILD_B_PRIx8
+#	define B_PRIX8		_HAIKU_BUILD_B_PRIX8
+#	define B_PRIu16		_HAIKU_BUILD_B_PRIu16
+#	define B_PRIo16		_HAIKU_BUILD_B_PRIo16
+#	define B_PRIx16		_HAIKU_BUILD_B_PRIx16
+#	define B_PRIX16		_HAIKU_BUILD_B_PRIX16
+#	define B_PRIu32		_HAIKU_BUILD_B_PRIu32
+#	define B_PRIo32		_HAIKU_BUILD_B_PRIo32
+#	define B_PRIx32		_HAIKU_BUILD_B_PRIx32
+#	define B_PRIX32		_HAIKU_BUILD_B_PRIX32
+#	define B_PRIu64		_HAIKU_BUILD_B_PRIu64
+#	define B_PRIo64		_HAIKU_BUILD_B_PRIo64
+#	define B_PRIx64		_HAIKU_BUILD_B_PRIx64
+#	define B_PRIX64		_HAIKU_BUILD_B_PRIX64
+
+#	define B_SCNd8 		_HAIKU_BUILD_B_SCNd8
+#	define B_SCNi8 		_HAIKU_BUILD_B_SCNi8
+#	define B_SCNd16		_HAIKU_BUILD_B_SCNd16
+#	define B_SCNi16	 	_HAIKU_BUILD_B_SCNi16
+#	define B_SCNd32 	_HAIKU_BUILD_B_SCNd32
+#	define B_SCNi32	 	_HAIKU_BUILD_B_SCNi32
+#	define B_SCNd64		_HAIKU_BUILD_B_SCNd64
+#	define B_SCNi64 	_HAIKU_BUILD_B_SCNi64
+#	define B_SCNu8 		_HAIKU_BUILD_B_SCNu8
+#	define B_SCNo8 		_HAIKU_BUILD_B_SCNo8
+#	define B_SCNx8 		_HAIKU_BUILD_B_SCNx8
+#	define B_SCNu16		_HAIKU_BUILD_B_SCNu16
+#	define B_SCNo16		_HAIKU_BUILD_B_SCNo16
+#	define B_SCNx16		_HAIKU_BUILD_B_SCNx16
+#	define B_SCNu32 	_HAIKU_BUILD_B_SCNu32
+#	define B_SCNo32 	_HAIKU_BUILD_B_SCNo32
+#	define B_SCNx32 	_HAIKU_BUILD_B_SCNx32
+#	define B_SCNu64		_HAIKU_BUILD_B_SCNu64
+#	define B_SCNo64		_HAIKU_BUILD_B_SCNo64
+#	define B_SCNx64		_HAIKU_BUILD_B_SCNx64
+
+/* printf() format strings for some standard types */
+/* size_t */
+#	define B_PRIuSIZE		_HAIKU_BUILD_B_PRIuSIZE
+#	define B_PRIoSIZE		_HAIKU_BUILD_B_PRIoSIZE
+#	define B_PRIxSIZE		_HAIKU_BUILD_B_PRIxSIZE
+#	define B_PRIXSIZE		_HAIKU_BUILD_B_PRIXSIZE
+/* ssize_t */
+#	define B_PRIdSSIZE		_HAIKU_BUILD_B_PRIdSSIZE
+#	define B_PRIiSSIZE		_HAIKU_BUILD_B_PRIiSSIZE
+/* addr_t */
+#	define B_PRIuADDR		_HAIKU_BUILD_B_PRIuADDR
+#	define B_PRIoADDR		_HAIKU_BUILD_B_PRIoADDR
+#	define B_PRIxADDR		_HAIKU_BUILD_B_PRIxADDR
+#	define B_PRIXADDR		_HAIKU_BUILD_B_PRIXADDR
+/* phys_addr_t */
+#	define B_PRIuPHYSADDR	_HAIKU_BUILD_B_PRIuPHYSADDR
+#	define B_PRIoPHYSADDR	_HAIKU_BUILD_B_PRIoPHYSADDR
+#	define B_PRIxPHYSADDR	_HAIKU_BUILD_B_PRIxPHYSADDR
+#	define B_PRIXPHYSADDR	_HAIKU_BUILD_B_PRIXPHYSADDR
+/* generic_addr_t */
+#	define B_PRIuGENADDR	_HAIKU_BUILD_B_PRIuGENADDR
+#	define B_PRIoGENADDR	_HAIKU_BUILD_B_PRIoGENADDR
+#	define B_PRIxGENADDR	_HAIKU_BUILD_B_PRIxGENADDR
+#	define B_PRIXGENADDR	_HAIKU_BUILD_B_PRIXGENADDR
+/* off_t */
+#	define B_PRIdOFF		_HAIKU_BUILD_B_PRIdOFF
+#	define B_PRIiOFF		_HAIKU_BUILD_B_PRIiOFF
+/* dev_t */
+#	define B_PRIdDEV		_HAIKU_BUILD_B_PRIdDEV
+#	define B_PRIiDEV		_HAIKU_BUILD_B_PRIiDEV
+/* ino_t */
+#	define B_PRIdINO		_HAIKU_BUILD_B_PRIdINO
+#	define B_PRIiINO		_HAIKU_BUILD_B_PRIiINO
+/* time_t */
+#	define B_PRIdTIME		_HAIKU_BUILD_B_PRIdTIME
+#	define B_PRIiTIME		_HAIKU_BUILD_B_PRIiTIME
+
+/* min and max comparisons */
+#	ifndef __cplusplus
+#		ifdef _haiku_build_min
+#			define min(a,b) _haiku_build_min(a,b)
+#		endif
+#		ifdef _haiku_build_max
+#			define max(a,b) _haiku_build_max(a,b)
+#		endif
+#	endif
+
+/* min() and max() are functions in C++ */
+#	define min_c(a,b) _haiku_build_min_c(a,b)
+#	define max_c(a,b) _haiku_build_max_c(a,b)
+
+
+/* Obsolete or discouraged API */
+
+/* use 'true' and 'false' */
+#	ifdef _HAIKU_BUILD_FALSE
+#		define FALSE	_HAIKU_BUILD_FALSE
+#	endif
+#	ifdef _HAIKU_BUILD_TRUE
+#		define TRUE		_HAIKU_BUILD_TRUE
+#	endif
+
+#endif /* _HAIKU_BUILD_LIBROOT_FUNCTION_WRAPPER */
+
 
 #endif	/* _SUPPORT_DEFS_H */
