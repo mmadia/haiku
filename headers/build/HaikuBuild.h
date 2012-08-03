@@ -6,7 +6,7 @@
 #define _HAIKU_BUILD_H
 
 
-//#include <HaikuHostBuildConfig.h>
+#include <HaikuHostBuildConfig.h>
 
 
 #define _HAIKU_BUILD_STRING(string)
@@ -27,7 +27,7 @@
 // NOTE: #8730 -- _HAIKU_BUILD_DECLARE_CONSTANT is untested.
 #ifdef _HAIKU_BUILD_LIBROOT_FUNCTION_WRAPPER
 #	define _HAIKU_BUILD_DECLARE_CONSTANT(type, name) \
-		extern type _haiku_build##name; \
+		extern type _haiku_build##name;
 #else
 #	define _HAIKU_BUILD_DECLARE_CONSTANT(type, name) \
 		extern type _haiku_build##name; \

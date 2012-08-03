@@ -1,0 +1,72 @@
+SubDir HAIKU_TOP src build configure ;
+
+HAIKU_BUILD_HOST_FEATURES = <build!configure>HostFeatures ;
+MakeLocate $(HAIKU_BUILD_HOST_FEATURES) : $(HAIKU_BUILD_OUTPUT_DIR) ;
+
+HAIKU_BUILD_CONFIG_HEADER = <build!configure>HaikuHostBuildConfig.h ;
+MakeLocate $(HAIKU_BUILD_CONFIG_HEADER) : $(HAIKU_BUILD_OUTPUT_DIR) ;
+
+local configureTargets ;
+
+rule ConfigureCheckExists feature : fileTarget
+{
+	local target = $(fileTarget:G=build!configure!test) ;
+
+	FEATURE on $(target) = $(feature) ;
+	NotFile $(target) ;
+	Depends $(target) : $(HAIKU_BUILD_CONFIG_HEADER) $(fileTarget) ;
+
+	ConfigureCheckExists1 $(target)
+		: $(HAIKU_BUILD_CONFIG_HEADER) $(fileTarget) ;
+
+	configureTargets += $(target) ;
+}
+
+
+actions ConfigureCheckExists1
+{
+	if [ -f "$(2[2-])" ]; then
+		echo "#define _HAIKU_BUILD_FEATURE_$(FEATURE) 1" >> $(2[1])
+#		echo $(FEATURE) >> $(2[1])
+	fi
+}
+
+
+rule ConfigureTestCompile feature : sources : libraries
+{
+	local executable = <build!configure>test_$(feature) ;
+
+	BuildPlatformMain $(executable) : $(sources) : $(libraries) ;
+	ConfigureCheckExists $(feature) : $(executable) ;
+}
+
+
+rule ConfigureRunProgram name : sources : libraries
+{
+	local program = $(name:G=build!configure) ;
+	local target = $(name:G=build!configure!test) ;
+
+	BuildPlatformMain $(program) : $(sources) : $(libraries) ;
+
+	ConfigureRunProgram1 ;
+
+	NotFile $(target) ;
+	Depends $(target) : $(HAIKU_BUILD_CONFIG_HEADER) $(program) ;
+
+	ConfigureRunProgram1 $(target) : $(HAIKU_BUILD_CONFIG_HEADER) $(program) ;
+
+	configureTargets += $(target) ;
+}
+
+
+actions ConfigureRunProgram1
+{
+	$(2[2-]) >> $(2[1])
+}
+
+
+ConfigureRunProgram test_int_types : test_int_types.cpp : $(HOST_LIBSTDC++) ;
+
+
+Depends configure_build : $(configureTargets) ;
+NotFile configure_build ;
