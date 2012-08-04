@@ -35,5 +35,10 @@
 			__asm__(_HAIKU_BUILD_ASMNAME("_haiku_build" #name));
 #endif
 
+#ifdef _HAIKU_BUILD_LIBROOT_FUNCTION_WRAPPER
+#	define _HAIKU_BUILD_IDENTIFIER(name) name
+#else
+#	define _HAIKU_BUILD_IDENTIFIER(name) _haiku_build_##name
+#endif
 
 #endif	/* _HAIKU_BUILD_H */
