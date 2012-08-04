@@ -926,12 +926,7 @@ if ! $(HOST_PLATFORM_BEOS_COMPATIBLE) {
 		[ FDirName $(HAIKU_TOP) headers build os support ]
 		[ FDirName $(HAIKU_TOP) headers build private ]
 	;
-#	HOST_BE_API_CCFLAGS = -include BeOSBuildCompatibility.h ;
-#	NOTE: -nostdinc was taken from full-host-abstraction.diff
-#		uncertain if needed.
-	HOST_BE_API_CCFLAGS += -nostdinc ;
 	HOST_BE_API_C++FLAGS = $(HOST_BE_API_CCFLAGS) ;
-	HOST_BE_API_C++FLAGS += -nostdinc++ ;
 }
 
 # Add directory with system headers we need when building something for the host
