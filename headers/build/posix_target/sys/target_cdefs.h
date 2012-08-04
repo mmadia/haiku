@@ -34,19 +34,19 @@
 #define __HAIKU_BUILD__dead2
 
 #ifndef _HAIKU_BUILD_LIBROOT_FUNCTION_WRAPPER
-#	ifndef __HAIKU_BUILD__THROW
+#	ifdef __HAIKU_BUILD__THROW
 #		define __THROW
 #	endif
 
-#	ifndef __HAIKU_BUILD__P
+#	ifdef __HAIKU_BUILD__P
 #		define	__P(s)			__HAIKU_BUILD__P(s)
 #	endif
 
-#	ifndef __HAIKU_BUILD__CONCAT
+#	ifdef __HAIKU_BUILD__CONCAT
 #		define	__CONCAT(x,y)	__HAIKU_BUILD__CONCAT(x,y)
 #	endif
 
-#	ifndef __HAIKU_BUILD__STRING
+#	ifdef __HAIKU_BUILD__STRING
 #		define	__STRING(x)		__HAIKU_BUILD__STRING(x)
 #	endif
 
