@@ -261,17 +261,17 @@ _HAIKU_BUILD_DECLARE_FUNCTION(void*, _haiku_build_get_stack_frame, (void))
 	typedef volatile _haiku_build_vuint64		vuint64;
 
 /* descriptive types */
-	typedef int32					_haiku_build_int32;
-	typedef int64					_haiku_build_int64;
-	typedef int64					_haiku_build_int64;
-	typedef uint32					_haiku_build_uint32;
-	typedef uint32					_haiku_build_uint32;
+	typedef _haiku_build_int32		int32;
+	typedef _haiku_build_int64		int64;
+	typedef _haiku_build_int64		int64;
+	typedef _haiku_build_uint32		uint32;
+	typedef _haiku_build_uint32		uint32;
 
-	typedef __haiku_phys_addr_t		__haiku_build_haiku_phys_addr_t;
-	typedef phys_addr_t				_haiku_build_phys_addr_t;
+	typedef __haiku_build_haiku_phys_addr_t		__haiku_phys_addr_t;
+	typedef _haiku_build_phys_addr_t			phys_addr_t;
 
-	typedef	__haiku_generic_addr_t	__haiku_build_haiku_generic_addr_t;
-	typedef	generic_addr_t			_haiku_build_generic_addr_t;
+	typedef	__haiku_build_haiku_generic_addr_t	__haiku_generic_addr_t;
+	typedef	_haiku_build_generic_addr_t			generic_addr_t;
 
 /* printf()/scanf() format strings for [u]int* types */
 #	define B_PRId8		_HAIKU_BUILD_B_PRId8
