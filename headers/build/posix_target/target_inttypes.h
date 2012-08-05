@@ -9,8 +9,8 @@
 #include <target_stdint.h>
 
 typedef struct {
-	intmax_t _HAIKU_BUILD_IDENTIFIER(quot);	/* quotient */
-	intmax_t _HAIKU_BUILD_IDENTIFIER(rem);	/* remainder */
+	_haiku_build_intmax_t quot;	/* quotient */
+	_haiku_build_intmax_t rem;	/* remainder */
 } _HAIKU_BUILD_IDENTIFIER(imaxdiv_t);
 
 // NOTE: #8730 does __STDC_FORMAT_MACROS need to be _HAIKU_BUILD_ prefixed?
@@ -379,16 +379,23 @@ typedef struct {
 extern "C" {
 #endif
 
-intmax_t	_HAIKU_BUILD_DECLARE_FUNCTION(intmax_t, imaxabs, (intmax_t num))
-imaxdiv_t	_HAIKU_BUILD_DECLARE_FUNCTION(imaxdiv_t, imaxdiv, \
-	(intmax_t numer, intmax_t denom))
+_haiku_build_intmax_t	_HAIKU_BUILD_DECLARE_FUNCTION(_haiku_build_intmax_t, \
+	imaxabs, (_haiku_build_intmax_t num))
+_HAIKU_BUILD_IDENTIFIER(imaxdiv_t)	_HAIKU_BUILD_DECLARE_FUNCTION(\
+	_HAIKU_BUILD_IDENTIFIER(imaxdiv_t), _haiku_build_imaxdiv, \
+		(_haiku_build_intmax_t numer, _haiku_build_intmax_t denom))
 
-intmax_t	_HAIKU_BUILD_DECLARE_FUNCTION(intmax_t, strtoimax, \
-	(const char *string, char **_end, int base))
-uintmax_t	_HAIKU_BUILD_DECLARE_FUNCTION(uintmax_t, strtoumax, \
-	(const char *string, char **_end, int base))
-/* intmax_t	_HAIKU_BUILD_DECLARE_FUNCTION(intmax_t, wcstoimax, (const __wchar_t *, __wchar_t **, int)) */
-/* uintmax_t	_HAIKU_BUILD_DECLARE_FUNCTION(uintmax_t, wcstoumax, (const __wchar_t *, __wchar_t **, int)) */
+_haiku_build_intmax_t	_HAIKU_BUILD_DECLARE_FUNCTION(_haiku_build_intmax_t, \
+	strtoimax, (const _haiku_build_char *string, _haiku_build_char **_end, \
+		_haiku_build_int base))
+_haiku_build_uintmax_t	_HAIKU_BUILD_DECLARE_FUNCTION(\
+	_haiku_build_uintmax_t, strtoumax, (const _haiku_build_char *string, \
+		_haiku_build_char **_end, _haiku_build_int base))
+// NOTE: these commented functions may not be updated 100% correctly.
+/* _haiku_build_intmax_t	_HAIKU_BUILD_DECLARE_FUNCTION(_haiku_build_intmax_t, \
+	wcstoimax, (const __wchar_t *, __wchar_t **, _haiku_build_int)) */
+/* _haiku_build_uintmax_t	_HAIKU_BUILD_DECLARE_FUNCTION(_haiku_build_uintmax_t, \
+	wcstoumax, (const __wchar_t *, __wchar_t **, _haiku_build_int)) */
 
 
 #ifdef __cplusplus
