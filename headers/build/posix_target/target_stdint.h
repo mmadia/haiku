@@ -23,38 +23,38 @@ typedef __haiku_build_haiku_std_int64	_haiku_build_int64_t;
 typedef __haiku_build_haiku_std_uint64	_haiku_build_uint64_t;
 
 /* Minimum-width integer types */
-typedef __haiku_build_int8_t			_haiku_build_int_least8_t;
-typedef __haiku_build_uint8_t			_haiku_build_uint_least8_t;
+typedef _haiku_build_int8_t				_haiku_build_int_least8_t;
+typedef _haiku_build_uint8_t			_haiku_build_uint_least8_t;
 
-typedef __haiku_build_int16_t			_haiku_build_int_least16_t;
-typedef __haiku_build_uint16_t			_haiku_build_uint_least16_t;
+typedef _haiku_build_int16_t			_haiku_build_int_least16_t;
+typedef _haiku_build_uint16_t			_haiku_build_uint_least16_t;
 
-typedef __haiku_build_int32_t			_haiku_build_int_least32_t;
-typedef __haiku_build_uint32_t			_haiku_build_uint_least32_t;
+typedef _haiku_build_int32_t			_haiku_build_int_least32_t;
+typedef _haiku_build_uint32_t			_haiku_build_uint_least32_t;
 
-typedef __haiku_build_int64_t			_haiku_build_int_least64_t;
-typedef __haiku_build_uint64_t			_haiku_build_uint_least64_t;
+typedef _haiku_build_int64_t			_haiku_build_int_least64_t;
+typedef _haiku_build_uint64_t			_haiku_build_uint_least64_t;
 
 /* Fastest minimum-width integer types */
-typedef __haiku_build_int32_t			_haiku_build_int_fast8_t;
-typedef __haiku_build_uint32_t			_haiku_build_uint_fast8_t;
+typedef _haiku_build_int32_t			_haiku_build_int_fast8_t;
+typedef _haiku_build_uint32_t			_haiku_build_uint_fast8_t;
 
-typedef __haiku_build_int32_t			_haiku_build_int_fast16_t;
-typedef __haiku_build_uint32_t			_haiku_build_uint_fast16_t;
+typedef _haiku_build_int32_t			_haiku_build_int_fast16_t;
+typedef _haiku_build_uint32_t			_haiku_build_uint_fast16_t;
 
-typedef __haiku_build_int32_t			_haiku_build_int_fast32_t;
-typedef __haiku_build_uint32_t			_haiku_build_uint_fast32_t;
+typedef _haiku_build_int32_t			_haiku_build_int_fast32_t;
+typedef _haiku_build_uint32_t			_haiku_build_uint_fast32_t;
 
-typedef __haiku_build_int64_t			_haiku_build_int_fast64_t;
-typedef __haiku_build_uint64_t			_haiku_build_uint_fast64_t;
+typedef _haiku_build_int64_t			_haiku_build_int_fast64_t;
+typedef _haiku_build_uint64_t			_haiku_build_uint_fast64_t;
 
 /* Integer types capable of holding object pointers */
 typedef __haiku_build_haiku_saddr_t		_haiku_build_intptr_t;
 typedef __haiku_build_haiku_addr_t		_haiku_build_uintptr_t;
 
 /* Greatest-width integer types */
-typedef __haiku_build_int64_t			_haiku_build_intmax_t;
-typedef __haiku_build_uint64_t			_haiku_build_uintmax_t;
+typedef _haiku_build_int64_t			_haiku_build_intmax_t;
+typedef _haiku_build_uint64_t			_haiku_build_uintmax_t;
 
 /* Limits of exact-width integer types */
 #define _HAIKU_BUILD_INT8_MIN			(-128)
@@ -151,10 +151,10 @@ typedef __haiku_build_uint64_t			_haiku_build_uintmax_t;
 
 
 /* BSD compatibility */
-typedef __haiku_build_uint8_t				u_int8_t;
-typedef __haiku_build_uint16_t				u_int16_t;
-typedef __haiku_build_uint32_t				u_int32_t;
-typedef __haiku_build_uint64_t				u_int64_t;
+typedef _haiku_build_uint8_t				u_int8_t;
+typedef _haiku_build_uint16_t				u_int16_t;
+typedef _haiku_build_uint32_t				u_int32_t;
+typedef _haiku_build_uint64_t				u_int64_t;
 
 #ifndef _HAIKU_BUILD_LIBROOT_FUNCTION_WRAPPER
 /* Exact-width integer types */
