@@ -8,13 +8,6 @@
 
 #include <config_target/target_types.h>
 
-/* TODO: #8730 -- The values for _HAIKU_BUILD_LONGLONG_MIN,
-	_HAIKU_BUILD_LONGLONG_MAX are compiler specific.
-	Their values could be incorrect (when long long isn't 64 bit).
-
-	Get the values via HaikuHostBuildConfig.h
-*/
-
 #define _HAIKU_BUILD_LONGLONG_MIN			_HAIKU_BUILD_FEATURE_LLONG_MIN
 #define _HAIKU_BUILD_LONGLONG_MAX			_HAIKU_BUILD_FEATURE_LLONG_MAX
 #define _HAIKU_BUILD_ULONGLONG_MAX			_HAIKU_BUILD_FEATURE_ULLONG_MAX
