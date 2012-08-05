@@ -67,6 +67,7 @@ actions ConfigureRunProgram1
 
 ConfigureRunProgram test_int_types : test_int_types.cpp : $(HOST_LIBSTDC++) ;
 ConfigureRunProgram test_limits_header : test_limits_header.cpp : $(HOST_LIBSTDC++) ;
+ConfigureRunProgram test_float_header : test_float_header.cpp : $(HOST_LIBSTDC++) ;
 
 
 Depends configure_build : $(configureTargets) ;
