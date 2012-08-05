@@ -30,7 +30,7 @@ typedef __haiku_build_haiku_int64			_haiku_build_int64;
 typedef __haiku_build_haiku_uint64			_haiku_build_uint64;
 
 /* shorthand types */
-typedef volatile _haiku_build_int8   		_haiku_build_vint8;
+typedef volatile _haiku_build_int8			_haiku_build_vint8;
 typedef volatile _haiku_build_uint8			_haiku_build_vuint8;
 typedef volatile _haiku_build_int16			_haiku_build_vint16;
 typedef volatile _haiku_build_uint16		_haiku_build_vuint16;
@@ -39,18 +39,18 @@ typedef volatile _haiku_build_uint32		_haiku_build_vuint32;
 typedef volatile _haiku_build_int64			_haiku_build_vint64;
 typedef volatile _haiku_build_uint64		_haiku_build_vuint64;
 
-typedef volatile long			_haiku_build_vlong;
-typedef volatile int			_haiku_build_vint;
-typedef volatile short			_haiku_build_vshort;
-typedef volatile char			_haiku_build_vchar;
+typedef volatile long						_haiku_build_vlong;
+typedef volatile int						_haiku_build_vint;
+typedef volatile short						_haiku_build_vshort;
+typedef volatile char						_haiku_build_vchar;
 
-typedef volatile unsigned long	_haiku_build_vulong;
-typedef volatile unsigned int	_haiku_build_vuint;
-typedef volatile unsigned short	_haiku_build_vushort;
-typedef volatile unsigned char	_haiku_build_vuchar;
+typedef volatile unsigned long				_haiku_build_vulong;
+typedef volatile unsigned int				_haiku_build_vuint;
+typedef volatile unsigned short				_haiku_build_vushort;
+typedef volatile unsigned char				_haiku_build_vuchar;
 
-typedef unsigned char			_haiku_build_uchar;
-typedef unsigned short          _haiku_build_unichar;
+typedef unsigned char						_haiku_build_uchar;
+typedef unsigned short						_haiku_build_unichar;
 
 /* descriptive types */
 typedef _haiku_build_int32					_HAIKU_BUILD_IDENTIFIER(status_t);
@@ -67,51 +67,51 @@ typedef	_haiku_build_generic_addr_t			_HAIKU_BUILD_IDENTIFIER(generic_size_t);
 
 
 /* printf()/scanf() format strings for [u]int* types */
-#define _HAIKU_BUILD_B_PRId8		"d"
-#define _HAIKU_BUILD_B_PRIi8		"i"
-#define _HAIKU_BUILD_B_PRId16		"d"
-#define _HAIKU_BUILD_B_PRIi16		"i"
-#define _HAIKU_BUILD_B_PRId32		__HAIKU_BUILD_HAIKU_PRI_PREFIX_32 "d"
-#define _HAIKU_BUILD_B_PRIi32		__HAIKU_BUILD_HAIKU_PRI_PREFIX_32 "i"
-#define _HAIKU_BUILD_B_PRId64		__HAIKU_BUILD_HAIKU_PRI_PREFIX_64 "d"
-#define _HAIKU_BUILD_B_PRIi64		__HAIKU_BUILD_HAIKU_PRI_PREFIX_64 "i"
-#define _HAIKU_BUILD_B_PRIu8		"u"
-#define _HAIKU_BUILD_B_PRIo8		"o"
-#define _HAIKU_BUILD_B_PRIx8		"x"
-#define _HAIKU_BUILD_B_PRIX8		"X"
-#define _HAIKU_BUILD_B_PRIu16		"u"
-#define _HAIKU_BUILD_B_PRIo16		"o"
-#define _HAIKU_BUILD_B_PRIx16		"x"
-#define _HAIKU_BUILD_B_PRIX16		"X"
-#define _HAIKU_BUILD_B_PRIu32		__HAIKU_BUILD_HAIKU_PRI_PREFIX_32 "u"
-#define _HAIKU_BUILD_B_PRIo32		__HAIKU_BUILD_HAIKU_PRI_PREFIX_32 "o"
-#define _HAIKU_BUILD_B_PRIx32		__HAIKU_BUILD_HAIKU_PRI_PREFIX_32 "x"
-#define _HAIKU_BUILD_B_PRIX32		__HAIKU_BUILD_HAIKU_PRI_PREFIX_32 "X"
-#define _HAIKU_BUILD_B_PRIu64		__HAIKU_BUILD_HAIKU_PRI_PREFIX_64 "u"
-#define _HAIKU_BUILD_B_PRIo64		__HAIKU_BUILD_HAIKU_PRI_PREFIX_64 "o"
-#define _HAIKU_BUILD_B_PRIx64		__HAIKU_BUILD_HAIKU_PRI_PREFIX_64 "x"
-#define _HAIKU_BUILD_B_PRIX64		__HAIKU_BUILD_HAIKU_PRI_PREFIX_64 "X"
+#define _HAIKU_BUILD_B_PRId8			"d"
+#define _HAIKU_BUILD_B_PRIi8			"i"
+#define _HAIKU_BUILD_B_PRId16			"d"
+#define _HAIKU_BUILD_B_PRIi16			"i"
+#define _HAIKU_BUILD_B_PRId32			__HAIKU_BUILD_HAIKU_PRI_PREFIX_32 "d"
+#define _HAIKU_BUILD_B_PRIi32			__HAIKU_BUILD_HAIKU_PRI_PREFIX_32 "i"
+#define _HAIKU_BUILD_B_PRId64			__HAIKU_BUILD_HAIKU_PRI_PREFIX_64 "d"
+#define _HAIKU_BUILD_B_PRIi64			__HAIKU_BUILD_HAIKU_PRI_PREFIX_64 "i"
+#define _HAIKU_BUILD_B_PRIu8			"u"
+#define _HAIKU_BUILD_B_PRIo8			"o"
+#define _HAIKU_BUILD_B_PRIx8			"x"
+#define _HAIKU_BUILD_B_PRIX8			"X"
+#define _HAIKU_BUILD_B_PRIu16			"u"
+#define _HAIKU_BUILD_B_PRIo16			"o"
+#define _HAIKU_BUILD_B_PRIx16			"x"
+#define _HAIKU_BUILD_B_PRIX16			"X"
+#define _HAIKU_BUILD_B_PRIu32			__HAIKU_BUILD_HAIKU_PRI_PREFIX_32 "u"
+#define _HAIKU_BUILD_B_PRIo32			__HAIKU_BUILD_HAIKU_PRI_PREFIX_32 "o"
+#define _HAIKU_BUILD_B_PRIx32			__HAIKU_BUILD_HAIKU_PRI_PREFIX_32 "x"
+#define _HAIKU_BUILD_B_PRIX32			__HAIKU_BUILD_HAIKU_PRI_PREFIX_32 "X"
+#define _HAIKU_BUILD_B_PRIu64			__HAIKU_BUILD_HAIKU_PRI_PREFIX_64 "u"
+#define _HAIKU_BUILD_B_PRIo64			__HAIKU_BUILD_HAIKU_PRI_PREFIX_64 "o"
+#define _HAIKU_BUILD_B_PRIx64			__HAIKU_BUILD_HAIKU_PRI_PREFIX_64 "x"
+#define _HAIKU_BUILD_B_PRIX64			__HAIKU_BUILD_HAIKU_PRI_PREFIX_64 "X"
 
-#define _HAIKU_BUILD_B_SCNd8 		"hhd"
-#define _HAIKU_BUILD_B_SCNi8 		"hhi"
-#define _HAIKU_BUILD_B_SCNd16		"hd"
-#define _HAIKU_BUILD_B_SCNi16	 	"hi"
-#define _HAIKU_BUILD_B_SCNd32 		__HAIKU_BUILD_HAIKU_PRI_PREFIX_32 "d"
-#define _HAIKU_BUILD_B_SCNi32	 	__HAIKU_BUILD_HAIKU_PRI_PREFIX_32 "i"
-#define _HAIKU_BUILD_B_SCNd64		__HAIKU_BUILD_HAIKU_PRI_PREFIX_64 "d"
-#define _HAIKU_BUILD_B_SCNi64 		__HAIKU_BUILD_HAIKU_PRI_PREFIX_64 "i"
-#define _HAIKU_BUILD_B_SCNu8 		"hhu"
-#define _HAIKU_BUILD_B_SCNo8 		"hho"
-#define _HAIKU_BUILD_B_SCNx8 		"hhx"
-#define _HAIKU_BUILD_B_SCNu16		"hu"
-#define _HAIKU_BUILD_B_SCNo16		"ho"
-#define _HAIKU_BUILD_B_SCNx16		"hx"
-#define _HAIKU_BUILD_B_SCNu32 		__HAIKU_BUILD_HAIKU_PRI_PREFIX_32 "u"
-#define _HAIKU_BUILD_B_SCNo32 		__HAIKU_BUILD_HAIKU_PRI_PREFIX_32 "o"
-#define _HAIKU_BUILD_B_SCNx32 		__HAIKU_BUILD_HAIKU_PRI_PREFIX_32 "x"
-#define _HAIKU_BUILD_B_SCNu64		__HAIKU_BUILD_HAIKU_PRI_PREFIX_64 "u"
-#define _HAIKU_BUILD_B_SCNo64		__HAIKU_BUILD_HAIKU_PRI_PREFIX_64 "o"
-#define _HAIKU_BUILD_B_SCNx64		__HAIKU_BUILD_HAIKU_PRI_PREFIX_64 "x"
+#define _HAIKU_BUILD_B_SCNd8			"hhd"
+#define _HAIKU_BUILD_B_SCNi8			"hhi"
+#define _HAIKU_BUILD_B_SCNd16			"hd"
+#define _HAIKU_BUILD_B_SCNi16			"hi"
+#define _HAIKU_BUILD_B_SCNd32			__HAIKU_BUILD_HAIKU_PRI_PREFIX_32 "d"
+#define _HAIKU_BUILD_B_SCNi32			__HAIKU_BUILD_HAIKU_PRI_PREFIX_32 "i"
+#define _HAIKU_BUILD_B_SCNd64			__HAIKU_BUILD_HAIKU_PRI_PREFIX_64 "d"
+#define _HAIKU_BUILD_B_SCNi64			__HAIKU_BUILD_HAIKU_PRI_PREFIX_64 "i"
+#define _HAIKU_BUILD_B_SCNu8			"hhu"
+#define _HAIKU_BUILD_B_SCNo8			"hho"
+#define _HAIKU_BUILD_B_SCNx8			"hhx"
+#define _HAIKU_BUILD_B_SCNu16			"hu"
+#define _HAIKU_BUILD_B_SCNo16			"ho"
+#define _HAIKU_BUILD_B_SCNx16			"hx"
+#define _HAIKU_BUILD_B_SCNu32			__HAIKU_BUILD_HAIKU_PRI_PREFIX_32 "u"
+#define _HAIKU_BUILD_B_SCNo32			__HAIKU_BUILD_HAIKU_PRI_PREFIX_32 "o"
+#define _HAIKU_BUILD_B_SCNx32			__HAIKU_BUILD_HAIKU_PRI_PREFIX_32 "x"
+#define _HAIKU_BUILD_B_SCNu64			__HAIKU_BUILD_HAIKU_PRI_PREFIX_64 "u"
+#define _HAIKU_BUILD_B_SCNo64			__HAIKU_BUILD_HAIKU_PRI_PREFIX_64 "o"
+#define _HAIKU_BUILD_B_SCNx64			__HAIKU_BUILD_HAIKU_PRI_PREFIX_64 "x"
 
 /* printf() format strings for some standard types */
 /* size_t */
@@ -157,7 +157,7 @@ typedef	_haiku_build_generic_addr_t			_HAIKU_BUILD_IDENTIFIER(generic_size_t);
 
 /* Empty string ("") */
 #ifdef __cplusplus
-_HAIKU_BUILD_DECLARE_CONSTANT(const char*, B_EMPTY_STRING)
+	_HAIKU_BUILD_DECLARE_CONSTANT(const char*, B_EMPTY_STRING)
 #endif
 
 
@@ -241,17 +241,17 @@ _HAIKU_BUILD_DECLARE_FUNCTION(void*, _haiku_build_get_stack_frame, (void))
 #ifndef _HAIKU_BUILD_LIBROOT_FUNCTION_WRAPPER
 // NOTE: #8730 -- Are the next several groupings correct?
 /* fixed-size integer types */
-	typedef	_haiku_build_int8			int8;
-	typedef _haiku_build_uint8			uint8;
-	typedef	_haiku_build_int16			int16;
-	typedef _haiku_build_uint16			uint16;
-	typedef	_haiku_build_int32			int32;
-	typedef _haiku_build_uint32			uint32;
-	typedef	_haiku_build_int64			int64;
-	typedef _haiku_build_uint64			uint64;
+	typedef	_haiku_build_int8					int8;
+	typedef _haiku_build_uint8					uint8;
+	typedef	_haiku_build_int16					int16;
+	typedef _haiku_build_uint16					uint16;
+	typedef	_haiku_build_int32					int32;
+	typedef _haiku_build_uint32					uint32;
+	typedef	_haiku_build_int64					int64;
+	typedef _haiku_build_uint64					uint64;
 
 /* shorthand types */
-	typedef volatile _haiku_build_vint8   		vint8;
+	typedef volatile _haiku_build_vint8			vint8;
 	typedef volatile _haiku_build_vuint8		vuint8;
 	typedef volatile _haiku_build_vint16		vint16;
 	typedef volatile _haiku_build_vuint16		vuint16;
@@ -261,11 +261,11 @@ _HAIKU_BUILD_DECLARE_FUNCTION(void*, _haiku_build_get_stack_frame, (void))
 	typedef volatile _haiku_build_vuint64		vuint64;
 
 /* descriptive types */
-	typedef _haiku_build_int32		int32;
-	typedef _haiku_build_int64		int64;
-	typedef _haiku_build_int64		int64;
-	typedef _haiku_build_uint32		uint32;
-	typedef _haiku_build_uint32		uint32;
+	typedef _haiku_build_int32					int32;
+	typedef _haiku_build_int64					int64;
+	typedef _haiku_build_int64					int64;
+	typedef _haiku_build_uint32					uint32;
+	typedef _haiku_build_uint32					uint32;
 
 	typedef __haiku_build_haiku_phys_addr_t		__haiku_phys_addr_t;
 	typedef _haiku_build_phys_addr_t			phys_addr_t;
@@ -274,51 +274,51 @@ _HAIKU_BUILD_DECLARE_FUNCTION(void*, _haiku_build_get_stack_frame, (void))
 	typedef	_haiku_build_generic_addr_t			generic_addr_t;
 
 /* printf()/scanf() format strings for [u]int* types */
-#	define B_PRId8		_HAIKU_BUILD_B_PRId8
-#	define B_PRIi8		_HAIKU_BUILD_B_PRIi8
-#	define B_PRId16		_HAIKU_BUILD_B_PRId16
-#	define B_PRIi16		_HAIKU_BUILD_B_PRIi16
-#	define B_PRId32		_HAIKU_BUILD_B_PRId32
-#	define B_PRIi32		_HAIKU_BUILD_B_PRId64
-#	define B_PRId64		_HAIKU_BUILD_B_PRId64
-#	define B_PRIi64		_HAIKU_BUILD_B_PRIi64
-#	define B_PRIu8		_HAIKU_BUILD_B_PRIu8
-#	define B_PRIo8		_HAIKU_BUILD_B_PRIo8
-#	define B_PRIx8		_HAIKU_BUILD_B_PRIx8
-#	define B_PRIX8		_HAIKU_BUILD_B_PRIX8
-#	define B_PRIu16		_HAIKU_BUILD_B_PRIu16
-#	define B_PRIo16		_HAIKU_BUILD_B_PRIo16
-#	define B_PRIx16		_HAIKU_BUILD_B_PRIx16
-#	define B_PRIX16		_HAIKU_BUILD_B_PRIX16
-#	define B_PRIu32		_HAIKU_BUILD_B_PRIu32
-#	define B_PRIo32		_HAIKU_BUILD_B_PRIo32
-#	define B_PRIx32		_HAIKU_BUILD_B_PRIx32
-#	define B_PRIX32		_HAIKU_BUILD_B_PRIX32
-#	define B_PRIu64		_HAIKU_BUILD_B_PRIu64
-#	define B_PRIo64		_HAIKU_BUILD_B_PRIo64
-#	define B_PRIx64		_HAIKU_BUILD_B_PRIx64
-#	define B_PRIX64		_HAIKU_BUILD_B_PRIX64
+#	define B_PRId8			_HAIKU_BUILD_B_PRId8
+#	define B_PRIi8			_HAIKU_BUILD_B_PRIi8
+#	define B_PRId16			_HAIKU_BUILD_B_PRId16
+#	define B_PRIi16			_HAIKU_BUILD_B_PRIi16
+#	define B_PRId32			_HAIKU_BUILD_B_PRId32
+#	define B_PRIi32			_HAIKU_BUILD_B_PRId64
+#	define B_PRId64			_HAIKU_BUILD_B_PRId64
+#	define B_PRIi64			_HAIKU_BUILD_B_PRIi64
+#	define B_PRIu8			_HAIKU_BUILD_B_PRIu8
+#	define B_PRIo8			_HAIKU_BUILD_B_PRIo8
+#	define B_PRIx8			_HAIKU_BUILD_B_PRIx8
+#	define B_PRIX8			_HAIKU_BUILD_B_PRIX8
+#	define B_PRIu16			_HAIKU_BUILD_B_PRIu16
+#	define B_PRIo16			_HAIKU_BUILD_B_PRIo16
+#	define B_PRIx16			_HAIKU_BUILD_B_PRIx16
+#	define B_PRIX16			_HAIKU_BUILD_B_PRIX16
+#	define B_PRIu32			_HAIKU_BUILD_B_PRIu32
+#	define B_PRIo32			_HAIKU_BUILD_B_PRIo32
+#	define B_PRIx32			_HAIKU_BUILD_B_PRIx32
+#	define B_PRIX32			_HAIKU_BUILD_B_PRIX32
+#	define B_PRIu64			_HAIKU_BUILD_B_PRIu64
+#	define B_PRIo64			_HAIKU_BUILD_B_PRIo64
+#	define B_PRIx64			_HAIKU_BUILD_B_PRIx64
+#	define B_PRIX64			_HAIKU_BUILD_B_PRIX64
 
-#	define B_SCNd8 		_HAIKU_BUILD_B_SCNd8
-#	define B_SCNi8 		_HAIKU_BUILD_B_SCNi8
-#	define B_SCNd16		_HAIKU_BUILD_B_SCNd16
-#	define B_SCNi16	 	_HAIKU_BUILD_B_SCNi16
-#	define B_SCNd32 	_HAIKU_BUILD_B_SCNd32
-#	define B_SCNi32	 	_HAIKU_BUILD_B_SCNi32
-#	define B_SCNd64		_HAIKU_BUILD_B_SCNd64
-#	define B_SCNi64 	_HAIKU_BUILD_B_SCNi64
-#	define B_SCNu8 		_HAIKU_BUILD_B_SCNu8
-#	define B_SCNo8 		_HAIKU_BUILD_B_SCNo8
-#	define B_SCNx8 		_HAIKU_BUILD_B_SCNx8
-#	define B_SCNu16		_HAIKU_BUILD_B_SCNu16
-#	define B_SCNo16		_HAIKU_BUILD_B_SCNo16
-#	define B_SCNx16		_HAIKU_BUILD_B_SCNx16
-#	define B_SCNu32 	_HAIKU_BUILD_B_SCNu32
-#	define B_SCNo32 	_HAIKU_BUILD_B_SCNo32
-#	define B_SCNx32 	_HAIKU_BUILD_B_SCNx32
-#	define B_SCNu64		_HAIKU_BUILD_B_SCNu64
-#	define B_SCNo64		_HAIKU_BUILD_B_SCNo64
-#	define B_SCNx64		_HAIKU_BUILD_B_SCNx64
+#	define B_SCNd8			_HAIKU_BUILD_B_SCNd8
+#	define B_SCNi8			_HAIKU_BUILD_B_SCNi8
+#	define B_SCNd16			_HAIKU_BUILD_B_SCNd16
+#	define B_SCNi16			_HAIKU_BUILD_B_SCNi16
+#	define B_SCNd32			_HAIKU_BUILD_B_SCNd32
+#	define B_SCNi32			_HAIKU_BUILD_B_SCNi32
+#	define B_SCNd64			_HAIKU_BUILD_B_SCNd64
+#	define B_SCNi64			_HAIKU_BUILD_B_SCNi64
+#	define B_SCNu8			_HAIKU_BUILD_B_SCNu8
+#	define B_SCNo8			_HAIKU_BUILD_B_SCNo8
+#	define B_SCNx8			_HAIKU_BUILD_B_SCNx8
+#	define B_SCNu16			_HAIKU_BUILD_B_SCNu16
+#	define B_SCNo16			_HAIKU_BUILD_B_SCNo16
+#	define B_SCNx16			_HAIKU_BUILD_B_SCNx16
+#	define B_SCNu32			_HAIKU_BUILD_B_SCNu32
+#	define B_SCNo32			_HAIKU_BUILD_B_SCNo32
+#	define B_SCNx32			_HAIKU_BUILD_B_SCNx32
+#	define B_SCNu64			_HAIKU_BUILD_B_SCNu64
+#	define B_SCNo64			_HAIKU_BUILD_B_SCNo64
+#	define B_SCNx64			_HAIKU_BUILD_B_SCNx64
 
 /* printf() format strings for some standard types */
 /* size_t */
