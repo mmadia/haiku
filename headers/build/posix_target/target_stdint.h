@@ -91,8 +91,8 @@ typedef __haiku_build_uint64_t			_haiku_build_uintmax_t;
 #define _HAIKU_BUILD_UINT_LEAST64_MAX	UINT64_MAX
 
 /* Limits of fastest minimum-width integer types */
-#define _HAIKU_BUILD_INT_FAST8_MIN 		INT8_MIN
-#define _HAIKU_BUILD_INT_FAST8_MAX 		INT8_MAX
+#define _HAIKU_BUILD_INT_FAST8_MIN		INT8_MIN
+#define _HAIKU_BUILD_INT_FAST8_MAX		INT8_MAX
 #define _HAIKU_BUILD_UINT_FAST8_MAX		UINT8_MAX
 
 #define _HAIKU_BUILD_INT_FAST16_MIN		INT16_MIN
@@ -151,10 +151,10 @@ typedef __haiku_build_uint64_t			_haiku_build_uintmax_t;
 
 
 /* BSD compatibility */
-typedef __haiku_build_uint8_t	u_int8_t;
-typedef __haiku_build_uint16_t	u_int16_t;
-typedef __haiku_build_uint32_t	u_int32_t;
-typedef __haiku_build_uint64_t	u_int64_t;
+typedef __haiku_build_uint8_t				u_int8_t;
+typedef __haiku_build_uint16_t				u_int16_t;
+typedef __haiku_build_uint32_t				u_int32_t;
+typedef __haiku_build_uint64_t				u_int64_t;
 
 #ifndef _HAIKU_BUILD_LIBROOT_FUNCTION_WRAPPER
 /* Exact-width integer types */

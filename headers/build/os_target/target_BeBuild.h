@@ -1,5 +1,5 @@
 /*
- * Copyright 2007-2010, Haiku, Inc. All Rights Reserved.
+ * Copyright 2007-2012, Haiku, Inc. All Rights Reserved.
  * Distributed under the terms of the MIT License.
  */
 #ifndef _BE_BUILD_H
@@ -79,9 +79,9 @@
 #define __HAIKU_BUILD_HAIKU_BUILD_IMPEXP_BE
 
 #ifndef _HAIKU_BUILD_LIBROOT_FUNCTION_WRAPPER
-#	define B_BEOS_VERSION_4				_HAIKU_BUILD_B_BEOS_VERSION_4
-#	define B_BEOS_VERSION_4_5			_HAIKU_BUILD_B_BEOS_VERSION_4_5
-#	define B_BEOS_VERSION_5				_HAIKU_BUILD_B_BEOS_VERSION_5
+#	define B_BEOS_VERSION_4					_HAIKU_BUILD_B_BEOS_VERSION_4
+#	define B_BEOS_VERSION_4_5				_HAIKU_BUILD_B_BEOS_VERSION_4_5
+#	define B_BEOS_VERSION_5					_HAIKU_BUILD_B_BEOS_VERSION_5
 
 #	define B_BEOS_VERSION					_HAIKU_BUILD_B_BEOS_VERSION
 #	define B_BEOS_VERSION_MAUI				_HAIKU_BUILD_B_BEOS_VERSION_MAUI
