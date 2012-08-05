@@ -8,8 +8,6 @@
 
 #include <config_target/target_types.h>
 
-#include <float.h>		/* for DBL_DIG, FLT_DIG, etc */
-
 /* TODO: #8730 -- The values for _HAIKU_BUILD_LONGLONG_MIN,
 	_HAIKU_BUILD_LONGLONG_MAX are compiler specific.
 	Their values could be incorrect (when long long isn't 64 bit).
