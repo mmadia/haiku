@@ -2,8 +2,8 @@
  * Copyright 2005-2012, Haiku, Inc. All Rights Reserved.
  * Distributed under the terms of the MIT License.
  */
-#ifndef _HAIKU_BUILD_TIME_H_
-#define _HAIKU_BUILD_TIME_H_
+#ifndef _TIME_H_
+#define _TIME_H_
 
 
 #include <sys/target_types.h>
