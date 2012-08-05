@@ -53,17 +53,17 @@ typedef unsigned char						_haiku_build_uchar;
 typedef unsigned short						_haiku_build_unichar;
 
 /* descriptive types */
-typedef _haiku_build_int32					_HAIKU_BUILD_IDENTIFIER(status_t);
-typedef _haiku_build_int64					_HAIKU_BUILD_IDENTIFIER(bigtime_t);
-typedef _haiku_build_int64					_HAIKU_BUILD_IDENTIFIER(nanotime_t);
-typedef _haiku_build_uint32					_HAIKU_BUILD_IDENTIFIER(type_code);
-typedef _haiku_build_uint32					_HAIKU_BUILD_IDENTIFIER(perform_code);
+typedef _haiku_build_int32					_haiku_build_status_t;
+typedef _haiku_build_int64					_haiku_build_bigtime_t;
+typedef _haiku_build_int64					_haiku_build_nanotime_t;
+typedef _haiku_build_uint32					_haiku_build_type_code;
+typedef _haiku_build_uint32					_haiku_build_perform_code;
 
-typedef __haiku_build_haiku_phys_addr_t		_HAIKU_BUILD_IDENTIFIER(phys_addr_t);
-typedef _haiku_build_phys_addr_t			_HAIKU_BUILD_IDENTIFIER(phys_size_t);
+typedef __haiku_build_haiku_phys_addr_t		_haiku_build_phys_addr_t;
+typedef _haiku_build_phys_addr_t			_haiku_build_phys_size_t;
 
-typedef __haiku_build_haiku_generic_addr_t	_HAIKU_BUILD_IDENTIFIER(generic_addr_t);
-typedef	_haiku_build_generic_addr_t			_HAIKU_BUILD_IDENTIFIER(generic_size_t);
+typedef __haiku_build_haiku_generic_addr_t	_haiku_build_generic_addr_t;
+typedef	_haiku_build_generic_addr_t			_haiku_build_generic_size_t;
 
 
 /* printf()/scanf() format strings for [u]int* types */
@@ -239,7 +239,6 @@ _HAIKU_BUILD_DECLARE_FUNCTION(void*, _haiku_build_get_stack_frame, (void))
 #endif
 
 #ifndef _HAIKU_BUILD_LIBROOT_FUNCTION_WRAPPER
-// NOTE: #8730 -- Are the next several groupings correct?
 /* fixed-size integer types */
 	typedef	_haiku_build_int8					int8;
 	typedef _haiku_build_uint8					uint8;
@@ -260,18 +259,33 @@ _HAIKU_BUILD_DECLARE_FUNCTION(void*, _haiku_build_get_stack_frame, (void))
 	typedef volatile _haiku_build_vint64		vint64;
 	typedef volatile _haiku_build_vuint64		vuint64;
 
+/* NOTE: #8730	Just to make sure, are these not needed?
+				Are the libroot versions correct?		*/
+//	typedef volatile _haiku_build_vlong				vlong;
+//	typedef volatile _haiku_build_vint				vint;
+//	typedef volatile _haiku_build_vshort			vshort;
+//	typedef volatile _haiku_build_vchar				vchar;
+//
+//	typedef volatile unsigned _haiku_build_vulong	vulong;
+//	typedef volatile unsigned _haiku_build_vuint	vuint;
+//	typedef volatile unsigned _haiku_build_vushort	vushort;
+//	typedef volatile unsigned _haiku_build_vuchar	vuchar;
+//
+//	typedef unsigned _haiku_build_uchar				uchar;
+//	typedef unsigned _haiku_build_unichar			unichar;
+
 /* descriptive types */
-	typedef _haiku_build_int32					int32;
-	typedef _haiku_build_int64					int64;
-	typedef _haiku_build_int64					int64;
-	typedef _haiku_build_uint32					uint32;
-	typedef _haiku_build_uint32					uint32;
+	typedef _haiku_build_status_t				status_t;
+	typedef _haiku_build_bigtime_t				bigtime_t;
+	typedef _haiku_build_nanotime_t				nanotime_t;
+	typedef _haiku_build_type_code				type_code;
+	typedef _haiku_build_perform_code			perform_code;
 
-	typedef __haiku_build_haiku_phys_addr_t		__haiku_phys_addr_t;
 	typedef _haiku_build_phys_addr_t			phys_addr_t;
+	typedef _haiku_build_phys_size_t			phys_size_t;
 
-	typedef	__haiku_build_haiku_generic_addr_t	__haiku_generic_addr_t;
-	typedef	_haiku_build_generic_addr_t			generic_addr_t;
+	typedef _haiku_build_generic_addr_t			generic_addr_t;
+	typedef	_haiku_build_generic_size_t			generic_size_t;
 
 /* printf()/scanf() format strings for [u]int* types */
 #	define B_PRId8			_HAIKU_BUILD_B_PRId8
