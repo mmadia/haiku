@@ -16,39 +16,39 @@
    __HAIKU_BEOS_COMPATIBLE_TYPES is not defined both sets are identical. Once
    we drop compatibility for good, we can consolidate the types.
 */
-typedef _HAIKU_BUILD_FEATURE_int8	__haiku_build_haiku_std_int8;
-typedef _HAIKU_BUILD_FEATURE_uint8	__haiku_build_haiku_std_uint8;
-typedef _HAIKU_BUILD_FEATURE_int16	__haiku_build_haiku_std_int16;
-typedef _HAIKU_BUILD_FEATURE_uint16	__haiku_build_haiku_std_uint16;
-typedef _HAIKU_BUILD_FEATURE_int32	__haiku_build_haiku_std_int32;
-typedef _HAIKU_BUILD_FEATURE_uint32	__haiku_build_haiku_std_uint32;
-typedef _HAIKU_BUILD_FEATURE_int64	__haiku_build_haiku_std_int64;
-typedef _HAIKU_BUILD_FEATURE_uint64	__haiku_build_haiku_std_uint64;
+typedef _HAIKU_BUILD_FEATURE_int8			__haiku_build_haiku_std_int8;
+typedef _HAIKU_BUILD_FEATURE_uint8			__haiku_build_haiku_std_uint8;
+typedef _HAIKU_BUILD_FEATURE_int16			__haiku_build_haiku_std_int16;
+typedef _HAIKU_BUILD_FEATURE_uint16			__haiku_build_haiku_std_uint16;
+typedef _HAIKU_BUILD_FEATURE_int32			__haiku_build_haiku_std_int32;
+typedef _HAIKU_BUILD_FEATURE_uint32			__haiku_build_haiku_std_uint32;
+typedef _HAIKU_BUILD_FEATURE_int64			__haiku_build_haiku_std_int64;
+typedef _HAIKU_BUILD_FEATURE_uint64			__haiku_build_haiku_std_uint64;
 
-typedef __haiku_build_haiku_std_int8	__haiku_build_haiku_int8;
-typedef __haiku_build_haiku_std_uint8	__haiku_build_haiku_uint8;
-typedef __haiku_build_haiku_std_int16	__haiku_build_haiku_int16;
-typedef __haiku_build_haiku_std_uint16	__haiku_build_haiku_uint16;
-typedef __haiku_build_haiku_std_int32	__haiku_build_haiku_int32;
-typedef __haiku_build_haiku_std_uint32	__haiku_build_haiku_uint32;
-typedef __haiku_build_haiku_std_int64	__haiku_build_haiku_int64;
-typedef __haiku_build_haiku_std_uint64	__haiku_build_haiku_uint64;
+typedef __haiku_build_haiku_std_int8		__haiku_build_haiku_int8;
+typedef __haiku_build_haiku_std_uint8		__haiku_build_haiku_uint8;
+typedef __haiku_build_haiku_std_int16		__haiku_build_haiku_int16;
+typedef __haiku_build_haiku_std_uint16		__haiku_build_haiku_uint16;
+typedef __haiku_build_haiku_std_int32		__haiku_build_haiku_int32;
+typedef __haiku_build_haiku_std_uint32		__haiku_build_haiku_uint32;
+typedef __haiku_build_haiku_std_int64		__haiku_build_haiku_int64;
+typedef __haiku_build_haiku_std_uint64		__haiku_build_haiku_uint64;
 
 /* address types */
 #ifdef __HAIKU_BUILD_HAIKU_ARCH_64_BIT
-	typedef	__haiku_build_haiku_int64	__haiku_build_haiku_saddr_t;
-	typedef	__haiku_build_haiku_uint64	__haiku_build_haiku_addr_t;
+	typedef	__haiku_build_haiku_int64		__haiku_build_haiku_saddr_t;
+	typedef	__haiku_build_haiku_uint64		__haiku_build_haiku_addr_t;
 #else
-	typedef	__haiku_build_haiku_int32	__haiku_build_haiku_saddr_t;
-	typedef	__haiku_build_haiku_uint32	__haiku_build_haiku_addr_t;
+	typedef	__haiku_build_haiku_int32		__haiku_build_haiku_saddr_t;
+	typedef	__haiku_build_haiku_uint32		__haiku_build_haiku_addr_t;
 #endif
 
 #ifdef __HAIKU_BUILD_HAIKU_ARCH_PHYSICAL_64_BIT
-	typedef	__haiku_build_haiku_int64	__haiku_build_haiku_phys_saddr_t;
-	typedef	__haiku_build_haiku_uint64	__haiku_build_haiku_phys_addr_t;
+	typedef	__haiku_build_haiku_int64		__haiku_build_haiku_phys_saddr_t;
+	typedef	__haiku_build_haiku_uint64		__haiku_build_haiku_phys_addr_t;
 #else
-	typedef	__haiku_build_haiku_int32	__haiku_build_haiku_phys_saddr_t;
-	typedef	__haiku_build_haiku_uint32	__haiku_build_haiku_phys_addr_t;
+	typedef	__haiku_build_haiku_int32		__haiku_build_haiku_phys_saddr_t;
+	typedef	__haiku_build_haiku_uint32		__haiku_build_haiku_phys_addr_t;
 #endif
 
 /* address type limits */
@@ -107,7 +107,8 @@ typedef __haiku_build_haiku_std_uint64	__haiku_build_haiku_uint64;
 #	define __HAIKU_BUILD_HAIKU_PRI_PREFIX_GENERIC_ADDR	\
 		__HAIKU_BUILD_HAIKU_PRI_PREFIX_ADDR
 #else
-	typedef __haiku_build_haiku_phys_addr_t	__haiku_build_haiku_generic_addr_t;
+	typedef __haiku_build_haiku_phys_addr_t				\
+		__haiku_build_haiku_generic_addr_t;
 #	define __HAIKU_BUILD_HAIKU_GENERIC_ADDR_MAX			\
 		__HAIKU_BUILD_HAIKU_PHYS_ADDR_MAX
 #	define __HAIKU_BUILD_HAIKU_PRI_PREFIX_GENERIC_ADDR	\
@@ -119,24 +120,25 @@ typedef __haiku_build_haiku_std_uint64	__haiku_build_haiku_uint64;
 
 #ifndef _HAIKU_BUILD_LIBROOT_FUNCTION_WRAPPER
 
-#define __HAIKU_SADDR_MAX	__HAIKU_BUILD_HAIKU_SADDR_MAX
-#define __HAIKU_ADDR_MAX	__HAIKU_BUILD_HAIKU_ADDR_MAX
-#define __HAIKU_SADDR_MIN	__HAIKU_BUILD_HAIKU_SADDR_MIN
+#define __HAIKU_SADDR_MAX				__HAIKU_BUILD_HAIKU_SADDR_MAX
+#define __HAIKU_ADDR_MAX				__HAIKU_BUILD_HAIKU_ADDR_MAX
+#define __HAIKU_SADDR_MIN				__HAIKU_BUILD_HAIKU_SADDR_MIN
 
-#define __HAIKU_PHYS_SADDR_MAX	__HAIKU_BUILD_HAIKU_PHYS_SADDR_MAX
-#define __HAIKU_PHYS_ADDR_MAX	__HAIKU_BUILD_HAIKU_PHYS_ADDR_MAX
-#define __HAIKU_PHYS_SADDR_MIN	__HAIKU_BUILD_HAIKU_PHYS_SADDR_MIN
+#define __HAIKU_PHYS_SADDR_MAX			__HAIKU_BUILD_HAIKU_PHYS_SADDR_MAX
+#define __HAIKU_PHYS_ADDR_MAX			__HAIKU_BUILD_HAIKU_PHYS_ADDR_MAX
+#define __HAIKU_PHYS_SADDR_MIN			__HAIKU_BUILD_HAIKU_PHYS_SADDR_MIN
 
-#define	__HAIKU_STD_PRI_PREFIX_32	__HAIKU_BUILD_HAIKU_STD_PRI_PREFIX_32
-#define __HAIKU_STD_PRI_PREFIX_64	__HAIKU_BUILD_HAIKU_STD_PRI_PREFIX_64
+#define	__HAIKU_STD_PRI_PREFIX_32		__HAIKU_BUILD_HAIKU_STD_PRI_PREFIX_32
+#define __HAIKU_STD_PRI_PREFIX_64		__HAIKU_BUILD_HAIKU_STD_PRI_PREFIX_64
 
-#define	__HAIKU_PRI_PREFIX_32	__HAIKU_BUILD_HAIKU_PRI_PREFIX_32
-#define	__HAIKU_PRI_PREFIX_64	__HAIKU_BUILD_HAIKU_PRI_PREFIX_64
+#define	__HAIKU_PRI_PREFIX_32			__HAIKU_BUILD_HAIKU_PRI_PREFIX_32
+#define	__HAIKU_PRI_PREFIX_64			__HAIKU_BUILD_HAIKU_PRI_PREFIX_64
 
 #define __HAIKU_PRI_PREFIX_ADDR			__HAIKU_BUILD_HAIKU_PRI_PREFIX_ADDR
-#define __HAIKU_PRI_PREFIX_PHYS_ADDR	__HAIKU_BUILD_HAIKU_PRI_PREFIX_PHYS_ADDR
+#define __HAIKU_PRI_PREFIX_PHYS_ADDR	\
+	__HAIKU_BUILD_HAIKU_PRI_PREFIX_PHYS_ADDR
 
-#define __HAIKU_GENERIC_ADDR_MAX	__HAIKU_BUILD_HAIKU_GENERIC_ADDR_MAX
+#define __HAIKU_GENERIC_ADDR_MAX		__HAIKU_BUILD_HAIKU_GENERIC_ADDR_MAX
 #define __HAIKU_PRI_PREFIX_GENERIC_ADDR		\
 	__HAIKU_BUILD_HAIKU_PRI_PREFIX_GENERIC_ADDR
 
