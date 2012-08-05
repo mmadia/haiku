@@ -379,23 +379,19 @@ typedef struct {
 extern "C" {
 #endif
 
-_haiku_build_intmax_t	_HAIKU_BUILD_DECLARE_FUNCTION(_haiku_build_intmax_t, \
-	imaxabs, (_haiku_build_intmax_t num))
-_HAIKU_BUILD_IDENTIFIER(imaxdiv_t)	_HAIKU_BUILD_DECLARE_FUNCTION(\
-	_HAIKU_BUILD_IDENTIFIER(imaxdiv_t), _haiku_build_imaxdiv, \
-		(_haiku_build_intmax_t numer, _haiku_build_intmax_t denom))
+_HAIKU_BUILD_DECLARE_FUNCTION(_haiku_build_intmax_t, imaxabs, \
+	(_haiku_build_intmax_t num))
+_HAIKU_BUILD_DECLARE_FUNCTION(_HAIKU_BUILD_IDENTIFIER(imaxdiv_t), imaxdiv, \
+	(_haiku_build_intmax_t numer, _haiku_build_intmax_t denom))
 
-_haiku_build_intmax_t	_HAIKU_BUILD_DECLARE_FUNCTION(_haiku_build_intmax_t, \
-	strtoimax, (const _haiku_build_char *string, _haiku_build_char **_end, \
-		_haiku_build_int base))
-_haiku_build_uintmax_t	_HAIKU_BUILD_DECLARE_FUNCTION(\
-	_haiku_build_uintmax_t, strtoumax, (const _haiku_build_char *string, \
-		_haiku_build_char **_end, _haiku_build_int base))
-// NOTE: these commented functions may not be updated 100% correctly.
-/* _haiku_build_intmax_t	_HAIKU_BUILD_DECLARE_FUNCTION(_haiku_build_intmax_t, \
-	wcstoimax, (const __wchar_t *, __wchar_t **, _haiku_build_int)) */
-/* _haiku_build_uintmax_t	_HAIKU_BUILD_DECLARE_FUNCTION(_haiku_build_uintmax_t, \
-	wcstoumax, (const __wchar_t *, __wchar_t **, _haiku_build_int)) */
+_HAIKU_BUILD_DECLARE_FUNCTION(_haiku_build_intmax_t, strtoimax, \
+	(const char *string, char **_end, int base))
+_HAIKU_BUILD_DECLARE_FUNCTION(_haiku_build_uintmax_t, strtoumax, \
+	(const char *string, char **_end, int base))
+/* _HAIKU_BUILD_DECLARE_FUNCTION(_haiku_build_intmax_t, wcstoimax, \
+	(const __wchar_t *, __wchar_t **, int)) */
+/* _HAIKU_BUILD_DECLARE_FUNCTION(_haiku_build_uintmax_t, wcstoumax, \
+	(const __wchar_t *, __wchar_t **, _haiku_build_int)) */
 
 
 #ifdef __cplusplus
