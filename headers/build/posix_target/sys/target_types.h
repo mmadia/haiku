@@ -57,7 +57,6 @@ typedef struct _HAIKU_BUILD_IDENTIFIER(__timer_t)*	\
 
 
 /* pthread types */
-// NOTE: #8730 -- do pointers go inside _HAIKU_BUILD_IDENTIFIER() ?
 typedef struct	_HAIKU_BUILD_IDENTIFIER(_pthread_thread)		\
 	*_HAIKU_BUILD_IDENTIFIER(pthread_t);
 typedef struct	_HAIKU_BUILD_IDENTIFIER(_pthread_attr)			\
@@ -87,8 +86,6 @@ typedef struct	_HAIKU_BUILD_IDENTIFIER(_pthread_barrierattr) 	\
 	*_HAIKU_BUILD_IDENTIFIER(pthread_barrierattr_t);
 */
 
-/* NOTE:	#8730 --  is using __haiku_build_haiku_std_[u]int32 correct or
-			would _haiku_build_[u]int32 be correct? */
 struct _HAIKU_BUILD_IDENTIFIER(_pthread_mutex) {
 	__haiku_build_haiku_std_uint32				flags;
 	__haiku_build_haiku_std_int32				lock;
@@ -131,20 +128,18 @@ struct _HAIKU_BUILD_IDENTIFIER(_pthread_spinlock) {
 };
 
 #ifndef _HAIKU_BUILD_LIBROOT_FUNCTION_WRAPPER
-/* NOTE: #8730	Just to make sure, are these not needed?
-				Are the libroot versions correct?		*/
-//	/* BSD compatibility */
-//	typedef unsigned _haiku_build_u_long 		u_long;
-//	typedef unsigned _haiku_build_u_int 		u_int;
-//	typedef unsigned _haiku_build_u_short 		u_short;
-//	typedef unsigned _haiku_build_u_char 		u_char;
-//
-//
-//	/* sysV compatibility */
-//	typedef unsigned _haiku_build_ulong 		ulong;
-//	typedef unsigned _haiku_build_ushort 		ushort;
-//	typedef unsigned _haiku_build_uint 			uint;
-//	typedef unsigned _haiku_build_unchar		unchar;
+	/* BSD compatibility */
+	typedef unsigned _haiku_build_u_long 		u_long;
+	typedef unsigned _haiku_build_u_int 		u_int;
+	typedef unsigned _haiku_build_u_short 		u_short;
+	typedef unsigned _haiku_build_u_char 		u_char;
+
+
+	/* sysV compatibility */
+	typedef unsigned _haiku_build_ulong 		ulong;
+	typedef unsigned _haiku_build_ushort 		ushort;
+	typedef unsigned _haiku_build_uint 			uint;
+	typedef unsigned _haiku_build_unchar		unchar;
 
 
 	typedef _haiku_build_blkcnt_t 		blkcnt_t;
