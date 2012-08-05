@@ -16,6 +16,7 @@
 int
 main()
 {
+	printf("/* float.h */\n");
 	PRINT_MACRO(__LDBL_UNION__);
 	PRINT_MACRO(DBL_DECIMAL_DIG);
 	PRINT_MACRO(DBL_DIG);
@@ -79,6 +80,7 @@ main()
 	PRINT_MACRO(LDBL_MIN_EXP);
 	PRINT_MACRO(LDBL_MIN);
 	PRINT_MACRO(LDBL_TRUE_MIN);
+	printf("\n");
 
 	return 0;
 }

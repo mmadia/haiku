@@ -63,9 +63,12 @@ struct PrintTypeInfo {
 int
 main()
 {
+	printf("/* inttypes.h */\n");
 	PRINT_TYPE_INFO_SIGNED_AND_UNSIGNED(int8);
 	PRINT_TYPE_INFO_SIGNED_AND_UNSIGNED(int16);
 	PRINT_TYPE_INFO_SIGNED_AND_UNSIGNED(int32);
 	PRINT_TYPE_INFO_SIGNED_AND_UNSIGNED(int64);
+	printf("\n");
+
 	return 0;
 }

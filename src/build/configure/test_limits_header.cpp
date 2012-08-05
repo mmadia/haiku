@@ -16,6 +16,7 @@
 int
 main()
 {
+	printf("/* limits.h */\n");
 	PRINT_MACRO(__INT_MAX__);
 	PRINT_MACRO(__LONG_LONG_MAX__);
 	PRINT_MACRO(__LONG_MAX__);
@@ -43,6 +44,7 @@ main()
 	PRINT_MACRO(ULONG_LONG_MAX);
 	PRINT_MACRO(ULONG_MAX);
 	PRINT_MACRO(USHRT_MAX);
+	printf("\n");
 
 	return 0;
 }
