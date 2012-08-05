@@ -147,13 +147,4 @@
 #	define _POSIX2_LINE_MAX			_HAIKU_BUILD_POSIX2_LINE_MAX
 #endif
 
-/* _GCC_LIMITS_H_ is defined by GCC's internal limits.h to avoid
- * collisions with any defines in this file.
- */
-// TODO: #8730 Don't include_next limits.h here. ...
-//		Instead define its contents here or defined in HaikuHostBuildConfig.h
-#ifndef _GCC_LIMITS_H_
-#	include_next <limits.h>
-#endif
-
 #endif /* _LIBC_LIMITS_H_ */
