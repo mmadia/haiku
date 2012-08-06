@@ -33,7 +33,7 @@
 			__asm__(_HAIKU_BUILD_ASMNAME("_haiku_build_" #name));
 #	define _HAIKU_BUILD_DECLARE_VARIABLE_ETC(type, name, etc) \
 		extern type _haiku_build_##name etc; \
-		extern type name[length] \
+		extern type name etc \
 			__asm__(_HAIKU_BUILD_ASMNAME("_haiku_build_" #name));
 #	define _HAIKU_BUILD_IDENTIFIER(name) name
 #endif
