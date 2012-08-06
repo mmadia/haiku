@@ -69,17 +69,17 @@ enum {
 
 // System-wide MIME types for handling URL's
 
-_HAIKU_BUILD_DECLARE_CONSTANT(const char*, B__URL_HTTP) 	// application/x-vnd.Be.URL.http
-_HAIKU_BUILD_DECLARE_CONSTANT(const char*, B__URL_HTTPS) 	// application/x-vnd.Be.URL.https
-_HAIKU_BUILD_DECLARE_CONSTANT(const char*, B__URL_FTP)		// application/x-vnd.Be.URL.ftp
-_HAIKU_BUILD_DECLARE_CONSTANT(const char*, B__URL_GOPHER) 	// application/x-vnd.Be.URL.gopher
-_HAIKU_BUILD_DECLARE_CONSTANT(const char*, B__URL_MAILTO) 	// application/x-vnd.Be.URL.mailto
-_HAIKU_BUILD_DECLARE_CONSTANT(const char*, B__URL_NEWS)		// application/x-vnd.Be.URL.news
-_HAIKU_BUILD_DECLARE_CONSTANT(const char*, B__URL_NNTP)		// application/x-vnd.Be.URL.nntp
-_HAIKU_BUILD_DECLARE_CONSTANT(const char*, B__URL_TELNET) 	// application/x-vnd.Be.URL.telnet
-_HAIKU_BUILD_DECLARE_CONSTANT(const char*, B__URL_RLOGIN) 	// application/x-vnd.Be.URL.rlogin
-_HAIKU_BUILD_DECLARE_CONSTANT(const char*, B__URL_TN3270) 	// application/x-vnd.Be.URL.tn3270
-_HAIKU_BUILD_DECLARE_CONSTANT(const char*, B__URL_WAIS)		// application/x-vnd.Be.URL.wais
-_HAIKU_BUILD_DECLARE_CONSTANT(const char*, B__URL_FILE)		// application/x-vnd.Be.URL.file
+_HAIKU_BUILD_DECLARE_VARIABLE(const char*, B__URL_HTTP) 	// application/x-vnd.Be.URL.http
+_HAIKU_BUILD_DECLARE_VARIABLE(const char*, B__URL_HTTPS) 	// application/x-vnd.Be.URL.https
+_HAIKU_BUILD_DECLARE_VARIABLE(const char*, B__URL_FTP)		// application/x-vnd.Be.URL.ftp
+_HAIKU_BUILD_DECLARE_VARIABLE(const char*, B__URL_GOPHER) 	// application/x-vnd.Be.URL.gopher
+_HAIKU_BUILD_DECLARE_VARIABLE(const char*, B__URL_MAILTO) 	// application/x-vnd.Be.URL.mailto
+_HAIKU_BUILD_DECLARE_VARIABLE(const char*, B__URL_NEWS)		// application/x-vnd.Be.URL.news
+_HAIKU_BUILD_DECLARE_VARIABLE(const char*, B__URL_NNTP)		// application/x-vnd.Be.URL.nntp
+_HAIKU_BUILD_DECLARE_VARIABLE(const char*, B__URL_TELNET) 	// application/x-vnd.Be.URL.telnet
+_HAIKU_BUILD_DECLARE_VARIABLE(const char*, B__URL_RLOGIN) 	// application/x-vnd.Be.URL.rlogin
+_HAIKU_BUILD_DECLARE_VARIABLE(const char*, B__URL_TN3270) 	// application/x-vnd.Be.URL.tn3270
+_HAIKU_BUILD_DECLARE_VARIABLE(const char*, B__URL_WAIS)		// application/x-vnd.Be.URL.wais
+_HAIKU_BUILD_DECLARE_VARIABLE(const char*, B__URL_FILE)		// application/x-vnd.Be.URL.file
 
 #endif	// _TYPE_CONSTANTS_H

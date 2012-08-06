@@ -157,7 +157,7 @@ typedef	_haiku_build_generic_addr_t			_haiku_build_generic_size_t;
 
 /* Empty string ("") */
 #ifdef __cplusplus
-	_HAIKU_BUILD_DECLARE_CONSTANT(const char*, B_EMPTY_STRING)
+	_HAIKU_BUILD_DECLARE_VARIABLE(const char*, B_EMPTY_STRING)
 #endif
 
 
