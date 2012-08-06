@@ -1,5 +1,5 @@
 /*
- * Copyright 2007, Haiku, Inc. All Rights Reserved.
+ * Copyright 2007-2012, Haiku, Inc. All Rights Reserved.
  * Distributed under the terms of the MIT License.
  */
 #ifndef _BYTEORDER_H
@@ -21,7 +21,7 @@ typedef enum {
 	_HAIKU_BUILD_B_SWAP_LENDIAN_TO_HOST,
 	_HAIKU_BUILD_B_SWAP_BENDIAN_TO_HOST,
 	_HAIKU_BUILD_B_SWAP_ALWAYS
-} _haiku_build_swap_action;
+} _HAIKU_BUILD_IDENTIFIER(swap_action);
 
 
 /* BSD/networking macros */
@@ -33,11 +33,11 @@ typedef enum {
 #endif
 
 /* always swap macros */
-#define _HAIKU_BUILD_B_SWAP_DOUBLE(arg)   __haiku_build_swap_double(arg)
-#define _HAIKU_BUILD_B_SWAP_FLOAT(arg)    __haiku_build_swap_float(arg)
-#define _HAIKU_BUILD_B_SWAP_INT64(arg)    __haiku_build_swap_int64(arg)
-#define _HAIKU_BUILD_B_SWAP_INT32(arg)    __haiku_build_swap_int32(arg)
-#define _HAIKU_BUILD_B_SWAP_INT16(arg)    __haiku_build_swap_int16(arg)
+#define _HAIKU_BUILD_B_SWAP_DOUBLE(arg)   _haiku_build___swap_double(arg)
+#define _HAIKU_BUILD_B_SWAP_FLOAT(arg)    _haiku_build___swap_float(arg)
+#define _HAIKU_BUILD_B_SWAP_INT64(arg)    _haiku_build___swap_int64(arg)
+#define _HAIKU_BUILD_B_SWAP_INT32(arg)    _haiku_build___swap_int32(arg)
+#define _HAIKU_BUILD_B_SWAP_INT16(arg)    _haiku_build___swap_int16(arg)
 
 #if _HAIKU_BUILD_BYTE_ORDER == __LITTLE_ENDIAN
 /* Host is little endian */
@@ -60,18 +60,18 @@ typedef enum {
 #define _HAIKU_BUILD_B_LENDIAN_TO_HOST_INT16(arg)	(_haiku_build_uint16)(arg)
 
 /* Host native to big endian */
-#define _HAIKU_BUILD_B_HOST_TO_BENDIAN_DOUBLE(arg)	__haiku_build_swap_double(arg)
-#define _HAIKU_BUILD_B_HOST_TO_BENDIAN_FLOAT(arg)	__haiku_build_swap_float(arg)
-#define _HAIKU_BUILD_B_HOST_TO_BENDIAN_INT64(arg)	__haiku_build_swap_int64(arg)
-#define _HAIKU_BUILD_B_HOST_TO_BENDIAN_INT32(arg)	__haiku_build_swap_int32(arg)
-#define _HAIKU_BUILD_B_HOST_TO_BENDIAN_INT16(arg)	__haiku_build_swap_int16(arg)
+#define _HAIKU_BUILD_B_HOST_TO_BENDIAN_DOUBLE(arg)	_haiku_build___swap_double(arg)
+#define _HAIKU_BUILD_B_HOST_TO_BENDIAN_FLOAT(arg)	_haiku_build___swap_float(arg)
+#define _HAIKU_BUILD_B_HOST_TO_BENDIAN_INT64(arg)	_haiku_build___swap_int64(arg)
+#define _HAIKU_BUILD_B_HOST_TO_BENDIAN_INT32(arg)	_haiku_build___swap_int32(arg)
+#define _HAIKU_BUILD_B_HOST_TO_BENDIAN_INT16(arg)	_haiku_build___swap_int16(arg)
 
 /* Big endian to host native */
-#define _HAIKU_BUILD_B_BENDIAN_TO_HOST_DOUBLE(arg)	__haiku_build_swap_double(arg)
-#define _HAIKU_BUILD_B_BENDIAN_TO_HOST_FLOAT(arg)	__haiku_build_swap_float(arg)
-#define _HAIKU_BUILD_B_BENDIAN_TO_HOST_INT64(arg)	__haiku_build_swap_int64(arg)
-#define _HAIKU_BUILD_B_BENDIAN_TO_HOST_INT32(arg)	__haiku_build_swap_int32(arg)
-#define _HAIKU_BUILD_B_BENDIAN_TO_HOST_INT16(arg)	__haiku_build_swap_int16(arg)
+#define _HAIKU_BUILD_B_BENDIAN_TO_HOST_DOUBLE(arg)	_haiku_build___swap_double(arg)
+#define _HAIKU_BUILD_B_BENDIAN_TO_HOST_FLOAT(arg)	_haiku_build___swap_float(arg)
+#define _HAIKU_BUILD_B_BENDIAN_TO_HOST_INT64(arg)	_haiku_build___swap_int64(arg)
+#define _HAIKU_BUILD_B_BENDIAN_TO_HOST_INT32(arg)	_haiku_build___swap_int32(arg)
+#define _HAIKU_BUILD_B_BENDIAN_TO_HOST_INT16(arg)	_haiku_build___swap_int16(arg)
 
 #else	/* BYTE_ORDER */
 /* Host is big endian */
@@ -80,18 +80,18 @@ typedef enum {
 #define _HAIKU_BUILD_B_HOST_IS_BENDIAN 1
 
 /* Host native to little endian */
-#define _HAIKU_BUILD_B_HOST_TO_LENDIAN_DOUBLE(arg)	__haiku_build_swap_double(arg)
-#define _HAIKU_BUILD_B_HOST_TO_LENDIAN_FLOAT(arg)	__haiku_build_swap_float(arg)
-#define _HAIKU_BUILD_B_HOST_TO_LENDIAN_INT64(arg)	__haiku_build_swap_int64(arg)
-#define _HAIKU_BUILD_B_HOST_TO_LENDIAN_INT32(arg)	__haiku_build_swap_int32(arg)
-#define _HAIKU_BUILD_B_HOST_TO_LENDIAN_INT16(arg)	__haiku_build_swap_int16(arg)
+#define _HAIKU_BUILD_B_HOST_TO_LENDIAN_DOUBLE(arg)	_haiku_build___swap_double(arg)
+#define _HAIKU_BUILD_B_HOST_TO_LENDIAN_FLOAT(arg)	_haiku_build___swap_float(arg)
+#define _HAIKU_BUILD_B_HOST_TO_LENDIAN_INT64(arg)	_haiku_build___swap_int64(arg)
+#define _HAIKU_BUILD_B_HOST_TO_LENDIAN_INT32(arg)	_haiku_build___swap_int32(arg)
+#define _HAIKU_BUILD_B_HOST_TO_LENDIAN_INT16(arg)	_haiku_build___swap_int16(arg)
 
 /* Little endian to host native */
-#define _HAIKU_BUILD_B_LENDIAN_TO_HOST_DOUBLE(arg)	__haiku_build_swap_double(arg)
-#define _HAIKU_BUILD_B_LENDIAN_TO_HOST_FLOAT(arg)	__haiku_build_swap_float(arg)
-#define _HAIKU_BUILD_B_LENDIAN_TO_HOST_INT64(arg)	__haiku_build_swap_int64(arg)
-#define _HAIKU_BUILD_B_LENDIAN_TO_HOST_INT32(arg)	__haiku_build_swap_int32(arg)
-#define _HAIKU_BUILD_B_LENDIAN_TO_HOST_INT16(arg)	__haiku_build_swap_int16(arg)
+#define _HAIKU_BUILD_B_LENDIAN_TO_HOST_DOUBLE(arg)	_haiku_build___swap_double(arg)
+#define _HAIKU_BUILD_B_LENDIAN_TO_HOST_FLOAT(arg)	_haiku_build___swap_float(arg)
+#define _HAIKU_BUILD_B_LENDIAN_TO_HOST_INT64(arg)	_haiku_build___swap_int64(arg)
+#define _HAIKU_BUILD_B_LENDIAN_TO_HOST_INT32(arg)	_haiku_build___swap_int32(arg)
+#define _HAIKU_BUILD_B_LENDIAN_TO_HOST_INT16(arg)	_haiku_build___swap_int16(arg)
 
 /* Host native to big endian */
 #define _HAIKU_BUILD_B_HOST_TO_BENDIAN_DOUBLE(arg)	(double)(arg)
@@ -117,7 +117,7 @@ extern "C" {
 _HAIKU_BUILD_DECLARE_FUNCTION(_haiku_build_status_t, swap_data,
 	(_haiku_build_type_code type, void *data,
 		_HAIKU_BUILD_FEATURE___SIZE_TYPE__ length,
-			_haiku_build_swap_action action))
+			_HAIKU_BUILD_IDENTIFIER(swap_action) action))
 _HAIKU_BUILD_DECLARE_FUNCTION(bool, is_type_swapped,
 	(_haiku_build_type_code type))
 
