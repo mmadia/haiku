@@ -8,13 +8,13 @@
 
 /* Determine the architecture and define macros for some fundamental
    properties:
-   __HAIKU_ARCH					- short name of the architecture (used in paths)
-   __HAIKU_ARCH_<arch>			- defined to 1 for the respective architecture
-   __HAIKU_ARCH_BITS			- defined to 32/64 on 32/64 bit architectures
+   __HAIKU_BUILD_HAIKU_ARCH					- short name of the architecture (used in paths)
+   __HAIKU_BUILD_HAIKU_ARCH_<arch>			- defined to 1 for the respective architecture
+   __HAIKU_BUILD_HAIKU_ARCH_BITS			- defined to 32/64 on 32/64 bit architectures
    								  (defaults to 32)
-   __HAIKU_ARCH_PHYSICAL_BITS	- defined to 32/64 on architectures with 32/64
+   __HAIKU_BUILD_HAIKU_ARCH_PHYSICAL_BITS	- defined to 32/64 on architectures with 32/64
    								  (defaults to __HAIKU_ARCH_BITS)
-   __HAIKU_BIG_ENDIAN			- defined to 1 on big endian architectures
+   __HAIKU_BUILD_HAIKU_BIG_ENDIAN	- defined to 1 on big endian architectures
    								  (defaults to undefined)
 */
 #ifdef __INTEL__
