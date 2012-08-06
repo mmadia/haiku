@@ -38,7 +38,7 @@ typedef enum {
 #define _HAIKU_BUILD_B_SWAP_INT32(arg)    _haiku_build___swap_int32(arg)
 #define _HAIKU_BUILD_B_SWAP_INT16(arg)    _haiku_build___swap_int16(arg)
 
-#if _HAIKU_BUILD_BYTE_ORDER == __LITTLE_ENDIAN
+#if _HAIKU_BUILD_BYTE_ORDER == __HAIKU_BUILD_LITTLE_ENDIAN
 /* Host is little endian */
 
 #define _HAIKU_BUILD_B_HOST_IS_LENDIAN 1
@@ -151,7 +151,6 @@ _HAIKU_BUILD_DECLARE_FUNCTION(_haiku_build_uint16, __swap_int16,
 #	define B_SWAP_INT16(arg)    _HAIKU_BUILD_B_SWAP_INT16(arg)
 
 
-// NOTE: #8730 -- does BYTE_ORDER need to be _HAIKU_BUILD_BYTE_ORDER ?
 #	if BYTE_ORDER == __LITTLE_ENDIAN
 	/* Host is little endian */
 
