@@ -5,7 +5,7 @@
 //#	include <BeOSBuildCompatibility.h>
 //#endif
 
-#include <target_ByteOrder.h>
+#include <ByteOrder.h>
 
 _haiku_build_uint16
 __haiku_build_swap_int16(_haiku_build_uint16 value)
