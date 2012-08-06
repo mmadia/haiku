@@ -26,7 +26,7 @@
 		returnValue name parameters										\
 			__asm__(_HAIKU_BUILD_ASMNAME("_haiku_build_" #name));
 #	define _HAIKU_BUILD_DECLARE_CONSTANT(type, name) \
-		extern type _haiku_build##name; \
+		extern type _haiku_build_##name; \
 		extern type name \
 			__asm__(_HAIKU_BUILD_ASMNAME("_haiku_build_" #name));
 #	define _HAIKU_BUILD_IDENTIFIER(name) name
