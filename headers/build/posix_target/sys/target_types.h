@@ -129,17 +129,17 @@ struct _HAIKU_BUILD_IDENTIFIER(_pthread_spinlock) {
 
 #ifndef _HAIKU_BUILD_LIBROOT_FUNCTION_WRAPPER
 	/* BSD compatibility */
-	typedef unsigned _haiku_build_u_long 		u_long;
-	typedef unsigned _haiku_build_u_int 		u_int;
-	typedef unsigned _haiku_build_u_short 		u_short;
-	typedef unsigned _haiku_build_u_char 		u_char;
+	typedef _haiku_build_u_long 		u_long;
+	typedef _haiku_build_u_int 		u_int;
+	typedef _haiku_build_u_short 		u_short;
+	typedef _haiku_build_u_char 		u_char;
 
 
 	/* sysV compatibility */
-	typedef unsigned _haiku_build_ulong 		ulong;
-	typedef unsigned _haiku_build_ushort 		ushort;
-	typedef unsigned _haiku_build_uint 			uint;
-	typedef unsigned _haiku_build_unchar		unchar;
+	typedef _haiku_build_ulong 		ulong;
+	typedef _haiku_build_ushort 		ushort;
+	typedef _haiku_build_uint 			uint;
+	typedef _haiku_build_unchar		unchar;
 
 
 	typedef _haiku_build_blkcnt_t 		blkcnt_t;
