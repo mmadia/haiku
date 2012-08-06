@@ -60,11 +60,11 @@ struct _HAIKU_BUILD_IDENTIFIER(tm) {
 	char *tm_zone;	/* timezone name */
 };
 
-// NOTE: #8730 -- Do these 3 need an #ifndef _HAIKU_BUILD_LIBROOT_FUNCTION_WRAPPER counterpart?
+
 /* special timezone support */
-extern char *_haiku_build_tzname[2];
-extern int 	_haiku_build_daylight;
-extern long	_haiku_build_timezone;
+_HAIKU_BUILD_DECLARE_VARIABLE_ETC(char*, tzname, [2])
+_HAIKU_BUILD_DECLARE_VARIABLE(int, daylight)
+_HAIKU_BUILD_DECLARE_VARIABLE(long, timezone)
 
 
 #ifdef __cplusplus
