@@ -60,7 +60,7 @@ struct _HAIKU_BUILD_IDENTIFIER(tm) {
 	char *tm_zone;	/* timezone name */
 };
 
-
+// NOTE: #8730 -- Do these 3 need an #ifndef _HAIKU_BUILD_LIBROOT_FUNCTION_WRAPPER counterpart?
 /* special timezone support */
 extern char *_haiku_build_tzname[2];
 extern int 	_haiku_build_daylight;
@@ -166,12 +166,6 @@ _HAIKU_BUILD_DECLARE_FUNCTION(int, stime, (const _haiku_build_time_t *t))
 		/* clock measuring the used CPU time of the current thread */
 
 #	define TIMER_ABSTIME				_HAIKU_BUILD_TIMER_ABSTIME	/* absolute timer flag */
-
-
-	/* special timezone support */
-	extern _haiku_build_tzname 			*tzname[2];
-	extern _haiku_build_daylight 		daylight;
-	extern _haiku_build_timezone		timezone;
 
 #	endif	/* _HAIKU_BUILD_LIBROOT_FUNCTION_WRAPPER */
 
