@@ -299,7 +299,7 @@ typedef _haiku_build_uint64_t				u_int64_t;
 
 
 /* BSD compatibility */
-	typedef uint8_t__haiku_build_uint8_t;
+	typedef uint8_t		__haiku_build_uint8_t;
 	typedef uint16_t	__haiku_build_uint16_t;
 	typedef uint32_t	__haiku_build_uint32_t;
 	typedef uint64_t	__haiku_build_uint64_t;
