@@ -40,11 +40,11 @@ haiku_freebsd_read(int fd, void *buf, size_t nbytes)
 
 	off_t seekDiff = (sectorSize - (cur % sectorSize)) % sectorSize;
 	off_t nbytesDiff = (nbytes - seekDiff) % sectorSize;
-	
+
 	if (seekDiff == 0 && nbytesDiff == 0) {
 		// Not needed but this saves malloc and free operations
 		return read(fd, buf, nbytes);
-		
+
 	} else if (cur % sectorSize + nbytes <= sectorSize) {
 		// Read complete in only a block
 		char* tmpBlock = (char*)malloc(sectorSize);
@@ -63,14 +63,14 @@ haiku_freebsd_read(int fd, void *buf, size_t nbytes)
 		}
 
 		free(tmpBlock);
-		
+
 		return nbytes;
 
 	} else {
 		// Needs to write more than a block
 
 		char* tmpBlock = (char*)malloc(sectorSize);
-		
+
 		// First block if seek isn't
 		if (seekDiff > 0) {
 			// read entire block at 0 pos
@@ -83,7 +83,7 @@ haiku_freebsd_read(int fd, void *buf, size_t nbytes)
 				perror("read seekDiff");
 			// alter content
 			memcpy(buf, tmpBlock + (sectorSize - seekDiff), seekDiff);
-			
+
 		}
 
 		// Blocks between
@@ -91,7 +91,7 @@ haiku_freebsd_read(int fd, void *buf, size_t nbytes)
 			if (read(fd, ((char*)buf) + seekDiff, nbytes - seekDiff - nbytesDiff) == -1)
 				perror("read between");
 		}
-		
+
 		// Last block if overflow
 		if (nbytesDiff > 0 ) {
 
@@ -107,7 +107,7 @@ haiku_freebsd_read(int fd, void *buf, size_t nbytes)
 		}
 
 		free(tmpBlock);
-		
+
 		return nbytes;
 	}
 
@@ -138,7 +138,7 @@ haiku_freebsd_write(int fd, const void *buf, size_t nbytes)
 	if (seekDiff == 0 && nbytesDiff == 0) {
 		// Not needed but this saves malloc and free operations
 		return write(fd, buf, nbytes);
-		
+
 	} else if (cur % sectorSize + nbytes <= sectorSize) {
 		// Write complete in only a block
 		char* tmpBlock = (char*)malloc(sectorSize);
@@ -157,14 +157,14 @@ haiku_freebsd_write(int fd, const void *buf, size_t nbytes)
 			perror("lseek2 oneblock");
 
 		free(tmpBlock);
-		
+
 		return nbytes;
 
 	} else {
 		// Needs to write more than a block
 
 		char* tmpBlock = (char*)malloc(sectorSize);
-		
+
 		// First block if seek isn't
 		if (seekDiff > 0) {
 			// read entire block at 0 pos
@@ -179,7 +179,7 @@ haiku_freebsd_write(int fd, const void *buf, size_t nbytes)
 			memcpy(tmpBlock + (sectorSize - seekDiff), buf, seekDiff);
 			if (write(fd, tmpBlock, sectorSize)==-1)
 				perror("write seekDiff");
-			
+
 		}
 
 		// Blocks between
@@ -187,7 +187,7 @@ haiku_freebsd_write(int fd, const void *buf, size_t nbytes)
 			if (write(fd, ((char*)buf) + seekDiff, nbytes - seekDiff - nbytesDiff) == -1)
 				perror("write between");
 		}
-		
+
 		// Last block if overflow
 		if (nbytesDiff > 0) {
 
@@ -205,7 +205,7 @@ haiku_freebsd_write(int fd, const void *buf, size_t nbytes)
 		}
 
 		free(tmpBlock);
-		
+
 		return nbytes;
 	}
 
