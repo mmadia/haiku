@@ -4,8 +4,8 @@
  */
 
 
-#include <errno.h>
-#include <string.h>
+#include <target_errno.h>
+#include <target_string.h>
 
 #include <map>
 
