@@ -16,10 +16,10 @@
 
 #include <map>
 
-#include <fcntl.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
+#include <target_fcntl.h>
+#include <target_stdio.h>
+#include <target_stdlib.h>
+#include <target_unistd.h>
 
 #include <fs_attr.h>
 

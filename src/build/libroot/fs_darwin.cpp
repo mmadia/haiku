@@ -7,16 +7,16 @@
 
 #include "fs_darwin.h"
 
-#include <dirent.h>
-#include <errno.h>
-#include <fcntl.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <sys/param.h>
-#include <sys/stat.h>
-#include <sys/time.h>
-#include <unistd.h>
+#include <target_dirent.h>
+#include <target_errno.h>
+#include <target_fcntl.h>
+#include <target_stdio.h>
+#include <target_stdlib.h>
+#include <target_string.h>
+#include <sys/target_param.h>
+#include <sys/target_stat.h>
+#include <sys/target_time.h>
+#include <target_unistd.h>
 
 
 // Private helper functions

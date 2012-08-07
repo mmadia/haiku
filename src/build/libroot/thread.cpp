@@ -1,7 +1,7 @@
 
 //#include <BeOSBuildCompatibility.h>
 
-#include <OS.h>
+#include <target_OS.h>
 
 static const thread_id kMainThreadID = 3;
 

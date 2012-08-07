@@ -6,16 +6,16 @@
 
 #include "fs_freebsd.h"
 
-#include <errno.h>
-#include <fcntl.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include <target_errno.h>
+#include <target_fcntl.h>
+#include <target_stdio.h>
+#include <target_stdlib.h>
+#include <target_string.h>
 #include <sys/disk.h>
-#include <sys/ioctl.h>
-#include <sys/stat.h>
-#include <sys/time.h>
-#include <unistd.h>
+#include <sys/target_ioctl.h>
+#include <sys/target_stat.h>
+#include <sys/target_time.h>
+#include <target_unistd.h>
 
 
 // Read and write operations in FreeBSD only work on devices block by block.

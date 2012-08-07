@@ -18,19 +18,20 @@
 #	define B_NO_MEMORY			ENOMEM
 #else
 //#	include <BeOSBuildCompatibility.h>
+// NOTE: #8730 -- does syscalls.h need to be target_syscalls.h?
 #	include <syscalls.h>
 
 #	include "fs_impl.h"
 #	include "fs_descriptors.h"
 #endif
 
-#include <dirent.h>
-#include <errno.h>
-#include <fcntl.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <sys/stat.h>
+#include <target_dirent.h>
+#include <target_errno.h>
+#include <target_fcntl.h>
+#include <target_stdio.h>
+#include <target_stdlib.h>
+#include <target_unistd.h>
+#include <sys/target_stat.h>
 
 #include <map>
 #include <string>

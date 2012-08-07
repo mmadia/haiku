@@ -1,11 +1,11 @@
 
 //#include <BeOSBuildCompatibility.h>
 
-#include <stdlib.h>
-#include <string.h>
+#include <target_stdlib.h>
+#include <target_string.h>
 
-#include <OS.h>
-#include <SupportDefs.h>
+#include <target_OS.h>
+#include <target_SupportDefs.h>
 
 // We assume that everything is single-threaded, so we don't need real
 // semaphores. Simple fakes are sufficient.

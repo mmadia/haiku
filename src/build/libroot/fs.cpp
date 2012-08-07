@@ -8,22 +8,23 @@
 
 #include "fs_impl.h"
 
-#include <dirent.h>
-#include <errno.h>
-#include <fcntl.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <unistd.h>
-#include <utime.h>
-#include <sys/stat.h>
-#include <sys/time.h>
+#include <target_dirent.h>
+#include <target_errno.h>
+#include <target_fcntl.h>
+#include <target_stdio.h>
+#include <target_stdlib.h>
+#include <target_string.h>
+#include <target_unistd.h>
+#include <target_utime.h>
+#include <sys/target_stat.h>
+#include <sys/target_time.h>
 
 #include <map>
 #include <string>
 
 #include <fs_attr.h>
-#include <NodeMonitor.h>	// for B_STAT_* flags
+#include <target_NodeMonitor.h>	// for B_STAT_* flags
+// NOTE: #8730 -- does syscalls.h need to be target_syscalls.h?
 #include <syscalls.h>
 
 #include "fs_descriptors.h"

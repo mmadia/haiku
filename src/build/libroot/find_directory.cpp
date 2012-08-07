@@ -7,15 +7,15 @@
  */
 
 
-#include <FindDirectory.h>
+#include <target_FindDirectory.h>
 
-#include <errno.h>
-#include <string.h>
-#include <sys/stat.h>
-#include <stdlib.h>
-#include <unistd.h>
+#include <target_errno.h>
+#include <target_string.h>
+#include <sys/target_stat.h>
+#include <target_stdlib.h>
+#include <target_unistd.h>
 
-#include <StorageDefs.h>
+#include <target_StorageDefs.h>
 
 
 #ifndef HAIKU_BUILD_GENERATED_DIRECTORY

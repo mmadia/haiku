@@ -1,16 +1,16 @@
 
 //#include <BeOSBuildCompatibility.h>
 
-#include <errno.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <sys/stat.h>
-#include <sys/time.h>
+#include <target_errno.h>
+#include <target_stdio.h>
+#include <target_stdlib.h>
+#include <target_unistd.h>
+#include <sys/target_stat.h>
+#include <sys/target_time.h>
 
-#include <Debug.h>
-#include <image.h>
-#include <OS.h>
+#include <target_Debug.h>
+#include <target_image.h>
+#include <target_OS.h>
 
 mode_t __gUmask = 022;
 
