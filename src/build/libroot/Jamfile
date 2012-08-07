@@ -28,7 +28,10 @@ UsePrivateBuildHeaders kernel system ;
 	] ;
 	ObjectC++Flags find_directory.cpp : $(defines) ;
 
-	defines = [ FDefines BUILDING_HAIKU_ERROR_MAPPER=1 ] ;
+	defines = [ FDefines
+		BUILDING_HAIKU_ERROR_MAPPER=1
+		_HAIKU_BUILD_LIBROOT_FUNCTION_WRAPPER=1
+	] ;
 	ObjectC++Flags errors.cpp : $(defines) ;
 
 	defines = [ FDefines KMESSAGE_CONTAINER_ONLY=1 ] ;
