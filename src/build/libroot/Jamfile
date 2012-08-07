@@ -79,7 +79,7 @@ local librootSources =
 	KMessage.cpp
 ;
 
-USES_BE_API on [ FGristFiles $(librootSources:S=$(SUFOBJ)) ] = true ;
+#USES_BE_API on [ FGristFiles $(librootSources:S=$(SUFOBJ)) ] = true ;
 
 BuildPlatformSharedLibrary libroot_build.so :
 	$(librootSources)
@@ -92,7 +92,7 @@ BuildPlatformStaticLibrary libroot_build.a :
 	[ FGristFiles $(librootSources:S=$(SUFOBJ)) ]
 ;
 
-USES_BE_API on [ FGristFiles function_remapper$(SUFOBJ) ] = true ;
+#USES_BE_API on [ FGristFiles function_remapper$(SUFOBJ) ] = true ;
 
 BuildPlatformStaticLibraryPIC libroot_build_function_remapper.a :
 	function_remapper.cpp
