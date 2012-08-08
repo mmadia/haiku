@@ -938,6 +938,8 @@ if $(HOST_PLATFORM) in r5 bone dano {
 	HOST_HDRS += [ FDirName $(HAIKU_TOP) headers build host beos_common ] ;
 }
 
+# Add directory with generated HaikuHostBuildConfig.h
+HOST_HDRS += [ FDirName $(HAIKU_BUILD_OUTPUT_DIR) ] ;
 
 #pragma mark -
 
