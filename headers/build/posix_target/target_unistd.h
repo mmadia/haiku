@@ -345,7 +345,7 @@ _HAIKU_BUILD_DECLARE_FUNCTION(_HAIKU_BUILD_IDENTIFIER(ssize_t), pread,
 _HAIKU_BUILD_DECLARE_FUNCTION(_HAIKU_BUILD_IDENTIFIER(ssize_t), write,
 	(int fd, const void *buffer, _HAIKU_BUILD_FEATURE___SIZE_TYPE__ count))
 _HAIKU_BUILD_DECLARE_FUNCTION(_HAIKU_BUILD_IDENTIFIER(ssize_t), write_pos,
-	(int fd, _haiku_build_off_t pos, const void *buffer,size_t count))
+	(int fd, _haiku_build_off_t pos, const void *buffer, _HAIKU_BUILD_FEATURE___SIZE_TYPE__ count))
 _HAIKU_BUILD_DECLARE_FUNCTION(_HAIKU_BUILD_IDENTIFIER(ssize_t), pwrite,
 	(int fd, const void *buffer, _HAIKU_BUILD_FEATURE___SIZE_TYPE__ count,
 		_haiku_build_off_t pos))
