@@ -17,9 +17,7 @@
 #	define B_ENTRY_NOT_FOUND	ENOENT
 #	define B_NO_MEMORY			ENOMEM
 #else
-//#	include <BeOSBuildCompatibility.h>
-// NOTE: #8730 -- does syscalls.h need to be target_syscalls.h?
-#	include <syscalls.h>
+#	include <target_syscalls.h>
 
 #	include "fs_impl.h"
 #	include "fs_descriptors.h"

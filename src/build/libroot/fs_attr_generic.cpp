@@ -1,7 +1,5 @@
 
-//#include <BeOSBuildCompatibility.h>
-// NOTE: #8730 -- does syscalls.h need to be target_syscalls.h?
-#include <syscalls.h>
+#include <target_syscalls.h>
 
 #include <target_dirent.h>
 #include <target_errno.h>

@@ -24,8 +24,7 @@
 
 #include <fs_attr.h>
 #include <target_NodeMonitor.h>	// for B_STAT_* flags
-// NOTE: #8730 -- does syscalls.h need to be target_syscalls.h?
-#include <syscalls.h>
+#include <target_syscalls.h>
 
 #include "fs_descriptors.h"
 #include "NodeRef.h"
