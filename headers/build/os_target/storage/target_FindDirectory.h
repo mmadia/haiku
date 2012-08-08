@@ -144,7 +144,7 @@ class BPath;
 
 _HAIKU_BUILD_DECLARE_FUNCTION(_haiku_build_status_t, find_directory,
 	(_HAIKU_BUILD_IDENTIFIER(directory_which) which, BPath* path,
-	bool createIt = false, BVolume* volume = NULL))
+	bool createIt = false, BVolume* volume = _HAIKU_BUILD_NULL))
 
 #endif	/* __cplusplus */
 
