@@ -296,80 +296,116 @@ extern "C" {
 // TODO: #8730 prefix function parameters as necessary.
 /* file functions */
 _HAIKU_BUILD_DECLARE_FUNCTION(int, access, (const char *path, int accessMode))
-_HAIKU_BUILD_DECLARE_FUNCTION(int, faccessat, (int fd, const char *path, int accessMode, int flag))
+_HAIKU_BUILD_DECLARE_FUNCTION(int, faccessat,
+	(int fd, const char *path, int accessMode, int flag))
 
 _HAIKU_BUILD_DECLARE_FUNCTION(int, chdir, (const char *path))
 _HAIKU_BUILD_DECLARE_FUNCTION(int, fchdir, (int fd))
-_HAIKU_BUILD_DECLARE_FUNCTION(char*, getcwd, (char *buffer, _HAIKU_BUILD_FEATURE___SIZE_TYPE__ size))
+_HAIKU_BUILD_DECLARE_FUNCTION(char*, getcwd, (char *buffer,
+	_HAIKU_BUILD_FEATURE___SIZE_TYPE__ size))
 
 _HAIKU_BUILD_DECLARE_FUNCTION(int, pipe, (int fildes[2]))
 _HAIKU_BUILD_DECLARE_FUNCTION(int, dup, (int fd))
 _HAIKU_BUILD_DECLARE_FUNCTION(int, dup2, (int fd1, int fd2))
 _HAIKU_BUILD_DECLARE_FUNCTION(int, close, (int fd))
-_HAIKU_BUILD_DECLARE_FUNCTION(int, link, (const char *toPath, const char *path))
-_HAIKU_BUILD_DECLARE_FUNCTION(int, linkat, (int toFD, const char *toPath, int pathFD,
-					const char *path, int flag))
+_HAIKU_BUILD_DECLARE_FUNCTION(int, link, (const char *toPath,
+	const char *path))
+_HAIKU_BUILD_DECLARE_FUNCTION(int, linkat, (int toFD, const char *toPath,
+	int pathFD, const char *path, int flag))
 _HAIKU_BUILD_DECLARE_FUNCTION(int, unlink, (const char *name))
-_HAIKU_BUILD_DECLARE_FUNCTION(int, unlinkat, (int fd, const char *path, int flag))
+_HAIKU_BUILD_DECLARE_FUNCTION(int, unlinkat, (int fd, const char *path,
+	int flag))
 _HAIKU_BUILD_DECLARE_FUNCTION(int, rmdir, (const char *path))
 
-_HAIKU_BUILD_DECLARE_FUNCTION(_HAIKU_BUILD_IDENTIFIER(ssize_t), readlink,(const char *path, char *buffer, _HAIKU_BUILD_FEATURE___SIZE_TYPE__ bufferSize))
-_HAIKU_BUILD_DECLARE_FUNCTION(_HAIKU_BUILD_IDENTIFIER(ssize_t), readlinkat, (int fd, const char *path, char *buffer,
-					_HAIKU_BUILD_FEATURE___SIZE_TYPE__  bufferSize))
-_HAIKU_BUILD_DECLARE_FUNCTION(int, symlink, (const char *toPath, const char *symlinkPath))
-_HAIKU_BUILD_DECLARE_FUNCTION(int, symlinkat, (const char *toPath, int fd, const char *symlinkPath))
+_HAIKU_BUILD_DECLARE_FUNCTION(_HAIKU_BUILD_IDENTIFIER(ssize_t), readlink,
+	(const char *path, char *buffer,
+		_HAIKU_BUILD_FEATURE___SIZE_TYPE__ bufferSize))
+_HAIKU_BUILD_DECLARE_FUNCTION(_HAIKU_BUILD_IDENTIFIER(ssize_t), readlinkat,
+	(int fd, const char *path, char *buffer,
+		_HAIKU_BUILD_FEATURE___SIZE_TYPE__  bufferSize))
+_HAIKU_BUILD_DECLARE_FUNCTION(int, symlink, (const char *toPath,
+	const char *symlinkPath))
+_HAIKU_BUILD_DECLARE_FUNCTION(int, symlinkat, (const char *toPath, int fd,
+	const char *symlinkPath))
 
-_HAIKU_BUILD_DECLARE_FUNCTION(int, ftruncate, (int fd, _haiku_build_off_t newSize))
-_HAIKU_BUILD_DECLARE_FUNCTION(int, truncate, (const char *path, _haiku_build_off_t newSize))
+_HAIKU_BUILD_DECLARE_FUNCTION(int, ftruncate, (int fd,
+	_haiku_build_off_t newSize))
+_HAIKU_BUILD_DECLARE_FUNCTION(int, truncate, (const char *path,
+	_haiku_build_off_t newSize))
 _HAIKU_BUILD_DECLARE_FUNCTION(int, ioctl, (int fd, unsigned long op, ...))
 
-_HAIKU_BUILD_DECLARE_FUNCTION(_HAIKU_BUILD_IDENTIFIER(ssize_t), read, (int fd, void *buffer, _HAIKU_BUILD_FEATURE___SIZE_TYPE__ count))
-_HAIKU_BUILD_DECLARE_FUNCTION(_HAIKU_BUILD_IDENTIFIER(ssize_t), read_pos, (int fd, _haiku_build_off_t pos, void *buffer, _HAIKU_BUILD_FEATURE___SIZE_TYPE__ count))
-_HAIKU_BUILD_DECLARE_FUNCTION(_HAIKU_BUILD_IDENTIFIER(ssize_t), pread, (int fd, void *buffer, _HAIKU_BUILD_FEATURE___SIZE_TYPE__ count, _haiku_build_off_t pos))
-_HAIKU_BUILD_DECLARE_FUNCTION(_HAIKU_BUILD_IDENTIFIER(ssize_t), write, (int fd, const void *buffer, _HAIKU_BUILD_FEATURE___SIZE_TYPE__ count))
-_HAIKU_BUILD_DECLARE_FUNCTION(_HAIKU_BUILD_IDENTIFIER(ssize_t), write_pos, (int fd, _haiku_build_off_t pos, const void *buffer,size_t count))
-_HAIKU_BUILD_DECLARE_FUNCTION(_HAIKU_BUILD_IDENTIFIER(ssize_t), pwrite, (int fd, const void *buffer, _HAIKU_BUILD_FEATURE___SIZE_TYPE__ count, _haiku_build_off_t pos))
-_HAIKU_BUILD_DECLARE_FUNCTION(_haiku_build_off_t, lseek, (int fd, _haiku_build_off_t offset, int whence))
+_HAIKU_BUILD_DECLARE_FUNCTION(_HAIKU_BUILD_IDENTIFIER(ssize_t), read,
+	(int fd, void *buffer, _HAIKU_BUILD_FEATURE___SIZE_TYPE__ count))
+_HAIKU_BUILD_DECLARE_FUNCTION(_HAIKU_BUILD_IDENTIFIER(ssize_t), read_pos,
+	(int fd, _haiku_build_off_t pos, void *buffer,
+		_HAIKU_BUILD_FEATURE___SIZE_TYPE__ count))
+_HAIKU_BUILD_DECLARE_FUNCTION(_HAIKU_BUILD_IDENTIFIER(ssize_t), pread,
+	(int fd, void *buffer, _HAIKU_BUILD_FEATURE___SIZE_TYPE__ count,
+		_haiku_build_off_t pos))
+_HAIKU_BUILD_DECLARE_FUNCTION(_HAIKU_BUILD_IDENTIFIER(ssize_t), write,
+	(int fd, const void *buffer, _HAIKU_BUILD_FEATURE___SIZE_TYPE__ count))
+_HAIKU_BUILD_DECLARE_FUNCTION(_HAIKU_BUILD_IDENTIFIER(ssize_t), write_pos,
+	(int fd, _haiku_build_off_t pos, const void *buffer,size_t count))
+_HAIKU_BUILD_DECLARE_FUNCTION(_HAIKU_BUILD_IDENTIFIER(ssize_t), pwrite,
+	(int fd, const void *buffer, _HAIKU_BUILD_FEATURE___SIZE_TYPE__ count,
+		_haiku_build_off_t pos))
+_HAIKU_BUILD_DECLARE_FUNCTION(_haiku_build_off_t, lseek, (int fd,
+	_haiku_build_off_t offset, int whence))
 
 _HAIKU_BUILD_DECLARE_FUNCTION(int, sync, (void))
 _HAIKU_BUILD_DECLARE_FUNCTION(int, fsync, (int fd))
 
-_HAIKU_BUILD_DECLARE_FUNCTION(int, chown, (const char *path, _haiku_build_uid_t owner, _haiku_build_gid_t group))
-_HAIKU_BUILD_DECLARE_FUNCTION(int, fchown, (int fd, _haiku_build_uid_t owner, _haiku_build_gid_t group))
-_HAIKU_BUILD_DECLARE_FUNCTION(int, lchown, (const char *path, _haiku_build_uid_t owner, _haiku_build_gid_t group))
-_HAIKU_BUILD_DECLARE_FUNCTION(int, fchownat, (int fd, const char *path, _haiku_build_uid_t owner, _haiku_build_gid_t group,
-					int flag))
+_HAIKU_BUILD_DECLARE_FUNCTION(int, chown, (const char *path,
+	_haiku_build_uid_t owner, _haiku_build_gid_t group))
+_HAIKU_BUILD_DECLARE_FUNCTION(int, fchown, (int fd,
+	_haiku_build_uid_t owner, _haiku_build_gid_t group))
+_HAIKU_BUILD_DECLARE_FUNCTION(int, lchown, (const char *path,
+	_haiku_build_uid_t owner, _haiku_build_gid_t group))
+_HAIKU_BUILD_DECLARE_FUNCTION(int, fchownat, (int fd, const char *path,
+	_haiku_build_uid_t owner, _haiku_build_gid_t group, int flag))
 
-_HAIKU_BUILD_DECLARE_FUNCTION(int, mknod, (const char *name, _haiku_build_mode_t mode, _haiku_build_dev_t dev))
-_HAIKU_BUILD_DECLARE_FUNCTION(int, mknodat, (int fd, const char *name, _haiku_build_mode_t mode, _haiku_build_dev_t dev))
+_HAIKU_BUILD_DECLARE_FUNCTION(int, mknod, (const char *name,
+	_haiku_build_mode_t mode, _haiku_build_dev_t dev))
+_HAIKU_BUILD_DECLARE_FUNCTION(int, mknodat, (int fd, const char *name,
+	_haiku_build_mode_t mode, _haiku_build_dev_t dev))
 
 _HAIKU_BUILD_DECLARE_FUNCTION(int, getpagesize, (void))
 _HAIKU_BUILD_DECLARE_FUNCTION(int, getdtablesize, (void))
 _HAIKU_BUILD_DECLARE_FUNCTION(long, sysconf, (int name))
 _HAIKU_BUILD_DECLARE_FUNCTION(long, fpathconf, (int fd, int name))
 _HAIKU_BUILD_DECLARE_FUNCTION(long, pathconf, (const char *path, int name))
-_HAIKU_BUILD_DECLARE_FUNCTION(_HAIKU_BUILD_FEATURE___SIZE_TYPE__, confstr, (int name, char *buf, _HAIKU_BUILD_FEATURE___SIZE_TYPE__ len))
-_HAIKU_BUILD_DECLARE_FUNCTION(int, lockf, (int fd, int function, _haiku_build_off_t size))
+_HAIKU_BUILD_DECLARE_FUNCTION(_HAIKU_BUILD_FEATURE___SIZE_TYPE__, confstr,
+	(int name, char *buf, _HAIKU_BUILD_FEATURE___SIZE_TYPE__ len))
+_HAIKU_BUILD_DECLARE_FUNCTION(int, lockf, (int fd, int function,
+	_haiku_build_off_t size))
 
 /* process functions */
 _HAIKU_BUILD_DECLARE_FUNCTION(_haiku_build_pid_t, fork, (void))
 _HAIKU_BUILD_DECLARE_FUNCTION(_haiku_build_pid_t, vfork, (void))
-_HAIKU_BUILD_DECLARE_FUNCTION(int, execve, (const char *path, char * const argv[], char * const envp[]))
-_HAIKU_BUILD_DECLARE_FUNCTION(int, execl, (const char *path, const char *arg, ...))
+_HAIKU_BUILD_DECLARE_FUNCTION(int, execve, (const char *path,
+	char * const argv[], char * const envp[]))
+_HAIKU_BUILD_DECLARE_FUNCTION(int, execl, (const char *path, const char *arg,
+	...))
 _HAIKU_BUILD_DECLARE_FUNCTION(int, execv, (const char *path, char *const *argv))
-_HAIKU_BUILD_DECLARE_FUNCTION(int, execlp, (const char *file, const char *arg, ...))
-_HAIKU_BUILD_DECLARE_FUNCTION(int, execle, (const char *path, const char *arg , ... /*, char **envp */))
-_HAIKU_BUILD_DECLARE_FUNCTION(int, exect, (const char *path, char *const *argv))
-_HAIKU_BUILD_DECLARE_FUNCTION(int, execvp, (const char *file, char *const *argv))
+_HAIKU_BUILD_DECLARE_FUNCTION(int, execlp, (const char *file, const char *arg,
+	...))
+_HAIKU_BUILD_DECLARE_FUNCTION(int, execle, (const char *path, const char *arg,
+	... /*, char **envp */))
+_HAIKU_BUILD_DECLARE_FUNCTION(int, exect, (const char *path,
+	char *const *argv))
+_HAIKU_BUILD_DECLARE_FUNCTION(int, execvp, (const char *file,
+	char *const *argv))
 
 _HAIKU_BUILD_DECLARE_FUNCTION(void, _exit, (int status))
 
 _HAIKU_BUILD_DECLARE_FUNCTION(_haiku_build_pid_t, tcgetpgrp, (int fd))
-_HAIKU_BUILD_DECLARE_FUNCTION(int, tcsetpgrp, (int fd, _haiku_build_pid_t pgrpid))
+_HAIKU_BUILD_DECLARE_FUNCTION(int, tcsetpgrp, (int fd,
+	_haiku_build_pid_t pgrpid))
 _HAIKU_BUILD_DECLARE_FUNCTION(void*, sbrk, (long incr))
 
 _HAIKU_BUILD_DECLARE_FUNCTION(unsigned int, alarm, (unsigned int seconds))
-_HAIKU_BUILD_DECLARE_FUNCTION(_haiku_build_useconds_t, ualarm, (_haiku_build_useconds_t microSeconds, _haiku_build_useconds_t interval))
+_HAIKU_BUILD_DECLARE_FUNCTION(_haiku_build_useconds_t, ualarm,
+	(_haiku_build_useconds_t microSeconds, _haiku_build_useconds_t interval))
 _HAIKU_BUILD_DECLARE_FUNCTION(unsigned int, sleep, (unsigned int seconds))
 _HAIKU_BUILD_DECLARE_FUNCTION(int, usleep, (unsigned int microSeconds))
 _HAIKU_BUILD_DECLARE_FUNCTION(int, pause, (void))
@@ -378,11 +414,14 @@ _HAIKU_BUILD_DECLARE_FUNCTION(int, pause, (void))
 _HAIKU_BUILD_DECLARE_FUNCTION(_haiku_build_pid_t, getpid, (void))
 _HAIKU_BUILD_DECLARE_FUNCTION(_haiku_build_pid_t, getpgrp, (void))
 _HAIKU_BUILD_DECLARE_FUNCTION(_haiku_build_pid_t, getppid, (void))
-_HAIKU_BUILD_DECLARE_FUNCTION(_haiku_build_pid_t, getsid, (_haiku_build_pid_t pid))
-_HAIKU_BUILD_DECLARE_FUNCTION(_haiku_build_pid_t, getpgid, (_haiku_build_pid_t pid))
+_HAIKU_BUILD_DECLARE_FUNCTION(_haiku_build_pid_t, getsid,
+	(_haiku_build_pid_t pid))
+_HAIKU_BUILD_DECLARE_FUNCTION(_haiku_build_pid_t, getpgid,
+	(_haiku_build_pid_t pid))
 
 _HAIKU_BUILD_DECLARE_FUNCTION(_haiku_build_pid_t, setsid, (void))
-_HAIKU_BUILD_DECLARE_FUNCTION(int, setpgid, (_haiku_build_pid_t pid, _haiku_build_pid_t pgid))
+_HAIKU_BUILD_DECLARE_FUNCTION(int, setpgid, (_haiku_build_pid_t pid,
+	_haiku_build_pid_t pgid))
 _HAIKU_BUILD_DECLARE_FUNCTION(_haiku_build_pid_t, setpgrp, (void))
 
 _HAIKU_BUILD_DECLARE_FUNCTION(int, chroot, (const char *path))
@@ -397,32 +436,46 @@ _HAIKU_BUILD_DECLARE_FUNCTION(int, setgid, (_haiku_build_gid_t gid))
 _HAIKU_BUILD_DECLARE_FUNCTION(int, setuid, (_haiku_build_uid_t uid))
 _HAIKU_BUILD_DECLARE_FUNCTION(int, setegid, (_haiku_build_gid_t gid))
 _HAIKU_BUILD_DECLARE_FUNCTION(int, seteuid, (_haiku_build_uid_t uid))
-_HAIKU_BUILD_DECLARE_FUNCTION(int, setregid, (_haiku_build_gid_t rgid, _haiku_build_gid_t egid))
-_HAIKU_BUILD_DECLARE_FUNCTION(int, setreuid, (_haiku_build_uid_t ruid, _haiku_build_uid_t euid))
+_HAIKU_BUILD_DECLARE_FUNCTION(int, setregid, (_haiku_build_gid_t rgid,
+	_haiku_build_gid_t egid))
+_HAIKU_BUILD_DECLARE_FUNCTION(int, setreuid, (_haiku_build_uid_t ruid,
+	_haiku_build_uid_t euid))
 
-_HAIKU_BUILD_DECLARE_FUNCTION(int, getgrouplist, (const char* user, _haiku_build_gid_t baseGroup,
-					_haiku_build_gid_t* groupList, int* groupCount))
-_HAIKU_BUILD_DECLARE_FUNCTION(int, getgroups, (int groupCount, _haiku_build_gid_t groupList[]))
-_HAIKU_BUILD_DECLARE_FUNCTION(int, initgroups, (const char* user, _haiku_build_gid_t baseGroup))
-_HAIKU_BUILD_DECLARE_FUNCTION(int, setgroups, (int groupCount, const _haiku_build_gid_t* groupList))
+_HAIKU_BUILD_DECLARE_FUNCTION(int, getgrouplist, (const char* user,
+	_haiku_build_gid_t baseGroup, _haiku_build_gid_t* groupList,
+		int* groupCount))
+_HAIKU_BUILD_DECLARE_FUNCTION(int, getgroups, (int groupCount,
+	_haiku_build_gid_t groupList[]))
+_HAIKU_BUILD_DECLARE_FUNCTION(int, initgroups, (const char* user,
+	_haiku_build_gid_t baseGroup))
+_HAIKU_BUILD_DECLARE_FUNCTION(int, setgroups, (int groupCount,
+	const _haiku_build_gid_t* groupList))
 
 _HAIKU_BUILD_DECLARE_FUNCTION(char*, getlogin, (void))
-_HAIKU_BUILD_DECLARE_FUNCTION(int, getlogin_r, (char *name, _HAIKU_BUILD_FEATURE___SIZE_TYPE__ nameSize))
+_HAIKU_BUILD_DECLARE_FUNCTION(int, getlogin_r, (char *name,
+	_HAIKU_BUILD_FEATURE___SIZE_TYPE__ nameSize))
 
 /* host name */
-_HAIKU_BUILD_DECLARE_FUNCTION(int, sethostname, (const char *hostName, _HAIKU_BUILD_FEATURE___SIZE_TYPE__ nameSize))
-_HAIKU_BUILD_DECLARE_FUNCTION(int, gethostname, (char *hostName, _HAIKU_BUILD_FEATURE___SIZE_TYPE__ nameSize))
+_HAIKU_BUILD_DECLARE_FUNCTION(int, sethostname, (const char *hostName,
+	_HAIKU_BUILD_FEATURE___SIZE_TYPE__ nameSize))
+_HAIKU_BUILD_DECLARE_FUNCTION(int, gethostname, (char *hostName,
+	_HAIKU_BUILD_FEATURE___SIZE_TYPE__ nameSize))
 
 /* tty */
 _HAIKU_BUILD_DECLARE_FUNCTION(int, isatty, (int fd))
 _HAIKU_BUILD_DECLARE_FUNCTION(char*, ttyname, (int fd))
-_HAIKU_BUILD_DECLARE_FUNCTION(int, ttyname_r, (int fd, char *buffer, _HAIKU_BUILD_FEATURE___SIZE_TYPE__ bufferSize))
+_HAIKU_BUILD_DECLARE_FUNCTION(int, ttyname_r, (int fd, char *buffer,
+	_HAIKU_BUILD_FEATURE___SIZE_TYPE__ bufferSize))
 
 /* misc */
-_HAIKU_BUILD_DECLARE_FUNCTION(char*, crypt, (const char *key, const char *salt))
-_HAIKU_BUILD_DECLARE_FUNCTION(void, encrypt, (char block[64], int edflag))
-_HAIKU_BUILD_DECLARE_FUNCTION(int, getopt, (int argc, char *const *argv, const char *shortOpts))
-_HAIKU_BUILD_DECLARE_FUNCTION(void, swab, (const void *src, void *dest, _HAIKU_BUILD_IDENTIFIER(ssize_t) nbytes))
+_HAIKU_BUILD_DECLARE_FUNCTION(char*, crypt, (const char *key,
+	const char *salt))
+_HAIKU_BUILD_DECLARE_FUNCTION(void, encrypt, (char block[64],
+	int edflag))
+_HAIKU_BUILD_DECLARE_FUNCTION(int, getopt, (int argc, char *const *argv,
+	const char *shortOpts))
+_HAIKU_BUILD_DECLARE_FUNCTION(void, swab, (const void *src, void *dest,
+	_HAIKU_BUILD_IDENTIFIER(ssize_t) nbytes))
 
 /* getopt() related external variables */
 _HAIKU_BUILD_DECLARE_VARIABLE(char*, optarg)
