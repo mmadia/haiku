@@ -23,8 +23,8 @@ init_error_map()
 		return;
 
 	#define ADD_ERROR(error) \
-		sToHaikuErrorMap[error] = HAIKU_##error; \
-		sToHostErrorMap[HAIKU_##error] = error;
+		sToHaikuErrorMap[error] = _HAIKU_BUILD_##error; \
+		sToHostErrorMap[_HAIKU_BUILD_##error] = error;
 
 	ADD_ERROR(E2BIG);
 	ADD_ERROR(ECHILD);
