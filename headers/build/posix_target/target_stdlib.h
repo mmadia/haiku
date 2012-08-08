@@ -167,26 +167,20 @@ _HAIKU_BUILD_DECLARE_FUNCTION(int, lcong48_r, (unsigned short int param[7],
 	struct _HAIKU_BUILD_IDENTIFIER(drand48_data) *data))
 
 /* search and sort functions */
-//typedef int (*_compare_function)(const void *, const void *);
-_HAIKU_BUILD_DECLARE_FUNCTION(int*, _compare_function,
-	(const void *, const void *))
+typedef int (*_compare_function)(const void *, const void *);
 
 _HAIKU_BUILD_DECLARE_FUNCTION(void*, bsearch, (const void *key,
 	const void *base, _HAIKU_BUILD_FEATURE___SIZE_TYPE__ numElements,
-		_HAIKU_BUILD_FEATURE___SIZE_TYPE__ sizeOfElement,
-			_haiku_build__compare_function))
+		_HAIKU_BUILD_FEATURE___SIZE_TYPE__ sizeOfElement, _compare_function))
 _HAIKU_BUILD_DECLARE_FUNCTION(int, heapsort, (void *base,
 	_HAIKU_BUILD_FEATURE___SIZE_TYPE__ numElements,
-		_HAIKU_BUILD_FEATURE___SIZE_TYPE__ sizeOfElement,
-			_haiku_build__compare_function))
+		_HAIKU_BUILD_FEATURE___SIZE_TYPE__ sizeOfElement, _compare_function))
 _HAIKU_BUILD_DECLARE_FUNCTION(int, mergesort, (void *base,
 	_HAIKU_BUILD_FEATURE___SIZE_TYPE__ numElements,
-		_HAIKU_BUILD_FEATURE___SIZE_TYPE__ sizeOfElement,
-			_haiku_build__compare_function))
+		_HAIKU_BUILD_FEATURE___SIZE_TYPE__ sizeOfElement, _compare_function))
 _HAIKU_BUILD_DECLARE_FUNCTION(void, qsort, (void *base,
 	_HAIKU_BUILD_FEATURE___SIZE_TYPE__ numElements,
-		_HAIKU_BUILD_FEATURE___SIZE_TYPE__ sizeOfElement,
-			_haiku_build__compare_function))
+		_HAIKU_BUILD_FEATURE___SIZE_TYPE__ sizeOfElement, _compare_function))
 _HAIKU_BUILD_DECLARE_FUNCTION(int, radixsort,
 	(_haiku_build_u_char const **base, int numElements,
 		_haiku_build_u_char const *table, _haiku_build_u_int endByte))
