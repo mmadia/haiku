@@ -9,10 +9,10 @@
 #include <target_limits.h>
 
 
-#define _HAIKU_BUILD_MAXPATHLEN			PATH_MAX
-#define _HAIKU_BUILD_MAXSYMLINKS		SYMLOOP_MAX
+#define _HAIKU_BUILD_MAXPATHLEN			_HAIKU_BUILD_PATH_MAX
+#define _HAIKU_BUILD_MAXSYMLINKS		_HAIKU_BUILD_SYMLOOP_MAX
 
-#define _HAIKU_BUILD_NOFILE				OPEN_MAX
+#define _HAIKU_BUILD_NOFILE				_HAIKU_BUILD_OPEN_MAX
 
 #ifndef _HAIKU_BUILD_MIN
 #	define _HAIKU_BUILD_MIN(a,b)		(((a) < (b)) ? (a) : (b))
@@ -23,7 +23,7 @@
 
 #define _HAIKU_BUILD_ALIGNBYTES			(sizeof(long) - 1)
 #define _HAIKU_BUILD_ALIGN(p) \
-	(((u_long)(p) + _ALIGNBYTES) &~ _ALIGNBYTES)
+	(((u_long)(p) + _ALIGNBYTESALIGNBYTES) &~ _ALIGNBYTESALIGNBYTES)
 
 /* maximum possible length of this machine's hostname */
 #ifndef _HAIKU_BUILD_MAXHOSTNAMELEN
