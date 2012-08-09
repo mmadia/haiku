@@ -25,31 +25,32 @@
 
 /*! make dir and its parents if needed */
 static int
-create_path(const char *path, mode_t mode)
+create_path(const char *path, _haiku_build_mode_t mode)
 {
-	char buffer[B_PATH_NAME_LENGTH + 1];
+	char buffer[_HAIKU_BUILD_B_PATH_NAME_LENGTH + 1];
 	int pathLength;
 	int i = 0;
 
-	if (path == NULL || ((pathLength = strlen(path)) > B_PATH_NAME_LENGTH))
-		return EINVAL;
+	if (path == _HAIKU_BUILD_NULL || ((pathLength = _haiku_build_strlen(path)) > _HAIKU_BUILD_B_PATH_NAME_LENGTH))
+		return _HAIKU_BUILD_EINVAL;
 
 	while (++i < pathLength) {
-		const char *slash = strchr(&path[i], '/');
+		const char *slash = _haiku_build_strchr(&path[i], '/');
+		// TODO: #8730 -- how to handle 'stat'?
 		struct stat st;
 
-		if (slash == NULL)
+		if (slash == _HAIKU_BUILD_NULL)
 			i = pathLength;
 		else if (i != slash - path)
 			i = slash - path;
 		else
 			continue;
 
-		strlcpy(buffer, path, i + 1);
+		_haiku_build_strlcpy(buffer, path, i + 1);
 		if (stat(buffer, &st) < 0) {
-			errno = 0;
-			if (mkdir(buffer, mode) < 0)
-				return errno;
+			_haiku_build_errno = 0;
+			if (_haiku_build_mkdir(buffer, mode) < 0)
+				return _haiku_build_errno;
 		}
 	}
 
@@ -57,40 +58,42 @@ create_path(const char *path, mode_t mode)
 }
 
 
-status_t
-find_directory(directory_which which, dev_t device, bool createIt,
-	char *returnedPath, int32 pathLength)
+_haiku_build_status_t
+find_directory(_HAIKU_BUILD_IDENTIFIER(directory_which) which,
+	_haiku_build_dev_t device, bool createIt, char *returnedPath,
+		_haiku_build_int32 pathLength)
 {
 	// we support only the handful of paths we need
 	const char* path;
 	switch (which) {
-		case B_COMMON_TEMP_DIRECTORY:
+		case _HAIKU_BUILD_IDENTIFIER(B_COMMON_TEMP_DIRECTORY):
 			path = HAIKU_BUILD_GENERATED_DIRECTORY "/tmp";
 			break;
-		case B_COMMON_SETTINGS_DIRECTORY:
+		case _HAIKU_BUILD_IDENTIFIER(B_COMMON_SETTINGS_DIRECTORY):
 			path = HAIKU_BUILD_GENERATED_DIRECTORY "/common/settings";
 			break;
-		case B_COMMON_CACHE_DIRECTORY:
+		case _HAIKU_BUILD_IDENTIFIER(B_COMMON_CACHE_DIRECTORY):
 			path = HAIKU_BUILD_GENERATED_DIRECTORY "/common/cache";
 			break;
-		case B_USER_SETTINGS_DIRECTORY:
+		case _HAIKU_BUILD_IDENTIFIER(B_USER_SETTINGS_DIRECTORY):
 			path = HAIKU_BUILD_GENERATED_DIRECTORY "/user/settings";
 			break;
-		case B_USER_CACHE_DIRECTORY:
+		case _HAIKU_BUILD_IDENTIFIER(B_USER_CACHE_DIRECTORY):
 			path = HAIKU_BUILD_GENERATED_DIRECTORY "/user/cache";
 			break;
 		default:
-			return B_BAD_VALUE;
+			return _HAIKU_BUILD_B_BAD_VALUE;
 	}
 
 	// create, if necessary
-	status_t error = B_OK;
+	_haiku_build_status_t error = _HAIKU_BUILD_B_OK;
+	// TODO: #8730 -- how to handle 'stat'?
 	struct stat st;
 	if (createIt && stat(path, &st) < 0)
 		error = create_path(path, 0755);
 
-	if (error == B_OK)
-		strlcpy(returnedPath, path, pathLength);
+	if (error == _HAIKU_BUILD_B_OK)
+		_haiku_build_strlcpy(returnedPath, path, pathLength);
 
 	return error;
 }
