@@ -17,7 +17,7 @@ extern "C"
 #define _HAIKU_BUILD_EOK		ENOERR	/* some code assumes EOK exists */
 
 _HAIKU_BUILD_DECLARE_FUNCTION(int*, _errnop, (void))
-#define _haiku_build_errno		(*(_errnop()))
+#define _haiku_build_errno		(*(_haiku_build__errnop()))
 
 #ifndef _HAIKU_BUILD_LIBROOT_FUNCTION_WRAPPER
 #	define ENOERR				_HAIKU_BUILD_ENOERR
