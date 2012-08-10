@@ -6,7 +6,7 @@
 #define _SYS_SELECT_H
 
 
-#include <config/target_types.h>
+#include <config_target/target_types.h>
 
 #include <sys/target_time.h>
 #include <target_signal.h>
