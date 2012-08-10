@@ -6,4 +6,4 @@
 
 /* Include GCC's stddef.h. It defines wchar_t. */
 /* NOTE: Included by HaikuHostBuildConfig.h */
-//#include <stddef.h>
+#include <stddef.h>

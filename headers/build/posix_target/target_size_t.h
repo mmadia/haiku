@@ -5,6 +5,8 @@
 #ifndef _SIZE_T_H_
 #define _SIZE_T_H_
 
+#include <stddef.h>
+
 
 /* ATM we don't define ssize_t for GCC2 */
 #if __GNUC__ > 2 && !defined(_HAIKU_BUILD_ssize_t__)
