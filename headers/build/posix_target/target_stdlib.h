@@ -195,7 +195,12 @@ _HAIKU_BUILD_DECLARE_FUNCTION(_HAIKU_BUILD_IDENTIFIER(lldiv_t), lldiv,
 
 /* wide & multibyte string functions */
 _HAIKU_BUILD_DECLARE_FUNCTION(int, mblen, (const char *string, size_t maxSize))
-// TODO: #8730 -- which _HAIKU_BUILD_FEATURE_* for wchar_t?
+/* TODO: #8730 -- _HAIKU_BUILD_FEATURE_* for wchar_t
+	You'll need to add a new one just like for the fixed width integer types,
+	i.e. just add a "PRINT_TYPE_INFO(wchar);" in test_int_types.cpp. Unless, of
+	course, <wchar_t.h> isn't wrapped by FreeBSD. Then you can include it and
+	use wchar_t directly.
+*/
 _HAIKU_BUILD_DECLARE_FUNCTION(int, mbtowc, (wchar_t *pwc,
 	const char *string, size_t maxSize))
 _HAIKU_BUILD_DECLARE_FUNCTION(int, wctomb, (char *string, wchar_t wchar))
