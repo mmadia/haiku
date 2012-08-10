@@ -22,7 +22,7 @@
 #include <map>
 #include <string>
 
-#include <fs_attr.h>
+#include <target_fs_attr.h>
 #include <target_NodeMonitor.h>	// for B_STAT_* flags
 #include <target_syscalls.h>
 

@@ -22,13 +22,13 @@ extern "C" {
 
 _HAIKU_BUILD_DECLARE_FUNCTION(ssize_t, fs_read_attr, (int fd,
 	const char *attribute, _haiku_build_uint32 type, _haiku_build_off_t pos,
-		void *buffer, size_t readBytes)
+		void *buffer, size_t readBytes))
 _HAIKU_BUILD_DECLARE_FUNCTION(ssize_t, fs_write_attr, (int fd,
 	const char *attribute, _haiku_build_uint32 type, haiku_build_off_t pos,
 		const void *buffer, size_t readBytes))
 _HAIKU_BUILD_DECLARE_FUNCTION(int, fs_remove_attr(int fd, const char *attribute))
 _HAIKU_BUILD_DECLARE_FUNCTION(int, fs_stat_attr(int fd, const char *attribute,
-	struct attr_info *attrInfo);
+	struct attr_info *attrInfo))
 
 _HAIKU_BUILD_DECLARE_FUNCTION(int, fs_open_attr(const char *path,
 	const char *attribute, _haiku_build_uint32 type, int openMode))
