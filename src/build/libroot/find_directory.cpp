@@ -36,8 +36,7 @@ create_path(const char *path, _haiku_build_mode_t mode)
 
 	while (++i < pathLength) {
 		const char *slash = _haiku_build_strchr(&path[i], '/');
-		// TODO: #8730 -- how to handle 'stat'?
-		struct stat st;
+		struct _HAIKU_BUILD_IDENTIFIER(stat) st;
 
 		if (slash == _HAIKU_BUILD_NULL)
 			i = pathLength;
@@ -47,7 +46,7 @@ create_path(const char *path, _haiku_build_mode_t mode)
 			continue;
 
 		_haiku_build_strlcpy(buffer, path, i + 1);
-		if (stat(buffer, &st) < 0) {
+		if (_haiku_build_stat(buffer, &st) < 0) {
 			_haiku_build_errno = 0;
 			if (_haiku_build_mkdir(buffer, mode) < 0)
 				return _haiku_build_errno;
@@ -87,9 +86,8 @@ find_directory(_HAIKU_BUILD_IDENTIFIER(directory_which) which,
 
 	// create, if necessary
 	_haiku_build_status_t error = _HAIKU_BUILD_B_OK;
-	// TODO: #8730 -- how to handle 'stat'?
-	struct stat st;
-	if (createIt && stat(path, &st) < 0)
+	struct _HAIKU_BUILD_IDENTIFIER(stat) st;
+	if (createIt && _haiku_build_stat(path, &st) < 0)
 		error = create_path(path, 0755);
 
 	if (error == _HAIKU_BUILD_B_OK)

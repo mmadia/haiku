@@ -10,8 +10,7 @@
 #include <target_time.h>
 
 
-// TODO: #8730 -- how to handle 'stat'?
-struct stat {
+struct _HAIKU_BUILD_IDENTIFIER(stat) {
 	_haiku_build_dev_t			st_dev;			/* device ID that this file resides on */
 	_haiku_build_ino_t			st_ino;			/* this file's serial inode ID */
 	_haiku_build_mode_t			st_mode;		/* file mode (rwx for user, group, etc) */
@@ -115,12 +114,11 @@ _HAIKU_BUILD_DECLARE_FUNCTION(int, chmod,
 _HAIKU_BUILD_DECLARE_FUNCTION(int, fchmod, (int fd, _haiku_build_mode_t mode))
 _HAIKU_BUILD_DECLARE_FUNCTION(int, fchmodat,
 	(int fd, const char *path, _haiku_build_mode_t mode, int flag))
-// TODO: #8730 -- how to handle 'stat'?
-_HAIKU_BUILD_DECLARE_FUNCTION(int, stat, (const char *path, struct stat *st))
-_HAIKU_BUILD_DECLARE_FUNCTION(int, fstat, (int fd, struct stat *st))
-_HAIKU_BUILD_DECLARE_FUNCTION(int, lstat, (const char *path, struct stat *st))
+_HAIKU_BUILD_DECLARE_FUNCTION(int, stat, (const char *path, struct _HAIKU_BUILD_IDENTIFIER(stat) *st))
+_HAIKU_BUILD_DECLARE_FUNCTION(int, fstat, (int fd, struct _HAIKU_BUILD_IDENTIFIER(stat) *st))
+_HAIKU_BUILD_DECLARE_FUNCTION(int, lstat, (const char *path, struct _HAIKU_BUILD_IDENTIFIER(stat) *st))
 _HAIKU_BUILD_DECLARE_FUNCTION(int, fstatat,
-	(int fd, const char *path, struct stat *st, int flag))
+	(int fd, const char *path, struct _HAIKU_BUILD_IDENTIFIER(stat) *st, int flag))
 _HAIKU_BUILD_DECLARE_FUNCTION(int, mkdir,
 	(const char *path, _haiku_build_mode_t mode))
 _HAIKU_BUILD_DECLARE_FUNCTION(int, mkdirat,
