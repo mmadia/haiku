@@ -301,8 +301,7 @@ _HAIKU_BUILD_DECLARE_FUNCTION(int, faccessat,
 
 _HAIKU_BUILD_DECLARE_FUNCTION(int, chdir, (const char *path))
 _HAIKU_BUILD_DECLARE_FUNCTION(int, fchdir, (int fd))
-_HAIKU_BUILD_DECLARE_FUNCTION(char*, getcwd, (char *buffer,
-	_HAIKU_BUILD_FEATURE___SIZE_TYPE__ size))
+_HAIKU_BUILD_DECLARE_FUNCTION(char*, getcwd, (char *buffer, size_t size))
 
 _HAIKU_BUILD_DECLARE_FUNCTION(int, pipe, (int fildes[2]))
 _HAIKU_BUILD_DECLARE_FUNCTION(int, dup, (int fd))
@@ -318,11 +317,9 @@ _HAIKU_BUILD_DECLARE_FUNCTION(int, unlinkat, (int fd, const char *path,
 _HAIKU_BUILD_DECLARE_FUNCTION(int, rmdir, (const char *path))
 
 _HAIKU_BUILD_DECLARE_FUNCTION(_HAIKU_BUILD_IDENTIFIER(ssize_t), readlink,
-	(const char *path, char *buffer,
-		_HAIKU_BUILD_FEATURE___SIZE_TYPE__ bufferSize))
+	(const char *path, char *buffer, size_t bufferSize))
 _HAIKU_BUILD_DECLARE_FUNCTION(_HAIKU_BUILD_IDENTIFIER(ssize_t), readlinkat,
-	(int fd, const char *path, char *buffer,
-		_HAIKU_BUILD_FEATURE___SIZE_TYPE__  bufferSize))
+	(int fd, const char *path, char *buffer, size_t  bufferSize))
 _HAIKU_BUILD_DECLARE_FUNCTION(int, symlink, (const char *toPath,
 	const char *symlinkPath))
 _HAIKU_BUILD_DECLARE_FUNCTION(int, symlinkat, (const char *toPath, int fd,
@@ -335,20 +332,17 @@ _HAIKU_BUILD_DECLARE_FUNCTION(int, truncate, (const char *path,
 _HAIKU_BUILD_DECLARE_FUNCTION(int, ioctl, (int fd, unsigned long op, ...))
 
 _HAIKU_BUILD_DECLARE_FUNCTION(_HAIKU_BUILD_IDENTIFIER(ssize_t), read,
-	(int fd, void *buffer, _HAIKU_BUILD_FEATURE___SIZE_TYPE__ count))
+	(int fd, void *buffer, size_t count))
 _HAIKU_BUILD_DECLARE_FUNCTION(_HAIKU_BUILD_IDENTIFIER(ssize_t), read_pos,
-	(int fd, _haiku_build_off_t pos, void *buffer,
-		_HAIKU_BUILD_FEATURE___SIZE_TYPE__ count))
+	(int fd, _haiku_build_off_t pos, void *buffer, size_t count))
 _HAIKU_BUILD_DECLARE_FUNCTION(_HAIKU_BUILD_IDENTIFIER(ssize_t), pread,
-	(int fd, void *buffer, _HAIKU_BUILD_FEATURE___SIZE_TYPE__ count,
-		_haiku_build_off_t pos))
+	(int fd, void *buffer, size_t count, _haiku_build_off_t pos))
 _HAIKU_BUILD_DECLARE_FUNCTION(_HAIKU_BUILD_IDENTIFIER(ssize_t), write,
-	(int fd, const void *buffer, _HAIKU_BUILD_FEATURE___SIZE_TYPE__ count))
+	(int fd, const void *buffer, size_t count))
 _HAIKU_BUILD_DECLARE_FUNCTION(_HAIKU_BUILD_IDENTIFIER(ssize_t), write_pos,
-	(int fd, _haiku_build_off_t pos, const void *buffer, _HAIKU_BUILD_FEATURE___SIZE_TYPE__ count))
+	(int fd, _haiku_build_off_t pos, const void *buffer, size_t count))
 _HAIKU_BUILD_DECLARE_FUNCTION(_HAIKU_BUILD_IDENTIFIER(ssize_t), pwrite,
-	(int fd, const void *buffer, _HAIKU_BUILD_FEATURE___SIZE_TYPE__ count,
-		_haiku_build_off_t pos))
+	(int fd, const void *buffer, size_t count, _haiku_build_off_t pos))
 _HAIKU_BUILD_DECLARE_FUNCTION(_haiku_build_off_t, lseek, (int fd,
 	_haiku_build_off_t offset, int whence))
 
@@ -374,8 +368,8 @@ _HAIKU_BUILD_DECLARE_FUNCTION(int, getdtablesize, (void))
 _HAIKU_BUILD_DECLARE_FUNCTION(long, sysconf, (int name))
 _HAIKU_BUILD_DECLARE_FUNCTION(long, fpathconf, (int fd, int name))
 _HAIKU_BUILD_DECLARE_FUNCTION(long, pathconf, (const char *path, int name))
-_HAIKU_BUILD_DECLARE_FUNCTION(_HAIKU_BUILD_FEATURE___SIZE_TYPE__, confstr,
-	(int name, char *buf, _HAIKU_BUILD_FEATURE___SIZE_TYPE__ len))
+_HAIKU_BUILD_DECLARE_FUNCTION(size_t, confstr,
+	(int name, char *buf, size_t len))
 _HAIKU_BUILD_DECLARE_FUNCTION(int, lockf, (int fd, int function,
 	_haiku_build_off_t size))
 
@@ -452,20 +446,19 @@ _HAIKU_BUILD_DECLARE_FUNCTION(int, setgroups, (int groupCount,
 	const _haiku_build_gid_t* groupList))
 
 _HAIKU_BUILD_DECLARE_FUNCTION(char*, getlogin, (void))
-_HAIKU_BUILD_DECLARE_FUNCTION(int, getlogin_r, (char *name,
-	_HAIKU_BUILD_FEATURE___SIZE_TYPE__ nameSize))
+_HAIKU_BUILD_DECLARE_FUNCTION(int, getlogin_r, (char *name, size_t nameSize))
 
 /* host name */
 _HAIKU_BUILD_DECLARE_FUNCTION(int, sethostname, (const char *hostName,
-	_HAIKU_BUILD_FEATURE___SIZE_TYPE__ nameSize))
+	size_t nameSize))
 _HAIKU_BUILD_DECLARE_FUNCTION(int, gethostname, (char *hostName,
-	_HAIKU_BUILD_FEATURE___SIZE_TYPE__ nameSize))
+	size_t nameSize))
 
 /* tty */
 _HAIKU_BUILD_DECLARE_FUNCTION(int, isatty, (int fd))
 _HAIKU_BUILD_DECLARE_FUNCTION(char*, ttyname, (int fd))
 _HAIKU_BUILD_DECLARE_FUNCTION(int, ttyname_r, (int fd, char *buffer,
-	_HAIKU_BUILD_FEATURE___SIZE_TYPE__ bufferSize))
+	size_t bufferSize))
 
 /* misc */
 _HAIKU_BUILD_DECLARE_FUNCTION(char*, crypt, (const char *key,

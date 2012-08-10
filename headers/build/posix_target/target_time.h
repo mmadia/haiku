@@ -97,8 +97,8 @@ _HAIKU_BUILD_DECLARE_FUNCTION(struct _HAIKU_BUILD_IDENTIFIER(tm) *,
 		struct _HAIKU_BUILD_IDENTIFIER(tm) *tm))
 _HAIKU_BUILD_DECLARE_FUNCTION(int, nanosleep, (const
 	_HAIKU_BUILD_IDENTIFIER(timespec) *, _HAIKU_BUILD_IDENTIFIER(timespec) *))
-_HAIKU_BUILD_DECLARE_FUNCTION(_HAIKU_BUILD_FEATURE___SIZE_TYPE__, strftime,
-	(char *buffer, _HAIKU_BUILD_FEATURE___SIZE_TYPE__ maxSize, const char *format,
+_HAIKU_BUILD_DECLARE_FUNCTION(size_t, strftime,
+	(char *buffer, size_t maxSize, const char *format,
 		const struct _HAIKU_BUILD_IDENTIFIER(tm) *tm))
 _HAIKU_BUILD_DECLARE_FUNCTION(char *, strptime, (const char *buf,
 	const char *format, struct _HAIKU_BUILD_IDENTIFIER(tm) *tm))

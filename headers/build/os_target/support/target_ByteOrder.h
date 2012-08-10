@@ -114,9 +114,8 @@ extern "C" {
 #endif
 
 _HAIKU_BUILD_DECLARE_FUNCTION(_haiku_build_status_t, swap_data,
-	(_haiku_build_type_code type, void *data,
-		_HAIKU_BUILD_FEATURE___SIZE_TYPE__ length,
-			_HAIKU_BUILD_IDENTIFIER(swap_action) action))
+	(_haiku_build_type_code type, void *data, size_t length,
+		_HAIKU_BUILD_IDENTIFIER(swap_action) action))
 _HAIKU_BUILD_DECLARE_FUNCTION(bool, is_type_swapped,
 	(_haiku_build_type_code type))
 

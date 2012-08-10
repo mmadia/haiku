@@ -52,15 +52,13 @@ extern "C" {
 
 /* memory allocation (see malloc.h for additional defines & prototypes) */
 _HAIKU_BUILD_DECLARE_FUNCTION(void*, calloc,
-	(_HAIKU_BUILD_FEATURE___SIZE_TYPE__ numElements,
-		_HAIKU_BUILD_FEATURE___SIZE_TYPE__ size))
+	(size_t numElements, size_t size))
 _HAIKU_BUILD_DECLARE_FUNCTION(void, free, (void *pointer))
-_HAIKU_BUILD_DECLARE_FUNCTION(void*, malloc, (_HAIKU_BUILD_FEATURE___SIZE_TYPE__ size))
+_HAIKU_BUILD_DECLARE_FUNCTION(void*, malloc, (size_t size))
 _HAIKU_BUILD_DECLARE_FUNCTION(int, posix_memalign, (void **_pointer,
-	_HAIKU_BUILD_FEATURE___SIZE_TYPE__ alignment,
-		_HAIKU_BUILD_FEATURE___SIZE_TYPE__ size))
+	size_t alignment, size_t size))
 _HAIKU_BUILD_DECLARE_FUNCTION(void*, realloc, (void *oldPointer,
-	_HAIKU_BUILD_FEATURE___SIZE_TYPE__ newSize))
+	size_t newSize))
 
 /* process termination */
 _HAIKU_BUILD_DECLARE_FUNCTION(void, abort, (void))
@@ -127,12 +125,10 @@ _HAIKU_BUILD_DECLARE_FUNCTION(int, random_r,
 _HAIKU_BUILD_DECLARE_FUNCTION(int, srandom_r,
 	(unsigned int seed, struct _HAIKU_BUILD_IDENTIFIER(random_data) *data))
 _HAIKU_BUILD_DECLARE_FUNCTION(char*, initstate,
-	(unsigned int seed, char *state, _HAIKU_BUILD_FEATURE___SIZE_TYPE__ size))
-_HAIKU_BUILD_DECLARE_FUNCTION(char* ,setstate,
-	(char *state))
+	(unsigned int seed, char *state, size_t size))
+_HAIKU_BUILD_DECLARE_FUNCTION(char*, setstate, (char *state))
 _HAIKU_BUILD_DECLARE_FUNCTION(int, initstate_r,
-	(unsigned int seed, void *stateBuffer,
-		_HAIKU_BUILD_FEATURE___SIZE_TYPE__ stateLength,
+	(unsigned int seed, void *stateBuffer, size_t stateLength,
 			struct _HAIKU_BUILD_IDENTIFIER(random_data) *data))
 _HAIKU_BUILD_DECLARE_FUNCTION(int, setstate_r,
 	(void *stateBuffer, struct _HAIKU_BUILD_IDENTIFIER(random_data) *data))
@@ -170,17 +166,14 @@ _HAIKU_BUILD_DECLARE_FUNCTION(int, lcong48_r, (unsigned short int param[7],
 typedef int (*_compare_function)(const void *, const void *);
 
 _HAIKU_BUILD_DECLARE_FUNCTION(void*, bsearch, (const void *key,
-	const void *base, _HAIKU_BUILD_FEATURE___SIZE_TYPE__ numElements,
-		_HAIKU_BUILD_FEATURE___SIZE_TYPE__ sizeOfElement, _compare_function))
+	const void *base, size_t numElements, size_t sizeOfElement,
+		_compare_function))
 _HAIKU_BUILD_DECLARE_FUNCTION(int, heapsort, (void *base,
-	_HAIKU_BUILD_FEATURE___SIZE_TYPE__ numElements,
-		_HAIKU_BUILD_FEATURE___SIZE_TYPE__ sizeOfElement, _compare_function))
+	size_t numElements, size_t sizeOfElement, _compare_function))
 _HAIKU_BUILD_DECLARE_FUNCTION(int, mergesort, (void *base,
-	_HAIKU_BUILD_FEATURE___SIZE_TYPE__ numElements,
-		_HAIKU_BUILD_FEATURE___SIZE_TYPE__ sizeOfElement, _compare_function))
+	size_t numElements, size_t sizeOfElement, _compare_function))
 _HAIKU_BUILD_DECLARE_FUNCTION(void, qsort, (void *base,
-	_HAIKU_BUILD_FEATURE___SIZE_TYPE__ numElements,
-		_HAIKU_BUILD_FEATURE___SIZE_TYPE__ sizeOfElement, _compare_function))
+	size_t numElements, size_t sizeOfElement, _compare_function))
 _HAIKU_BUILD_DECLARE_FUNCTION(int, radixsort,
 	(_haiku_build_u_char const **base, int numElements,
 		_haiku_build_u_char const *table, _haiku_build_u_int endByte))
@@ -201,18 +194,15 @@ _HAIKU_BUILD_DECLARE_FUNCTION(_HAIKU_BUILD_IDENTIFIER(lldiv_t), lldiv,
 	(long long numerator, long long denominator))
 
 /* wide & multibyte string functions */
-_HAIKU_BUILD_DECLARE_FUNCTION(int, mblen,
-	(const char *string, _HAIKU_BUILD_FEATURE___SIZE_TYPE__ maxSize))
+_HAIKU_BUILD_DECLARE_FUNCTION(int, mblen, (const char *string, size_t maxSize))
 // TODO: #8730 -- which _HAIKU_BUILD_FEATURE_* for wchar_t?
 _HAIKU_BUILD_DECLARE_FUNCTION(int, mbtowc, (wchar_t *pwc,
-	const char *string, _HAIKU_BUILD_FEATURE___SIZE_TYPE__ maxSize))
+	const char *string, size_t maxSize))
 _HAIKU_BUILD_DECLARE_FUNCTION(int, wctomb, (char *string, wchar_t wchar))
-_HAIKU_BUILD_DECLARE_FUNCTION(_HAIKU_BUILD_FEATURE___SIZE_TYPE__, mbstowcs,
-	(wchar_t *pwcs, const char *string,
-		_HAIKU_BUILD_FEATURE___SIZE_TYPE__ maxSize))
-_HAIKU_BUILD_DECLARE_FUNCTION(_HAIKU_BUILD_FEATURE___SIZE_TYPE__, wcstombs,
-	(char *string, const wchar_t *pwcs,
-		_HAIKU_BUILD_FEATURE___SIZE_TYPE__ maxSize))
+_HAIKU_BUILD_DECLARE_FUNCTION(size_t, mbstowcs,
+	(wchar_t *pwcs, const char *string, size_t maxSize))
+_HAIKU_BUILD_DECLARE_FUNCTION(size_t, wcstombs,
+	(char *string, const wchar_t *pwcs, size_t maxSize))
 
 /* crypt */
 _HAIKU_BUILD_DECLARE_FUNCTION(void, setkey, (const char *key))

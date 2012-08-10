@@ -18,10 +18,8 @@ extern "C" {
 
 // NOTE: #8730 -- uncertain if these functions need to have the same names as
 //		the macro definitions.
-_HAIKU_BUILD_DECLARE_FUNCTION(void*, __alloca,
-	(_HAIKU_BUILD_FEATURE___SIZE_TYPE__ __size))
-_HAIKU_BUILD_DECLARE_FUNCTION(void*, alloca,
-	(_HAIKU_BUILD_FEATURE___SIZE_TYPE__ __size))
+_HAIKU_BUILD_DECLARE_FUNCTION(void*, __alloca, (size_t __size))
+_HAIKU_BUILD_DECLARE_FUNCTION(void*, alloca, (size_t __size))
 
 #ifdef __cplusplus
 }
