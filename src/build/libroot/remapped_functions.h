@@ -6,10 +6,10 @@
 #define REMAPPED_FUNCTIONS_H
 
 
-#include <fcntl.h>
-#include <stdio.h>
-#include <unistd.h>
-#include <sys/stat.h>
+#include <target_fcntl.h>
+#include <target_stdio.h>
+#include <target_unistd.h>
+#include <sys/target_stat.h>
 
 
 #ifdef __cplusplus

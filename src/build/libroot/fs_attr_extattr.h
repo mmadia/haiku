@@ -9,8 +9,8 @@
 */
 
 
-#include <string.h>
-#include <sys/extattr.h>
+#include <target_string.h>
+#include <sys/target_extattr.h>
 
 
 // the namespace all attributes live in

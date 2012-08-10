@@ -1,11 +1,11 @@
 /*
- * Copyright 2005-2008, Haiku, Inc. All Rights Reserved.
+ * Copyright 2005-2012, Haiku, Inc. All Rights Reserved.
  * Distributed under the terms of the MIT License.
  */
 #ifndef NODE_REF_H
 #define NODE_REF_H
 
-#include <sys/stat.h>
+#include <sys/target_stat.h>
 
 namespace BPrivate {
 
@@ -24,7 +24,7 @@ struct NodeRef {
 		  node(st.st_ino)
 	{
 	}
-	
+
 	NodeRef(const NodeRef &other)
 	{
 		device = other.device;

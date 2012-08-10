@@ -5,7 +5,7 @@
 #ifndef FS_FREEBSD_H
 #define FS_FREEBSD_H
 
-#include <sys/uio.h>
+#include <sys/target_uio.h>
 
 
 ssize_t haiku_freebsd_read(int fd, void *buf, size_t nbytes);

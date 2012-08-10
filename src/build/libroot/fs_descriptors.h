@@ -5,12 +5,12 @@
 #ifndef FS_DESCRIPTORS_H
 #define FS_DESCRIPTORS_H
 
-#include <dirent.h>
+#include <target_dirent.h>
 
 #include <string>
 
-#include <StorageDefs.h>
-#include <SupportDefs.h>
+#include <target_StorageDefs.h>
+#include <target_SupportDefs.h>
 
 #include "NodeRef.h"
 

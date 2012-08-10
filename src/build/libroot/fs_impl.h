@@ -3,13 +3,13 @@
 
 #include <string>
 
-#include <SupportDefs.h>
+#include <target_SupportDefs.h>
 
 namespace BPrivate {
 
 // defined in fs.cpp
 
-status_t get_path(int fd, const char *name, std::string &path);
+_haiku_build_status_t get_path(int fd, const char *name, std::string &path);
 
 }	// namespace BPrivate
 
