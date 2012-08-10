@@ -44,7 +44,7 @@ extern "C" {
 
 _HAIKU_BUILD_DECLARE_FUNCTION(DIR*, fdopendir, (int fd))
 _HAIKU_BUILD_DECLARE_FUNCTION(DIR*, opendir, (const char* dirName))
-struct _HAIKU_BUILD_IDENTIFIER(dirent_t)*	readdir(DIR* dir);
+_HAIKU_BUILD_DECLARE_FUNCTION(struct _HAIKU_BUILD_IDENTIFIER(dirent_t)*, readdir, (DIR* dir))
 _HAIKU_BUILD_DECLARE_FUNCTION(int, readdir_r, (DIR* dir, struct _HAIKU_BUILD_IDENTIFIER(dirent_t)* entry,
 					struct _HAIKU_BUILD_IDENTIFIER(dirent_t)** _result))
 _HAIKU_BUILD_DECLARE_FUNCTION(int, closedir, (DIR* dir))
