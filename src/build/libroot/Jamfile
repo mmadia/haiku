@@ -22,6 +22,7 @@ UsePrivateBuildHeaders kernel system ;
 
 	defines = [ FDefines
 		HAIKU_BUILD_GENERATED_DIRECTORY="\\\"$(HAIKU_OUTPUT_DIR)\\\""
+		_HAIKU_BUILD_LIBROOT_FUNCTION_WRAPPER=1
 	] ;
 	ObjectC++Flags find_directory.cpp : $(defines) ;
 
@@ -36,6 +37,7 @@ UsePrivateBuildHeaders kernel system ;
 
 	defines = [ FDefines _HAIKU_BUILD_LIBROOT_FUNCTION_WRAPPER=1 ] ;
 	ObjectC++Flags atomic.cpp : $(defines) ;
+	ObjectC++Flags byteorder.cpp : $(defines) ;
 }
 
 # locate the library
