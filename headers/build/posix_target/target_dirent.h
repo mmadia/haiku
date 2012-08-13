@@ -18,7 +18,8 @@ typedef struct _HAIKU_BUILD_IDENTIFIER(dirent) {
 	char			d_name[1];	/* name of the entry (null byte terminated) */
 } _HAIKU_BUILD_IDENTIFIER(dirent_t);
 
-typedef struct _HAIKU_BUILD_IDENTIFIER(__DIR) DIR;
+struct _HAIKU_BUILD_IDENTIFIER(_DIR);
+typedef _HAIKU_BUILD_IDENTIFIER(_DIR) _HAIKU_BUILD_IDENTIFIER(DIR);
 
 #ifndef _HAIKU_BUILD_MAXNAMLEN
 #	ifdef  _HAIKU_BUILD_NAME_MAX
