@@ -107,7 +107,8 @@ typedef _haiku_build_off_t	fpos_t;
 	Start with an empty file and only add something, if actually used.
 */
 //#include <target_stdio_pre.h>
-typedef struct _HAIKU_BUILD_IDENTIFIER(_IO_FILE) FILE;
+struct _HAIKU_BUILD_IDENTIFIER(_FILE);
+typedef _HAIKU_BUILD_IDENTIFIER(_FILE) _HAIKU_BUILD_IDENTIFIER(FILE);
 
 #define __HAIKU_BUILD_PRINTFLIKE(format, varargs) __attribute__ ((__format__ (__printf__, format, varargs)))
 #define __HAIKU_BUILD_SCANFLIKE(format, varargs) __attribute__((__format__ (__scanf__, format, varargs)))
@@ -117,9 +118,9 @@ typedef struct _HAIKU_BUILD_IDENTIFIER(_IO_FILE) FILE;
 #endif /* _HAIKU_BUILD_LIBROOT_FUNCTION_WRAPPER */
 // end of stdio_pre.h
 
-_HAIKU_BUILD_DECLARE_VARIABLE(FILE*, stdin)
-_HAIKU_BUILD_DECLARE_VARIABLE(FILE*, stdout)
-_HAIKU_BUILD_DECLARE_VARIABLE(FILE*, stderr)
+_HAIKU_BUILD_DECLARE_VARIABLE(_HAIKU_BUILD_IDENTIFIER(FILE)*, stdin)
+_HAIKU_BUILD_DECLARE_VARIABLE(_HAIKU_BUILD_IDENTIFIER(FILE)*, stdout)
+_HAIKU_BUILD_DECLARE_VARIABLE(_HAIKU_BUILD_IDENTIFIER(FILE)*, stderr)
 
 
 #ifdef __cplusplus
@@ -127,104 +128,102 @@ extern "C" {
 #endif
 
 /* file operations */
-_HAIKU_BUILD_DECLARE_FUNCTION(FILE*, fopen, (const char *name, const char *mode))
-_HAIKU_BUILD_DECLARE_FUNCTION(FILE*, freopen, (const char *name, const char *mode, FILE *stream))
-_HAIKU_BUILD_DECLARE_FUNCTION(FILE*, fdopen, (int fd, const char *mode))
-_HAIKU_BUILD_DECLARE_FUNCTION(int, fclose, (FILE *stream))
+_HAIKU_BUILD_DECLARE_FUNCTION(_HAIKU_BUILD_IDENTIFIER(FILE)*, fopen, (const char *name, const char *mode))
+_HAIKU_BUILD_DECLARE_FUNCTION(_HAIKU_BUILD_IDENTIFIER(FILE)*, freopen, (const char *name, const char *mode, _HAIKU_BUILD_IDENTIFIER(FILE) *stream))
+_HAIKU_BUILD_DECLARE_FUNCTION(_HAIKU_BUILD_IDENTIFIER(FILE)*, fdopen, (int fd, const char *mode))
+_HAIKU_BUILD_DECLARE_FUNCTION(int, fclose, (_HAIKU_BUILD_IDENTIFIER(FILE) *stream))
 
-_HAIKU_BUILD_DECLARE_FUNCTION(int, fileno, (FILE *stream))
-_HAIKU_BUILD_DECLARE_FUNCTION(int, fileno_unlocked, (FILE *stream))
+_HAIKU_BUILD_DECLARE_FUNCTION(int, fileno, (_HAIKU_BUILD_IDENTIFIER(FILE) *stream))
+_HAIKU_BUILD_DECLARE_FUNCTION(int, fileno_unlocked, (_HAIKU_BUILD_IDENTIFIER(FILE) *stream))
 
-_HAIKU_BUILD_DECLARE_FUNCTION(int, ferror, (FILE *stream))
-_HAIKU_BUILD_DECLARE_FUNCTION(int, ferror_unlocked, (FILE *stream))
-_HAIKU_BUILD_DECLARE_FUNCTION(void, clearerr, (FILE *stream))
-_HAIKU_BUILD_DECLARE_FUNCTION(void, clearerr_unlocked, (FILE *stream))
+_HAIKU_BUILD_DECLARE_FUNCTION(int, ferror, (_HAIKU_BUILD_IDENTIFIER(FILE) *stream))
+_HAIKU_BUILD_DECLARE_FUNCTION(int, ferror_unlocked, (_HAIKU_BUILD_IDENTIFIER(FILE) *stream))
+_HAIKU_BUILD_DECLARE_FUNCTION(void, clearerr, (_HAIKU_BUILD_IDENTIFIER(FILE) *stream))
+_HAIKU_BUILD_DECLARE_FUNCTION(void, clearerr_unlocked, (_HAIKU_BUILD_IDENTIFIER(FILE) *stream))
 
-_HAIKU_BUILD_DECLARE_FUNCTION(int, feof, (FILE *stream))
-_HAIKU_BUILD_DECLARE_FUNCTION(int, feof_unlocked, (FILE *stream))
+_HAIKU_BUILD_DECLARE_FUNCTION(int, feof, (_HAIKU_BUILD_IDENTIFIER(FILE) *stream))
+_HAIKU_BUILD_DECLARE_FUNCTION(int, feof_unlocked, (_HAIKU_BUILD_IDENTIFIER(FILE) *stream))
 
-_HAIKU_BUILD_DECLARE_FUNCTION(void, flockfile, (FILE *stream))
-_HAIKU_BUILD_DECLARE_FUNCTION(void, funlockfile, (FILE *stream))
-_HAIKU_BUILD_DECLARE_FUNCTION(int, ftrylockfile, (FILE *stream))
+_HAIKU_BUILD_DECLARE_FUNCTION(void, flockfile, (_HAIKU_BUILD_IDENTIFIER(FILE) *stream))
+_HAIKU_BUILD_DECLARE_FUNCTION(void, funlockfile, (_HAIKU_BUILD_IDENTIFIER(FILE) *stream))
+_HAIKU_BUILD_DECLARE_FUNCTION(int, ftrylockfile, (_HAIKU_BUILD_IDENTIFIER(FILE) *stream))
 
 _HAIKU_BUILD_DECLARE_FUNCTION(int, remove, (const char *name))
 _HAIKU_BUILD_DECLARE_FUNCTION(int, rename, (const char *from, const char *to))
 _HAIKU_BUILD_DECLARE_FUNCTION(int, renameat, (int fromFD, const char *from, int toFD, const char *to))
 
 /* pipes */
-_HAIKU_BUILD_DECLARE_FUNCTION(FILE*, popen, (const char *command, const char *mode))
-_HAIKU_BUILD_DECLARE_FUNCTION(int, pclose, (FILE *stream))
+_HAIKU_BUILD_DECLARE_FUNCTION(_HAIKU_BUILD_IDENTIFIER(FILE)*, popen, (const char *command, const char *mode))
+_HAIKU_BUILD_DECLARE_FUNCTION(int, pclose, (_HAIKU_BUILD_IDENTIFIER(FILE) *stream))
 _HAIKU_BUILD_DECLARE_FUNCTION(void, perror, (const char *errorPrefix))
 
 /* memory streams */
-_HAIKU_BUILD_DECLARE_FUNCTION(FILE*, fmemopen, (void *buf, size_t size, const char *mode))
-_HAIKU_BUILD_DECLARE_FUNCTION(FILE*, open_memstream, (char **buf, size_t *size))
+_HAIKU_BUILD_DECLARE_FUNCTION(_HAIKU_BUILD_IDENTIFIER(FILE)*, fmemopen, (void *buf, size_t size, const char *mode))
+_HAIKU_BUILD_DECLARE_FUNCTION(_HAIKU_BUILD_IDENTIFIER(FILE)*, open_memstream, (char **buf, size_t *size))
 
 /* file I/O */
-_HAIKU_BUILD_DECLARE_FUNCTION(int, fflush, (FILE *stream))
-_HAIKU_BUILD_DECLARE_FUNCTION(int, fflush_unlocked, (FILE *stream))
-_HAIKU_BUILD_DECLARE_FUNCTION(int, fpurge, (FILE *stream))
+_HAIKU_BUILD_DECLARE_FUNCTION(int, fflush, (_HAIKU_BUILD_IDENTIFIER(FILE) *stream))
+_HAIKU_BUILD_DECLARE_FUNCTION(int, fflush_unlocked, (_HAIKU_BUILD_IDENTIFIER(FILE) *stream))
+_HAIKU_BUILD_DECLARE_FUNCTION(int, fpurge, (_HAIKU_BUILD_IDENTIFIER(FILE) *stream))
 
-_HAIKU_BUILD_DECLARE_FUNCTION(int, fgetpos, (FILE *stream, fpos_t *position))
-_HAIKU_BUILD_DECLARE_FUNCTION(int, fsetpos, (FILE *stream, const fpos_t *position))
-_HAIKU_BUILD_DECLARE_FUNCTION(int, fseek, (FILE *stream, long offset, int seekType))
-_HAIKU_BUILD_DECLARE_FUNCTION(int, fseeko, (FILE *stream, off_t offset, int seekType))
-_HAIKU_BUILD_DECLARE_FUNCTION(int, _fseek, (FILE *stream, fpos_t offset, int seekType))
-_HAIKU_BUILD_DECLARE_FUNCTION(long, ftell, (FILE *stream))
-_HAIKU_BUILD_DECLARE_FUNCTION(_haiku_build_off_t, ftello, (FILE *stream))
-_HAIKU_BUILD_DECLARE_FUNCTION(_haiku_build_fpos_t, _ftell, (FILE *stream))
+_HAIKU_BUILD_DECLARE_FUNCTION(int, fgetpos, (_HAIKU_BUILD_IDENTIFIER(FILE) *stream, fpos_t *position))
+_HAIKU_BUILD_DECLARE_FUNCTION(int, fsetpos, (_HAIKU_BUILD_IDENTIFIER(FILE) *stream, const fpos_t *position))
+_HAIKU_BUILD_DECLARE_FUNCTION(int, fseek, (_HAIKU_BUILD_IDENTIFIER(FILE) *stream, long offset, int seekType))
+_HAIKU_BUILD_DECLARE_FUNCTION(int, fseeko, (_HAIKU_BUILD_IDENTIFIER(FILE) *stream, off_t offset, int seekType))
+_HAIKU_BUILD_DECLARE_FUNCTION(int, _fseek, (_HAIKU_BUILD_IDENTIFIER(FILE) *stream, fpos_t offset, int seekType))
+_HAIKU_BUILD_DECLARE_FUNCTION(long, ftell, (_HAIKU_BUILD_IDENTIFIER(FILE) *stream))
+_HAIKU_BUILD_DECLARE_FUNCTION(_haiku_build_off_t, ftello, (_HAIKU_BUILD_IDENTIFIER(FILE) *stream))
+_HAIKU_BUILD_DECLARE_FUNCTION(_haiku_build_fpos_t, _ftell, (_HAIKU_BUILD_IDENTIFIER(FILE) *stream))
 
-_HAIKU_BUILD_DECLARE_FUNCTION(void, rewind, (FILE *stream))
+_HAIKU_BUILD_DECLARE_FUNCTION(void, rewind, (_HAIKU_BUILD_IDENTIFIER(FILE) *stream))
 
-_HAIKU_BUILD_DECLARE_FUNCTION(void, setbuf, (FILE *file, char *buff))
-_HAIKU_BUILD_DECLARE_FUNCTION(int, setvbuf, (FILE *file, char *buff, int mode, size_t size))
-_HAIKU_BUILD_DECLARE_FUNCTION(int, setbuffer, (FILE *stream, char *buf, size_t size))
-_HAIKU_BUILD_DECLARE_FUNCTION(int, setlinebuf, (FILE *stream))
+_HAIKU_BUILD_DECLARE_FUNCTION(void, setbuf, (_HAIKU_BUILD_IDENTIFIER(FILE) *file, char *buff))
+_HAIKU_BUILD_DECLARE_FUNCTION(int, setvbuf, (_HAIKU_BUILD_IDENTIFIER(FILE) *file, char *buff, int mode, size_t size))
+_HAIKU_BUILD_DECLARE_FUNCTION(int, setbuffer, (_HAIKU_BUILD_IDENTIFIER(FILE) *stream, char *buf, size_t size))
+_HAIKU_BUILD_DECLARE_FUNCTION(int, setlinebuf, (_HAIKU_BUILD_IDENTIFIER(FILE) *stream))
 
-_HAIKU_BUILD_DECLARE_FUNCTION(size_t, fwrite, (const void *buffer, size_t size, size_t numItems, FILE *stream))
-_HAIKU_BUILD_DECLARE_FUNCTION(size_t, fread, (void *buffer, size_t size, size_t numItems, FILE *stream))
+_HAIKU_BUILD_DECLARE_FUNCTION(size_t, fwrite, (const void *buffer, size_t size, size_t numItems, _HAIKU_BUILD_IDENTIFIER(FILE) *stream))
+_HAIKU_BUILD_DECLARE_FUNCTION(size_t, fread, (void *buffer, size_t size, size_t numItems, _HAIKU_BUILD_IDENTIFIER(FILE) *stream))
 
-_HAIKU_BUILD_DECLARE_FUNCTION(int, putc, (int c, FILE *stream))
+_HAIKU_BUILD_DECLARE_FUNCTION(int, putc, (int c, _HAIKU_BUILD_IDENTIFIER(FILE) *stream))
 _HAIKU_BUILD_DECLARE_FUNCTION(int, putchar(int c))
-_HAIKU_BUILD_DECLARE_FUNCTION(int, putc_unlocked, (int c, FILE *stream))
 _HAIKU_BUILD_DECLARE_FUNCTION(int, putchar_unlocked, (int c))
-_HAIKU_BUILD_DECLARE_FUNCTION(int, fputc, (int c, FILE *stream))
-_HAIKU_BUILD_DECLARE_FUNCTION(int, fputc_unlocked, (int c, FILE *stream))
+_HAIKU_BUILD_DECLARE_FUNCTION(int, fputc, (int c, _HAIKU_BUILD_IDENTIFIER(FILE) *stream))
+_HAIKU_BUILD_DECLARE_FUNCTION(int, fputc_unlocked, (int c, _HAIKU_BUILD_IDENTIFIER(FILE) *stream))
 _HAIKU_BUILD_DECLARE_FUNCTION(int, puts, (const char *string))
-_HAIKU_BUILD_DECLARE_FUNCTION(int, fputs, (const char *string, FILE *stream))
+_HAIKU_BUILD_DECLARE_FUNCTION(int, fputs, (const char *string, _HAIKU_BUILD_IDENTIFIER(FILE) *stream))
 
-_HAIKU_BUILD_DECLARE_FUNCTION(int, getc, (FILE *stream))
-_HAIKU_BUILD_DECLARE_FUNCTION(int, getc_unlocked, (FILE *stream))
-_HAIKU_BUILD_DECLARE_FUNCTION(int, ungetc, (int c, FILE *stream))
+_HAIKU_BUILD_DECLARE_FUNCTION(int, getc, (_HAIKU_BUILD_IDENTIFIER(FILE) *stream))
+_HAIKU_BUILD_DECLARE_FUNCTION(int, ungetc, (int c, _HAIKU_BUILD_IDENTIFIER(FILE) *stream))
 _HAIKU_BUILD_DECLARE_FUNCTION(int, getchar, (void))
 _HAIKU_BUILD_DECLARE_FUNCTION(int, getchar_unlocked, (void))
-_HAIKU_BUILD_DECLARE_FUNCTION(int, fgetc, (FILE *stream))
+_HAIKU_BUILD_DECLARE_FUNCTION(int, fgetc, (_HAIKU_BUILD_IDENTIFIER(FILE) *stream))
 _HAIKU_BUILD_DECLARE_FUNCTION(char*, gets, (char *buffer))
-_HAIKU_BUILD_DECLARE_FUNCTION(char*, fgets, (char *string, int stringLength, FILE *stream))
+_HAIKU_BUILD_DECLARE_FUNCTION(char*, fgets, (char *string, int stringLength, _HAIKU_BUILD_IDENTIFIER(FILE) *stream))
 
 _HAIKU_BUILD_DECLARE_FUNCTION(ssize_t, getdelim, (char **_line, size_t *_length, int delimiter,
-					FILE *stream))
-_HAIKU_BUILD_DECLARE_FUNCTION(ssize_t, getline, (char **_line, size_t *_length, FILE *stream))
+					_HAIKU_BUILD_IDENTIFIER(FILE) *stream))
+_HAIKU_BUILD_DECLARE_FUNCTION(ssize_t, getline, (char **_line, size_t *_length, _HAIKU_BUILD_IDENTIFIER(FILE) *stream))
 
 /* formatted I/O */
 /* TODO: #8730 */
 _HAIKU_BUILD_DECLARE_FUNCTION_ETC(int, printf, (char const *format, ...), __PRINTFLIKE(1,2))
-_HAIKU_BUILD_DECLARE_FUNCTION_ETC(int, fprintf, (FILE *stream, char const *format, ...), __PRINTFLIKE(2,3))
+_HAIKU_BUILD_DECLARE_FUNCTION_ETC(int, fprintf, (_HAIKU_BUILD_IDENTIFIER(FILE) *stream, char const *format, ...), __PRINTFLIKE(2,3))
 _HAIKU_BUILD_DECLARE_FUNCTION_ETC(int, sprintf, (char *string, char const *format, ...), __PRINTFLIKE(2,3))
 _HAIKU_BUILD_DECLARE_FUNCTION_ETC(int, snprintf, (char *string, size_t size, char const *format, ...), __PRINTFLIKE(3,4))
 _HAIKU_BUILD_DECLARE_FUNCTION_ETC(int, asprintf, (char **ret, char const *format, ...), __PRINTFLIKE(2,3))
 _HAIKU_BUILD_DECLARE_FUNCTION(int, vprintf, (char const *format, va_list ap))
-_HAIKU_BUILD_DECLARE_FUNCTION(int, vfprintf, (FILE *stream, char const *format, va_list ap))
+_HAIKU_BUILD_DECLARE_FUNCTION(int, vfprintf, (_HAIKU_BUILD_IDENTIFIER(FILE) *stream, char const *format, va_list ap))
 _HAIKU_BUILD_DECLARE_FUNCTION(int, vsprintf, (char *string, char const *format, va_list ap))
 _HAIKU_BUILD_DECLARE_FUNCTION(int, vsnprintf, (char *string, size_t size, char const *format, va_list ap))
 _HAIKU_BUILD_DECLARE_FUNCTION(int, vasprintf, (char **ret, char const *format, va_list ap))
 
 _HAIKU_BUILD_DECLARE_FUNCTION(int, scanf, (char const *format, ...))
-_HAIKU_BUILD_DECLARE_FUNCTION(int, fscanf, (FILE *stream, char const *format, ...))
+_HAIKU_BUILD_DECLARE_FUNCTION(int, fscanf, (_HAIKU_BUILD_IDENTIFIER(FILE) *stream, char const *format, ...))
 _HAIKU_BUILD_DECLARE_FUNCTION(int, sscanf, (char const *str, char const *format, ...))
 _HAIKU_BUILD_DECLARE_FUNCTION(int, vscanf, (char const *format, va_list ap))
 _HAIKU_BUILD_DECLARE_FUNCTION(int, vsscanf, (char const *str, char const *format, va_list ap))
-_HAIKU_BUILD_DECLARE_FUNCTION(int, vfscanf, (FILE *stream, char const *format, va_list ap))
+_HAIKU_BUILD_DECLARE_FUNCTION(int, vfscanf, (_HAIKU_BUILD_IDENTIFIER(FILE) *stream, char const *format, va_list ap))
 
 /* misc */
 _HAIKU_BUILD_DECLARE_FUNCTION(char*, ctermid, (char *controllingTerminal))
@@ -232,25 +231,14 @@ _HAIKU_BUILD_DECLARE_FUNCTION(char*, cuserid, (char *s))
 
 /* temporary files */
 _HAIKU_BUILD_DECLARE_FUNCTION(char*, tempnam, (char const *path, char const *prefix))
-_HAIKU_BUILD_DECLARE_FUNCTION(FILE*, tmpfile,(void))
+_HAIKU_BUILD_DECLARE_FUNCTION(_HAIKU_BUILD_IDENTIFIER(FILE)*, tmpfile,(void))
 _HAIKU_BUILD_DECLARE_FUNCTION(char*, tmpnam,(char *nameBuffer))
 _HAIKU_BUILD_DECLARE_FUNCTION(char*, tmpnam_r, (char *nameBuffer))
 
 // #include <target_stdio_post.h>
-// NOTE: #8730 -- uncertain on these changes pertaining to including stdio_post.h
-#ifdef __cplusplus
-extern "C" {
-#endif
-
-_HAIKU_BUILD_DECLARE_VARIABLE(char, _single_threaded)
-	/* this boolean value is true (1) if there is only the main thread
-	 * running - as soon as you spawn the first thread, it's set to
-	 * false (0) */
-
-#ifdef __cplusplus
-}
-#endif
-
+/*	TODO: #8730 -- These should be defined as functions instead (check the
+	POSIX specs for their signature).
+*/
 #define _haiku_build_getc(stream) \
 	(_single_threaded ? _haiku_build_getc_unlocked(stream) : _haiku_build_getc(stream))
 #define _haiku_build_putc(c, stream) \
