@@ -43,23 +43,36 @@ typedef _HAIKU_BUILD_IDENTIFIER(_DIR) _HAIKU_BUILD_IDENTIFIER(DIR);
 extern "C" {
 #endif
 
-_HAIKU_BUILD_DECLARE_FUNCTION(_HAIKU_BUILD_IDENTIFIER(DIR)*, fdopendir, (int fd))
-_HAIKU_BUILD_DECLARE_FUNCTION(_HAIKU_BUILD_IDENTIFIER(DIR)*, opendir, (const char* dirName))
-_HAIKU_BUILD_DECLARE_FUNCTION(struct _HAIKU_BUILD_IDENTIFIER(dirent_t)*, readdir, (_HAIKU_BUILD_IDENTIFIER(DIR)* dir))
-_HAIKU_BUILD_DECLARE_FUNCTION(int, readdir_r, (_HAIKU_BUILD_IDENTIFIER(DIR)* dir, struct _HAIKU_BUILD_IDENTIFIER(dirent_t)* entry,
-					struct _HAIKU_BUILD_IDENTIFIER(dirent_t)** _result))
-_HAIKU_BUILD_DECLARE_FUNCTION(int, closedir, (_HAIKU_BUILD_IDENTIFIER(DIR)* dir))
-_HAIKU_BUILD_DECLARE_FUNCTION(void, rewinddir, (_HAIKU_BUILD_IDENTIFIER(DIR)* dir))
-_HAIKU_BUILD_DECLARE_FUNCTION(void, seekdir, (_HAIKU_BUILD_IDENTIFIER(DIR)* dir, long int position))
-_HAIKU_BUILD_DECLARE_FUNCTION(long int, telldir, (_HAIKU_BUILD_IDENTIFIER(DIR)* dir))
-_HAIKU_BUILD_DECLARE_FUNCTION(int, dirfd, (_HAIKU_BUILD_IDENTIFIER(DIR)* dir))
+_HAIKU_BUILD_DECLARE_FUNCTION(_HAIKU_BUILD_IDENTIFIER(DIR)*, fdopendir,
+	(int fd))
+_HAIKU_BUILD_DECLARE_FUNCTION(_HAIKU_BUILD_IDENTIFIER(DIR)*, opendir,
+	(const char* dirName))
+_HAIKU_BUILD_DECLARE_FUNCTION(struct _HAIKU_BUILD_IDENTIFIER(dirent_t)*,
+	readdir, (_HAIKU_BUILD_IDENTIFIER(DIR)* dir))
+_HAIKU_BUILD_DECLARE_FUNCTION(int, readdir_r,
+	(_HAIKU_BUILD_IDENTIFIER(DIR)* dir,
+		struct _HAIKU_BUILD_IDENTIFIER(dirent_t)* entry,
+			struct _HAIKU_BUILD_IDENTIFIER(dirent_t)** _result))
+_HAIKU_BUILD_DECLARE_FUNCTION(int, closedir,
+	(_HAIKU_BUILD_IDENTIFIER(DIR)* dir))
+_HAIKU_BUILD_DECLARE_FUNCTION(void, rewinddir,
+	(_HAIKU_BUILD_IDENTIFIER(DIR)* dir))
+_HAIKU_BUILD_DECLARE_FUNCTION(void, seekdir,
+	(_HAIKU_BUILD_IDENTIFIER(DIR)* dir, long int position))
+_HAIKU_BUILD_DECLARE_FUNCTION(long int, telldir,
+	(_HAIKU_BUILD_IDENTIFIER(DIR)* dir))
+_HAIKU_BUILD_DECLARE_FUNCTION(int, dirfd,
+	(_HAIKU_BUILD_IDENTIFIER(DIR)* dir))
 
-_HAIKU_BUILD_DECLARE_FUNCTION(int, alphasort, (const struct _HAIKU_BUILD_IDENTIFIER(dirent_t)** entry1,
-					const struct _HAIKU_BUILD_IDENTIFIER(dirent_t)** entry2))
-_HAIKU_BUILD_DECLARE_FUNCTION(int, scandir, (const char* dir, struct _HAIKU_BUILD_IDENTIFIER(dirent_t)*** _entryArray,
-					int (*selectFunc)(const struct _HAIKU_BUILD_IDENTIFIER(dirent_t)*),
-					int (*compareFunc)(const struct _HAIKU_BUILD_IDENTIFIER(dirent_t)** entry1,
-						const struct _HAIKU_BUILD_IDENTIFIER(dirent_t)** entry2)))
+_HAIKU_BUILD_DECLARE_FUNCTION(int, alphasort,
+	(const struct _HAIKU_BUILD_IDENTIFIER(dirent_t)** entry1,
+		const struct _HAIKU_BUILD_IDENTIFIER(dirent_t)** entry2))
+_HAIKU_BUILD_DECLARE_FUNCTION(int, scandir,
+	(const char* dir, struct _HAIKU_BUILD_IDENTIFIER(dirent_t)*** _entryArray,
+		int (*selectFunc)(const struct _HAIKU_BUILD_IDENTIFIER(dirent_t)*),
+			int (*compareFunc)
+				(const struct _HAIKU_BUILD_IDENTIFIER(dirent_t)** entry1,
+					const struct _HAIKU_BUILD_IDENTIFIER(dirent_t)** entry2)))
 
 #ifdef __cplusplus
 }
