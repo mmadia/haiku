@@ -6,7 +6,7 @@
 #define	_HAIKU_BUILD_STDIO_POST_H_
 
 
-#include "posix_target/target_stdio_post.h"
+// Empty header.
 
 
 #endif

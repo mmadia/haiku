@@ -6,7 +6,7 @@
 #define	_HAIKU_BUILD_STDIO_PRE_H_
 
 
-#include "posix_target/target_stdio_pre.h"
+// Empty header.
 
 
 #endif
