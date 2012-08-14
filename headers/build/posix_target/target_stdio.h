@@ -108,7 +108,7 @@ typedef _haiku_build_off_t	fpos_t;
 */
 //#include <target_stdio_pre.h>
 struct _HAIKU_BUILD_IDENTIFIER(_FILE);
-typedef _HAIKU_BUILD_IDENTIFIER(_FILE) _HAIKU_BUILD_IDENTIFIER(FILE);
+typedef struct _HAIKU_BUILD_IDENTIFIER(_FILE) _HAIKU_BUILD_IDENTIFIER(FILE);
 
 #define __HAIKU_BUILD_PRINTFLIKE(format, varargs) \
 	__attribute__ ((__format__ (__printf__, format, varargs)))
