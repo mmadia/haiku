@@ -370,7 +370,8 @@ typedef struct _HAIKU_BUILD_IDENTIFIER(vregs) vregs;
 
 
 /* include architecture specific definitions */
-#include __HAIKU_ARCH_HEADER(target_signal.h)
+#include __HAIKU_BUILD_HAIKU_ARCH_HEADER(target_signal.h)
+
 
 
 typedef struct _HAIKU_BUILD_IDENTIFIER(vregs) mcontext_t;
