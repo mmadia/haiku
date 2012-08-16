@@ -14,12 +14,11 @@ typedef __haiku_build_haiku_uint64	_HAIKU_BUILD_IDENTIFIER(sigset_t);
 
 
 /* macros defining the standard signal handling behavior */
-// NOTE: #8730 -- does __sighandler_t need to be prefixed?
-#define _HAIKU_BUILD_SIG_DFL		((__sighandler_t)0)		/* "default" signal behaviour */
-#define _HAIKU_BUILD_SIG_IGN		((__sighandler_t)1)		/* ignore signal */
-#define _HAIKU_BUILD_SIG_ERR		((__sighandler_t)-1)	/* an error occurred during signal
+#define _HAIKU_BUILD_SIG_DFL		((_HAIKU_BUILD_IDENTIFIER(__sighandler_t))0)	/* "default" signal behaviour */
+#define _HAIKU_BUILD_SIG_IGN		((_HAIKU_BUILD_IDENTIFIER(__sighandler_t))1)	/* ignore signal */
+#define _HAIKU_BUILD_SIG_ERR		((_HAIKU_BUILD_IDENTIFIER(__sighandler_t))-1)	/* an error occurred during signal
 																processing */
-#define _HAIKU_BUILD_SIG_HOLD		((__sighandler_t)3)		/* the signal was hold */
+#define _HAIKU_BUILD_SIG_HOLD		((_HAIKU_BUILD_IDENTIFIER(__sighandler_t))3)	/* the signal was hold */
 
 /* macros specifying the event notification type (sigevent::sigev_notify) */
 #define _HAIKU_BUILD_SIGEV_NONE		0	/* no notification */
@@ -27,7 +26,6 @@ typedef __haiku_build_haiku_uint64	_HAIKU_BUILD_IDENTIFIER(sigset_t);
 #define _HAIKU_BUILD_SIGEV_THREAD	2	/* notify via function called in new thread */
 
 
-// NOTE: #8730 -- are unions handled in the same was as structs, enums?
 union _HAIKU_BUILD_IDENTIFIER(sigval) {
 	int		sival_int;
 	void*	sival_ptr;
@@ -37,8 +35,7 @@ struct _HAIKU_BUILD_IDENTIFIER(sigevent) {
 	int										sigev_notify;	/* notification type */
 	int										sigev_signo;	/* signal number */
 	union _HAIKU_BUILD_IDENTIFIER(sigval)	sigev_value;	/* user-defined signal value */
-	// NOTE: #8730 -- hmm. No idea as what to do for this.
-	void									(*sigev_notify_function)(union _HAIKU_BUILD_IDENTIFIER(sigval));
+	void	(*sigev_notify_function)(union _HAIKU_BUILD_IDENTIFIER(sigval));
 									/* notification function in case of
 										SIGEV_THREAD */
 	// TODO: #8730 -- revisit pthread.* after creating target_pthread.h
@@ -53,7 +50,7 @@ typedef struct _HAIKU_BUILD_IDENTIFIER(__siginfo_t) {
 	int										si_errno;	/* if non zero, an
 														error number associated
 														with this signal */
-	_HAIKU_BUILD_IDENTIFIER(pid_t)				si_pid;		/* sending process ID */
+	_HAIKU_BUILD_IDENTIFIER(pid_t)			si_pid;		/* sending process ID */
 	_HAIKU_BUILD_IDENTIFIER(uid_t)			si_uid;		/* real user ID of
 														sending process */
 	void*									si_addr;	/* address of faulting
@@ -65,12 +62,11 @@ typedef struct _HAIKU_BUILD_IDENTIFIER(__siginfo_t) {
 
 
 /* signal handler function types */
-// TODO: #8730 -- Get advice from Ingo on what to do.
-typedef void (*__sighandler_t)(int);
-typedef void (*__siginfo_handler_t)(int, _HAIKU_BUILD_IDENTIFIER(siginfo_t)*, void*);
+typedef void (*_HAIKU_BUILD_IDENTIFIER(__sighandler_t))(int);
+typedef void (*_HAIKU_BUILD_IDENTIFIER(__siginfo_handler_t))(int, _HAIKU_BUILD_IDENTIFIER(siginfo_t)*, void*);
 
 #ifdef __USE_GNU
-typedef __sighandler_t	sighandler_t;
+typedef _HAIKU_BUILD_IDENTIFIER(__sighandler_t)	sighandler_t;
 	/* GNU-like signal handler typedef */
 #endif
 
@@ -78,8 +74,8 @@ typedef __sighandler_t	sighandler_t;
 /* structure used by sigaction() */
 struct _HAIKU_BUILD_IDENTIFIER(sigaction) {
 	union {
-		__sighandler_t					sa_handler;
-		__siginfo_handler_t				sa_sigaction;
+		_HAIKU_BUILD_IDENTIFIER(__sighandler_t)					sa_handler;
+		_HAIKU_BUILD_IDENTIFIER(__siginfo_handler_t)			sa_sigaction;
 	};
 	_HAIKU_BUILD_IDENTIFIER(sigset_t)	sa_mask;
 	int									sa_flags;
@@ -234,13 +230,13 @@ extern "C" {
 
 
 /* signal management (actions and block masks) */
-_HAIKU_BUILD_DECLARE_FUNCTION(__sighandler_t, signal,
-	(int _signal, __sighandler_t signalHandler))
+_HAIKU_BUILD_DECLARE_FUNCTION(_HAIKU_BUILD_IDENTIFIER(__sighandler_t), signal,
+	(int _signal, _HAIKU_BUILD_IDENTIFIER(__sighandler_t) signalHandler))
 _HAIKU_BUILD_DECLARE_FUNCTION(int, sigaction,
 	(int _signal, const struct _HAIKU_BUILD_IDENTIFIER(sigaction)* action,
 		struct _HAIKU_BUILD_IDENTIFIER(sigaction)* oldAction))
-_HAIKU_BUILD_DECLARE_FUNCTION(__sighandler_t, sigset,
-	(int _signal, __sighandler_t signalHandler))
+_HAIKU_BUILD_DECLARE_FUNCTION(_HAIKU_BUILD_IDENTIFIER(__sighandler_t), sigset,
+	(int _signal, _HAIKU_BUILD_IDENTIFIER(__sighandler_t) signalHandler))
 _HAIKU_BUILD_DECLARE_FUNCTION(int, sigignore, (int _signal))
 _HAIKU_BUILD_DECLARE_FUNCTION(int, siginterrupt, (int _signal, int flag))
 
